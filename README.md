@@ -7,8 +7,8 @@ I'm on a 4-year journey to become a high-performance systems engineer, focusing 
 ### 🔭 Currently Learning
 - **C++, C, Python**
 - **Discrete Mathematics / Mathematics For CS**
-- **Single Variable Calculus**
-- **Multi-Variable Calculus**
+- **Single Variable Calculus, Multi-Variable Calculus**
+- **Linear Algebra**
 - **Physics I and Physics II**
 - **Computer Systems A Programmers's Perspective**
 
