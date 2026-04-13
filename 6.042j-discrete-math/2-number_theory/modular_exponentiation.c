@@ -9,7 +9,6 @@ int main(void) {
     uint64_t exp = 5;        // p - 2
     uint64_t p = 7;          // p
     uint64_t result = 1;     // Accumulator
-    // YOUR LOOP HERE
     while (exp != 0) {
         if (exp & 1UL) // if least bit is 1
             result = (((__uint128_t)result) * base) % p; // result modulo p
