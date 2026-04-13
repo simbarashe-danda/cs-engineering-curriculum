@@ -1,4 +1,4 @@
-# c-knr
+# c-k&r
 
 ## Module Scope
 See root `README.md` for full curriculum architecture and execution standards.
