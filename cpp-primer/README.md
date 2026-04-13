@@ -1,17 +1,11 @@
 # cpp-primer
 
-## Purpose
-This directory is part of a structured Computer Science and Engineering curriculum focused on systems, mathematics, and algorithmic rigor.
+## Module Scope
+See root `README.md` for full curriculum architecture and execution standards.
 
-## Environment
-WSL2 (Ubuntu/Linux toolchain)
-- gcc/g++ (C/C++)
-- python3
-- make / cmake where applicable
-- gdb / valgrind for debugging
+## Local Content
+This directory contains materials, notes, and implementations specific to this module.
 
-## Execution Standard
-- All programs must compile cleanly with strict warnings enabled
-- Memory safety is mandatory (no UB, no leaks)
-- Complexity must be explicitly reasoned where applicable
-
+## Notes
+- All work follows repository-wide systems + mathematical rigor constraints
+- WSL/Linux toolchain assumed
