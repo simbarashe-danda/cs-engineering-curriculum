@@ -16,4 +16,5 @@ int main(void)
 int strlonger(char*s,char*t){
     return strlen(s) - strlen(t) > 0;
 }
-/* always prints 1 (true) */
+/* always returns 1, for len(s) < len(t) 
+The subtraction is negative, which is converted to unsigned */
