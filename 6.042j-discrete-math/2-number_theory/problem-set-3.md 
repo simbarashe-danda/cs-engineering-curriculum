@@ -1,0 +1,84 @@
+---
+
+# Problem Set 3
+
+## Problem 3
+
+**(a)** An integer $n$ is a square modulo $p$ if there exists another integer $x$ such that $n \equiv x^2 \pmod{p}$. Prove that $x^2 \equiv y^2 \pmod{p}$ if and only if $x \equiv y \pmod{p}$ or $x \equiv -y \pmod{p}$. (Hint: $x^2 - y^2 = (x+y)(x-y)$)
+
+### Proof
+**Case 1: Proof that $x^2 \equiv y^2 \pmod{p} \implies x \equiv y \pmod{p}$ or $x \equiv -y \pmod{p}$**
+
+Notice that $x^2 \equiv y^2 \pmod{p}$ is defined to be true if $p \mid (x^2 - y^2)$.
+$$\therefore p \mid (x+y)(x-y)$$
+By Euclid's lemma we know that since $p$ is prime, it must divide $x+y$ or $x-y$.
+$$\therefore p \mid x+y \quad \text{or} \quad p \mid x-y$$
+$$\therefore x \equiv -y \pmod{p} \quad \text{or} \quad x \equiv y \pmod{p}$$
+
+**Case 2: Proof that $x \equiv y \pmod{p}$ or $x \equiv -y \pmod{p} \implies x^2 \equiv y^2 \pmod{p}$**
+
+We know $p \mid x-y$ or $p \mid x+y$. If $p$ divides at least one then $p$ must also divide:
+$$(x-y)(x+y) = x^2 - y^2$$
+$$\therefore p \mid x^2 - y^2$$
+$$\therefore x^2 \equiv y^2 \pmod{p}$$
+Thus we have proved that $x^2 \equiv y^2 \pmod{p} \iff x \equiv y \pmod{p}$ or $x \equiv -y \pmod{p}$.
+
+---
+
+**(b)** Theorem 1 (Euler's Criterion). 
+1. If $n$ is a square modulo $p$ then $n^{\frac{p-1}{2}} \equiv 1 \pmod{p}$.
+2. If $n$ is not a square modulo $p$ then $n^{\frac{p-1}{2}} \equiv -1 \pmod{p}$.
+
+Prove the first part of Euler's Criterion. (Hint: Use Fermat's theorem.)
+
+### Proof
+If $n$ is a square modulo $p$ then we know $\exists x$ such that $n \equiv x^2 \pmod{p}$. Raising both sides to the power $\frac{p-1}{2}$:
+$$\therefore n^{\frac{p-1}{2}} \equiv x^{2\left(\frac{p-1}{2}\right)} \pmod{p}$$
+$$n^{\frac{p-1}{2}} \equiv x^{p-1} \pmod{p}$$
+By Fermat's little theorem we know that if $p$ is a prime and $k$ is not a multiple of $p$ then $k^{p-1} \equiv 1 \pmod{p}$.
+
+**Proof that $x$ is not a multiple of $p$ (by Contradiction):**
+Assume $x$ is a multiple of $p$.
+Then $x \equiv 0 \pmod{p}$
+Then $x^2 \equiv 0 \pmod{p}$
+$\therefore n \equiv 0 \pmod{p}$
+Assuming $n \not\equiv 0 \pmod{p}$ (as Euler's criterion requires $m$ and $n$ to be coprime):
+$\therefore x$ is not a multiple of $p$.
+$$\therefore x^{p-1} \equiv 1 \pmod{p}$$
+This implies $n^{\frac{p-1}{2}} \equiv 1 \pmod{p}$. This completes the proof.
+
+---
+
+**(c)** Assume that $p \equiv 3 \pmod{4}$ and $n \equiv x^2 \pmod{p}$. Given $n$ and $p$, find one possible value of $x$. (Hint: Write $p$ as $p = 4k+3$ and use Euler's Criterion. You might have to multiply two sides of an equation by $n$ at one point.)
+
+### Proof
+Since $p \equiv 3 \pmod{4}$ then $p = 4k+3$. By Euler's criterion we know:
+$$n^{\frac{p-1}{2}} \equiv 1 \pmod{p}$$
+**Algebraic manipulation:**
+$$\therefore n^{\frac{(4k+3)-1}{2}} \equiv 1 \pmod{p}$$
+$$n^{\frac{4k+2}{2}} \equiv 1 \pmod{p}$$
+Multiplying both sides by $n$:
+$$n \cdot n^{\frac{4k+2}{2}} \equiv n \pmod{p}$$
+$$n^{\frac{4k+4}{2}} \equiv n \pmod{p}$$
+We know $n \equiv x^2 \pmod{p}$, then:
+$$n^{\frac{4k+4}{2}} \equiv x^2 \pmod{p}$$
+**Factoring 2:**
+$$n^{2\left(\frac{2k+2}{2}\right)} \equiv x^2 \pmod{p}$$
+$$n^{2\left(\frac{p+1}{4}\right)} \equiv x^2 \pmod{p}$$
+We can see:
+$$n^{\left(\frac{p+1}{4}\right)2} \equiv x^2 \pmod{p}$$
+$$\therefore x \equiv n^{\frac{p+1}{4}} \pmod{p}$$
+
+---
+
+## Problem 4
+
+Prove that for any prime, $p$, and integer, $k \ge 1$, $\phi(p^k) = p^k - p^{k-1}$ where $\phi$ is Euler's function. (Hint: Which numbers between $0$ and $p^k - 1$ are divisible by $p$? How many are there?)
+
+### Proof
+Instead of computing the number of integers relatively prime to $p^k$, let's compute factors of $p$ which are:
+$$1 \cdot p, 2 \cdot p, \dots, p^{k-1} \cdot p$$
+Since $p^{k-1} \cdot p = p^k$ and we also know $p \mid p^k$, we see that $(1, 2, \dots, p^{k-1})$ is a permutation of the number of all multiples of $p$.
+Since $p^k - (\text{multiples}) = \phi(p^k)$, then:
+$$\phi(p^k) = p^k - p^{k-1}$$
+This completes the proof.
