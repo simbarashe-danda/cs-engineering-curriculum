@@ -1,6 +1,7 @@
 # Core Systems Engineering Foundation
 
 **Engineer:** Simbarashe Danda  
+**Grade : Year1**
 **Location:** Zimbabwe 
 **Objective:** A rigorous, self-directed 4-year Computer Science and Engineering curriculum.
 
