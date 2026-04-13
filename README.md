@@ -13,7 +13,7 @@ The repository is strictly structured by mathematical and engineering domains:
 
 ### ⚙️ Systems Engineering & Architecture
 * **`csapp-systems/`**: C and x86-64 assembly implementations. Includes bit-level manipulations (Data Lab) and executable reverse engineering (Bomb Lab).
-* **`c-knr/`**: Rigorous problem sets from *The C Programming Language* (K&R), focusing on memory safety, pointers, and custom text parsing.
+* **`c-k&r/`**: Rigorous problem sets from *The C Programming Language* (K&R), focusing on memory safety, pointers, and custom text parsing.
 * **`cpp-primer/`**: Object-oriented systems and standard template library (STL) mastery.
 
 ### 📐 Theoretical Computer Science & Mathematics
