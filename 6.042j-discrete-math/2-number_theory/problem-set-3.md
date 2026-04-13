@@ -4,8 +4,6 @@
 
 **(a)** An integer $n$ is a square modulo $p$ if there exists another integer $x$ such that $n \equiv x^2 \pmod{p}$. Prove that $x^2 \equiv y^2 \pmod{p}$ if and only if $x \equiv y \pmod{p}$ or $x \equiv -y \pmod{p}$.
 
-> *Hint:* $x^2 - y^2 = (x+y)(x-y)$
-
 ### Proof
 
 **Case 1 $(\Rightarrow)$:** Prove $x^2 \equiv y^2 \pmod{p} \implies x \equiv y \pmod{p}$ or $x \equiv -y \pmod{p}$.
@@ -41,8 +39,6 @@ Both directions proved. $\blacksquare$
 
 Prove part (1).
 
-> *Hint:* Use Fermat's Little Theorem.
-
 ### Proof
 
 Since $n$ is a square mod $p$, $\exists\, x$ such that $n \equiv x^2 \pmod{p}$. Raise both sides to the power $\frac{p-1}{2}$:
@@ -62,8 +58,6 @@ $\blacksquare$
 ---
 
 **(c)** Assume $p \equiv 3 \pmod{4}$ and $n \equiv x^2 \pmod{p}$. Given $n$ and $p$, find one possible value of $x$.
-
-> *Hint:* Write $p = 4k+3$ and use Euler's Criterion. Multiply both sides by $n$ at one point.
 
 ### Proof
 
@@ -102,8 +96,6 @@ Prove that for any prime $p$ and integer $k \ge 1$:
 $$\phi(p^k) = p^k - p^{k-1}$$
 
 where $\phi$ is Euler's totient function.
-
-> *Hint:* Which integers in $\{0, 1, \ldots, p^k - 1\}$ are divisible by $p$? How many are there?
 
 ### Proof
 
