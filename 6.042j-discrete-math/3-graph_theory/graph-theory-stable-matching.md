@@ -32,11 +32,13 @@ The objective is to design an algorithm to assign students to universities satis
 ## 3. Mathematical Proofs of Algorithm Properties
 
 **Termination — Upper Bound of $NM + 1$ Days**
+
 Each student has $M$ universities on their list, giving $NM$ total entries across all lists. Because at least one entry is crossed off on every day the algorithm does not terminate, there can be at most $NM$ days of rejections. The algorithm must terminate on the day following the final possible rejection. Therefore the absolute upper bound for termination is $NM + 1$ days. $\blacksquare$
 
 ---
 
 **Claim 1**
+
 **If during some day a university $u_j$ has at least $n_j$ applicants, then when the algorithm terminates, it accepts exactly $n_j$ students.**
 
 **Proof.** Let day $d$ be the first day that $u_j$ receives $k \ge n_j$ applicants. The university rejects the $k - n_j$ least preferred applicants and tells its top $n_j$ to "come back tomorrow." Since these applicants applied because $u_j$ is their current top choice, on day $d+1$ university $u_j$ again receives $\ge n_j$ applications.
@@ -46,6 +48,7 @@ The claim follows from the invariant: if a university receives $\ge n_j$ applica
 ---
 
 **Claim 2**
+
 **Every student is assigned to one university.**
 
 **Proof.** We know $\sum_{i=1}^M n_i = N$, so there are exactly enough slots for all students. Assume for contradiction that upon termination there exists a student $s_i$ assigned to no university. This is only possible if $s_i$ was rejected by every university, which is only possible if for every university $u_j$, $s_i$ was among the least preferred applicants and the number of applicants exceeded $n_j$.
@@ -55,6 +58,7 @@ This would imply the total number of slots is less than $N$, contradicting $\sum
 ---
 
 **Claim 3**
+
 **For all $j$, $u_j$ gets assigned exactly $n_j$ students.**
 
 **Proof.** Assume for contradiction that some $u_j$ is assigned fewer than $n_j$ students. Since $\sum_{i=1}^M n_i = N$ and by Claim 2 every student is assigned, some other university must be assigned more than its maximum slots — contradicting Claim 1. $\blacksquare$
@@ -62,6 +66,7 @@ This would imply the total number of slots is less than $N$, contradicting $\sum
 ---
 
 **Claim 4**
+
 **The rank of $u_j$'s least favourite "maybe" applicant cannot decrease (i.e. get worse) on any future day.**
 
 **Proof.** Suppose on day $d$, university $u_j$ has $k \ge n_j$ applicants and says "maybe" to its top $n_j$. Let $S_{\text{worst}}$ be the least favourite among these, with rank $R$ on $u_j$'s preference list.
@@ -71,6 +76,7 @@ On day $d+1$, if $u_j$ again has $k > n_j$ applicants, the new $S_{\text{worst}}
 ---
 
 **Claim 5 — No rogue pairs exist**
+
 **There do not exist $s_i, s_j, u_k, u_\ell$ such that $s_i$ is assigned to $u_k$, $s_j$ is assigned to $u_\ell$, $s_j$ prefers $u_k$ to $u_\ell$, and $u_k$ prefers $s_j$ to $s_i$.**
 
 **Proof.** Assume for contradiction such a rogue combination exists at termination. Since $s_j$ prefers $u_k$ to $u_\ell$ but is assigned to $u_\ell$, by the algorithm $s_j$ must have applied to $u_k$ before $u_\ell$ and been rejected.
@@ -80,6 +86,7 @@ Since $s_j$ was rejected by $u_k$ and $s_i$ was accepted, by Claim 4 $u_k$ must 
 ---
 
 **Claim 6 — Student optimality**
+
 **Each student is assigned to their optimal university.**
 
 **Proof.** Assume for contradiction the algorithm does not assign every student to their optimal university. Then at least one student is rejected by their optimal university during execution.
