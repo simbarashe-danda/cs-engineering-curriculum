@@ -2,8 +2,8 @@
 
 ## Problem 1
 
-*An undirected graph $G$ has width $w$ if the vertices can be arranged in a sequence $v_1, v_2, v_3, \dots, v_n$ such that each vertex $v_i$ is joined by an edge to at most $w$ preceding vertices. (Vertex $v_j$ precedes $v_i$ if $j < i$.) Use induction to prove that every graph with width at most $w$ is $(w+1)$-colorable.*
 
+**Definition:** An undirected graph $G$ has width $w$ if the vertices can be arranged in a sequence $v_1, v_2, v_3, \dots, v_n$ such that each vertex $v_i$ is joined by an edge to at most $w$ preceding vertices. (Vertices $v_1, v_2, v_3, \dots$ need not be adjacent.)
 **Proof:**
 Let $P(n)$ the proposition that Every graph with width $w$ is $(w+1)$-colourable.
 
