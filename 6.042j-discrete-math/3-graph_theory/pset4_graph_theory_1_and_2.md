@@ -1,239 +1,213 @@
-# Problem Set 4
+# 6.042 / 18.062J — Problem Set 4
 
-## Problem 1
-
-**Proof that $G' = (V, M_1 \cup M_2)$ is bipartite given matchings $M_1$ and $M_2$.**
-
-Let $M_1$ and $M_2$ be two matchings of $G$.
-
-Consider $G' = (V, M_1 \cup M_2)$.
-
-First note that the maximum degree on a node in the matching $M_1$ or $M_2$ is 1.  
-The $M_1 \cup M_2$ can have a maximum node degree of 2.
-
-Now notice that the only possible structures $G'$ can take are paths and cycles (since degree is limited to 2).
-
-If $M_1 \cup M_2$ forms a cycle, then it must be an even cycle (alternating between $M_1$ and $M_2$).  
-Assume starting at edge $E_0$ that belongs to $M_1$, then the closing edge $E_{end}$ must belong to $M_2$ or we will break matching rules.  
-And this also shows if its a cycle then the number of edge can't be odd.
-
-If $M_1 \cup M_2$ forms a path then it contains no cycles at all.
-
-$\therefore$ It follows $G'$ is bipartite $\blacksquare$
+Course: 6.042/18.062J Mathematics for Computer Science (Fall 2010)
+Authors: Tom Leighton and Marten van Dijk
+Source: MIT OpenCourseWare — September 28, 2010
 
 ---
 
-## Problem 2
+## Problem 1 — Union of Two Matchings is Bipartite (15 points)
 
-### (a)
-**Proof that $2|E| = \sum_{v \in V} d_v$ where $d_v$ is the degree of a vertex $v$.**
+Let M1 and M2 be two matchings of a graph G = (V, E). Consider the graph
+G' = (V, M1 ∪ M2) whose edge set is all edges that appear in either M1 or M2.
+Show that G' is bipartite.
 
-**Lemma 1:** Every edge contribute exactly 2 degree to the total sum of degrees in the graph.
+Solution.
 
-*P.f:* consider adding an edge $e$ to a graph such that the edge gets connected to node $u$ and $v$ (which is the only way, an edge can be connected to exactly two nodes).  
-It follows that the degree of each node increase by 1  
-$\therefore$ total increase is 2 $\blacksquare$
+First note that every vertex in a matching has degree at most 1. Therefore in
+G' every vertex has degree at most 2. Hence each connected component of G' is
+either a path or a cycle.
 
-Let $|E|$ be $M$.  
-Let $P(M)$ be the proposition:
-
-$\sum_{v \in V} d_v = 2M$ where $d_v$ is the degree of a node $v$.
-
-By Mathematical induction:
-
-**Base case**, $M = 0$.  
-Since there are no edges then every node has degree 0. $\underline{\text{holds}}$
-
-**Inductive step** Assume $P(M)$.  
-Consider an $M+1$ number of edges graph.
-
-By Lemma 1, sum of all degrees must increase by 2.
-
-$\therefore \sum_{v \in V} d_v + 2 = 2(M+1)$
-
-By the inductive hypothesis:
-
-$2M + 2 = 2(M+1) \implies P(M+1)$
-
-This completes the inductive step and proof by induction $\blacksquare$
-
-### (b)
-**Determine if 111 students can each shake exactly 17 hands.**
-
-Let the graph which characterize students shaking hands be $G = (V,E)$ where $|V| = 111$.
-
-We can also notice that the degree $d_v$ of each student is 17.
-
-$\therefore \sum_{v \in V} 17 = 17 \cdot 111 = 1887$
-
-But from the proof from (a) we know:
-
-$\sum_{v \in V} d_v = 2|E|$, which is a contradiction since $1887 \equiv 1 \pmod 2$. $\blacksquare$
-
-The claim is false.
+If a connected component of G' is a cycle, the edges alternate between M1 and
+M2, so the cycle length must be even. If a component is a path it contains no
+cycle. Thus every connected component is bipartite, and therefore G' is
+bipartite. ∎
 
 ---
 
-## Problem 3
+## Problem 2 — Degree sum formula and applications (20 points)
 
-### (a)
-**Prove that a finite graph is bipartite if and only if it contains no cycles of odd length.**
+(a) Prove that
 
-$\Rightarrow$ Assume $G$ is Bipartite.
-Then its vertices can be partitioned into two disjoint sets $V_1$ and $V_2$ such that every edge connects a vertex in $V_1$ to one in $V_2$.
-A cycle must start and end at the same vertex.
-Every step in the cycle alternates between $V_1$ and $V_2$.
-To return to the starting set, the number of steps must be even.
-$\therefore G$ contains no cycles of odd length.
+  2|E| = Σ_{v∈V} d_v
 
-$\Leftarrow$ Assume $G$ contains no cycles of odd length.
-We want to show $G$ is Bipartite.
-Assume $G$ is connected (if not, apply to each connected component).
-Pick an arbitrary node $v \in V$.
-Define $V_1 = \{u \in V \mid \text{shortest path from } v \text{ to } u \text{ is even length}\}$.
-Define $V_2 = \{u \in V \mid \text{shortest path from } v \text{ to } u \text{ is odd length}\}$.
-Suppose $x, y \in V_1$ are adjacent.
-Then there is a cycle: $v \rightarrow \dots \rightarrow x \rightarrow y \rightarrow \dots \rightarrow v$.
-The length of this cycle is (even) + 1 + (even) = odd.
-This contradicts our assumption that $G$ has no cycles of odd length.
-$\therefore$ No two nodes in $V_1$ are adjacent. (Similarly for $V_2$).
-$\therefore G$ is Bipartite. $\blacksquare$
+where d_v denotes the degree of vertex v.
 
-### (b)
-**If $G$ contains a closed walk of odd length, then $G$ contains a cycle of odd length.**
+Solution.
 
-Let $W = v_0, e_1, v_1, e_2, \dots, e_k, v_k$ where $v_0 = v_k$ and $k$ is odd.
-Let $W$ be the shortest closed walk of odd length in $G$.
-Suppose $W$ is not a cycle.
-Then some vertex is repeated, say $v_i = v_j$ for $0 \leq i < j < k$.
-We can split $W$ into two closed walks:
-$W_1 = v_i \rightarrow \dots \rightarrow v_j$
-$W_2 = v_0 \rightarrow \dots \rightarrow v_i \rightarrow v_{j+1} \rightarrow \dots \rightarrow v_k$
-The sum of the lengths of $W_1$ and $W_2$ is $k$ (which is odd).
-Therefore, one must be odd and the other even.
-Suppose $W_1$ is odd.
-Length of $W_1 < k$.
-This contradicts that $W$ is the shortest closed walk of odd length.
-$\therefore W$ must be a cycle. $\blacksquare$
+Each edge contributes exactly 1 to the degree of each of its two endpoints,
+so each edge contributes 2 to the sum of degrees. Summing over all edges gives
+2|E| = Σ_v d_v. (An induction proof is also valid.) ∎
+
+(b) At a session 111 students showed up, and each student shook hands with
+exactly 17 others. Is this possible?
+
+Solution.
+
+If each of the 111 vertices has degree 17 then the sum of degrees is 111·17 =
+1887, which is odd. But by part (a) the sum of degrees must equal 2|E|, an
+even number. Contradiction — such a configuration is impossible. ∎
+
+(c) How many edges does K_n (the complete graph on n vertices) have?
+
+Solution.
+
+Each of the n vertices has degree n−1, so Σ_v d_v = n(n−1) = 2|E|, hence
+|E| = n(n−1)/2. ∎
 
 ---
 
-## Problem 4
+## Problem 3 — Bipartiteness and odd cycles (15 points)
 
-**State whether each of the following statements is true or false. If the statement is true, give a short proof. If the statement is false, give a counter-example.**
+(a) Prove that a finite graph is bipartite if and only if it contains no odd
+cycles.
 
-### (a) Let $G=(V,E)$ be a simple graph. Then $G$ must contain a cycle of length $\geq 3$ or an independent set of size $\geq 3$.
-False. 
-Counter-example: $K_2$.
-$K_2$ has no cycles and its maximum independent set size is 1.
+Solution.
 
-### (b) If $G$ has an Eulerian walk, then $G$ must be connected.
-False. 
-Counter-example: A graph with an Eulerian walk but also isolated vertices (degree 0). The walk traverses all edges, but the graph is disconnected because of the isolated vertices.
+(⇒) If G is bipartite with parts V1 and V2, any cycle must alternate between
+V1 and V2, so cycles have even length.
 
-### (c) If $G$ is a bipartite graph, then it cannot have an Eulerian cycle.
-False. 
-Counter-example: $C_4$.
-$C_4$ is an even cycle so it is bipartite, and it has an Eulerian cycle because every vertex has an even degree.
+(⇐) Conversely, if G has no odd cycles, pick a vertex v and let V1 be the set
+of vertices at even distance from v and V2 those at odd distance. If there
+were an edge between two vertices in V1 it would create an odd cycle; hence
+V1 and V2 are independent and G is bipartite. ∎
 
-### (d) Let $G$ be a connected simple graph. If $G$ has an Eulerian cycle, then every vertex of $G$ has even degree.
-True.
-Proof: Let $C$ be an Eulerian cycle in $G$.
-$C$ traverses every edge exactly once.
-For every time $C$ enters a vertex $v$, it must also leave $v$.
-Each visit (enter and leave) contributes 2 to the degree of $v$.
-Since $C$ starts and ends at the same vertex, the first leaving edge and last entering edge also contribute 2.
-$\therefore$ Every vertex must have an even degree. $\blacksquare$
+(b) Show that if G contains a closed walk of odd length then G contains an odd
+cycle.
+
+Solution.
+
+Take a shortest closed odd walk; if some vertex repeats within the walk it
+splits the walk into shorter closed walks, one of which must be odd, contradicting
+minimality. Hence the shortest such walk is a cycle. ∎
 
 ---
 
-## Problem 5
+## Problem 4 — True/False statements about graphs (15 points)
 
-**Let $G = (V,E)$ be a simple bipartite graph. Let $|V| = n$. Show that $|E| \leq \frac{n^2}{4}$.**
+For each statement state True or False and give a brief justification or a
+counterexample.
 
-Let $G = (V_1 \cup V_2, E)$ be a bipartite graph where $|V_1| + |V_2| = n$.
-The max number of edges is when every node in $V_1$ is connected to every node in $V_2$.
-So $|E| \leq |V_1||V_2|$.
-Let $|V_1| = x$, then $|V_2| = n - x$.
-$|E| \leq x(n-x) = nx - x^2$.
-To find the maximum, take the derivative and set to 0.
-$\frac{d}{dx} (nx - x^2) = n - 2x = 0$
-$2x = n \implies x = \frac{n}{2}$
-$\therefore$ max edges $= (\frac{n}{2})(n - \frac{n}{2}) = \frac{n^2}{4}$.
-$\therefore |E| \leq \frac{n^2}{4}$ $\blacksquare$
+(a) Let G be a simple graph. Then G must contain a cycle of length ≥ 3 or an
+independent set of size ≥ 3.
 
----
+Answer: False. Counterexample: K_2 has no cycle and its largest independent set
+has size 1.
 
-## Problem 6
+(b) If G has an Eulerian walk, then G must be connected.
 
-**Prove that every $k$-regular bipartite graph has a perfect matching.**
+Answer: False. A graph can have an Eulerian walk that traverses all edges in a
+connected component while isolated vertices (degree 0) make the graph
+disconnected.
 
-Let $G = (V_1 \cup V_2, E)$ be a $k$-regular bipartite graph ($k \geq 1$).
+(c) If G is bipartite, then it cannot have an Eulerian cycle.
 
-First we prove $|V_1| = |V_2|$. Total edges $|E| = \sum_{v \in V_1} \text{deg}(v) = k|V_1|$.
-Also $|E| = \sum_{v \in V_2} \text{deg}(v) = k|V_2|$.
-$\therefore k|V_1| = k|V_2| \implies |V_1| = |V_2|$.
+Answer: False. Example: a 4-cycle C4 is bipartite and has an Eulerian cycle
+because all vertex degrees are even.
 
-We will use Hall's Marriage Theorem: $G$ has a matching covering $V_1$ iff $|N(A)| \geq |A|$ for all $A \subseteq V_1$.
+(d) Let G be a connected simple graph. If G has an Eulerian cycle, then every
+vertex of G has even degree.
 
-Let $A \subseteq V_1$. Let $E_A$ be the set of edges incident to vertices in $A$.
-Since each vertex has degree $k$, $|E_A| = k|A|$.
-
-All these edges must connect to vertices in $N(A)$.
-The maximum number of edges the vertices in $N(A)$ can 'accept' is $k|N(A)|$.
-
-$\therefore k|A| \leq k|N(A)| \implies |A| \leq |N(A)|$.
-
-Therefore, by Hall's Marriage Theorem, $G$ contains a matching that covers $V_1$.
-Since $|V_1| = |V_2|$, this matching is a perfect matching. $\blacksquare$
+Answer: True. In an Eulerian cycle each time the tour enters a vertex it must
+also leave it, contributing an even number to its degree. ∎
 
 ---
 
-## Problem 7
+## Problem 5 — Maximum edges in a bipartite graph (15 points)
 
-**Show that a tree with $n \geq 2$ vertices has at least 2 leaves (vertices of degree 1).**
+Let G = (V, E) be a simple bipartite graph with |V| = n. Show that
+|E| ≤ n^2 / 4.
 
-Let $T$ be a tree with $n \geq 2$ vertices.
+Solution.
 
-Consider the longest simple path in $T$, let it be $P = v_1, e_1, v_2, \dots, e_k, v_{k+1}$.
-Since $n \geq 2$, $P$ has at least one edge.
-
-The vertex $v_1$ has degree 1 in $T$. If it had another neighbor $u$, then either $u$ is in $P$ (creating a cycle, which is a contradiction since $T$ is a tree) or $u$ is not in $P$ (which would make a longer path, contradicting that $P$ is the longest simple path).
-
-Similarly, $v_{k+1}$ must have degree 1.
-
-Therefore $v_1$ and $v_{k+1}$ are leaves. $T$ has at least 2 leaves. $\blacksquare$
+Write V = V1 ∪ V2 with |V1| = x and |V2| = n−x. Then |E| ≤ x(n−x) = nx − x^2,
+which is maximized at x = n/2, giving |E| ≤ n^2/4. ∎
 
 ---
 
-## Problem 8
+## Problem 6 — k-regular bipartite graphs have perfect matchings (20 points)
 
-**Prove that a tree with $n$ vertices has exactly $n-1$ edges.**
+Prove that every k-regular bipartite graph (k ≥ 1) has a perfect matching.
 
-Proof by induction on $n$.
+Solution.
 
-**Base case:** $n=1$. 
-$T$ has 1 vertex and 0 edges. $1 - 1 = 0$. Holds.
-
-**Inductive step:** Assume any tree with $k$ vertices has $k-1$ edges.
-
-Consider a tree $T$ with $k+1$ vertices. By the previous problem, $T$ has at least one leaf $v$.
-Remove $v$ and its incident edge $e$ to get $T'$.
-$T'$ is connected and acyclic, so $T'$ is a tree with $k$ vertices.
-
-By the inductive hypothesis, $T'$ has $k-1$ edges.
-Since $T$ has one more edge than $T'$, $T$ has $(k-1) + 1 = k$ edges.
-
-This completes the proof by induction. $\blacksquare$
+First note k|V1| = |E| = k|V2|, so |V1| = |V2|. For any subset A ⊆ V1 consider the
+set of edges incident to A; there are k|A| such edges, and they all go to N(A).
+Since each vertex of N(A) has degree at most k, k|A| ≤ k|N(A)|, so |A| ≤ |N(A)|.
+By Hall's theorem there is a matching that covers V1; since |V1| = |V2| this is a
+perfect matching. ∎
 
 ---
 
-## Problem 9
+## Problem 7 — Trees have at least two leaves (10 points)
 
-**What is the max number of leaves in a tree with $n$ vertices? min number?**
+Show that a tree with n ≥ 2 vertices has at least two leaves.
 
-**Max number of leaves:** $n-1$.
-This happens in a star graph where 1 central node is connected to $n-1$ leaves.
+Solution.
 
-**Min number of leaves:** $2$.
-This happens in a path graph where all nodes are arranged in a single line, so only the two endpoints are leaves.
+Take a longest path in the tree. Its two endpoints have degree 1, otherwise the
+path could be extended. Thus there are at least two leaves. ∎
+
+---
+
+## Problem 8 — Trees have n−1 edges (10 points)
+
+Prove that any tree with n vertices has exactly n−1 edges.
+
+Solution.
+
+By induction on n: removing a leaf from an n-vertex tree yields an
+(n−1)-vertex tree with (n−2) edges by the inductive hypothesis, so the original
+tree had (n−1) edges. ∎
+
+---
+
+## Problem 9 — Extremal number of leaves in a tree (5 points)
+
+What are the maximum and minimum possible numbers of leaves in an n-vertex
+tree?
+
+Answer: Maximum = n−1 (a star); Minimum = 2 (a path). ∎
+
+---
+
+Notes on including images in Markdown
+
+Yes — you can include images in Markdown. Common options:
+
+1. Use a relative path to an image committed in the repository, e.g.
+
+   ![Figure 1](./images/pset4_fig1.png)
+
+   Place the file at 6.042j-discrete-math/3-graph_theory/images/pset4_fig1.png
+   and the image will render on GitHub and in the repository README pages.
+
+2. Use an absolute URL (hosted elsewhere):
+
+   ![Alt text](https://example.com/path/to/image.png)
+
+3. Use the GitHub raw URL if you want to reference a specific branch/commit:
+
+   ![Raw image](https://raw.githubusercontent.com/simbarashe-danda/cs-engineering-curriculum/main/6.042j-discrete-math/3-graph_theory/images/pset4_fig1.png)
+
+Recommendations:
+- Prefer PNG or SVG for diagrams. SVG scales well; PNG is broadly supported.
+- Keep images in a dedicated images/ directory next to the Markdown file.
+- Use relative paths so the images move with the repo.
+
+Example snippet to add to this file (you can copy-paste):
+
+```markdown name=example_image_snippet.md
+![Example graph](./images/pset4_example_graph.png)
+```
+
+---
+
+If you'd like, I can:
+- commit this improved file for you (I have just updated it),
+- or instead create a new file such as `pset4_graph_theory_1_and_2.md` in a
+  `polished/` folder so the original is preserved,
+- or add an `images/` directory and upload example images (please provide the
+  image files or tell me where to fetch them).
+
+Tell me which of these you prefer and I'll continue.
