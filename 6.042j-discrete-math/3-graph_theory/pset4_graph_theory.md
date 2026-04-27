@@ -105,6 +105,7 @@ $|E| = \frac{n(n-1)}{2}$
 
 $\therefore \frac{n(n-1)}{2} \blacksquare$
 
+---
 
 # Problem 3
 
@@ -220,13 +221,13 @@ Now consider a scenario where two distinct boys $b_x$ and $b_y$ share the exact 
 From (1) for a valid matching where both $b_x$ and $b_y$ are not connected to $g_z$ then both $b_x$ and $b_y$ must strictly rank lower than all the boys in $g_z$ preference list (rank is same).
 
 But a strict preference list prohibits ties.
-$	herefore g_z$ cannot rank $b_x$ and $b_y$ simultaneously at the absolute bottom.
+$\therefore g_z$ cannot rank $b_x$ and $b_y$ simultaneously at the absolute bottom.
 
 **Limitation 1:** No two boys can share the same first-choice girl.
-$	herefore$ Every girl must have is the top choice of exactly one boy.
+$\therefore$ Every girl must have is the top choice of exactly one boy.
 
 **Limitation 2:** Since stability is symmetric, No two girls can share the same first choice boy.
-$	herefore$ Every boy is the top choice of exactly one girl.
+$\therefore$ Every boy is the top choice of exactly one girl.
 
 Consider $n=3$ and
 $V_b = \{b_1, b_2, b_3\}$ and $V_g = \{g_1, g_2, g_3\}$
@@ -258,15 +259,15 @@ Using Lim 1 and 2:
 *(Note: Parentheses indicate the elements circled in the original handwritten notes)*
 
 $$
- egin{array}{c|ccc}
-g_1 & b_2 & (b_3) & b_1 \
-g_2 & b_3 & b_1 & b_2 \
+\begin{array}{c|ccc}
+g_1 & b_2 & (b_3) & b_1 \\
+g_2 & b_3 & b_1 & b_2 \\
 g_3 & b_1 & b_2 & b_3 
 \end{array}
 \hspace{2cm}
- egin{array}{c|ccc}
-b_1 & g_1 & (g_2) & g_3 \
-b_2 & g_2 & g_3 & g_1 \
+\begin{array}{c|ccc}
+b_1 & g_1 & (g_2) & g_3 \\
+b_2 & g_2 & g_3 & g_1 \\
 b_3 & g_3 & (g_1) & g_2 
 \end{array}
 $$
@@ -279,5 +280,5 @@ Notice that the pair $(b_3, g_1)$ is a rogue couple because:
 * $g_1$ prefers $b_3$ more than $b_1$
 
 Which is a contradiction to the claim that every possible matching is stable
-$	herefore$ The claim is false
-This completes the proof. $ lacksquare$
+$\therefore$ The claim is false
+This completes the proof. $\blacksquare$
