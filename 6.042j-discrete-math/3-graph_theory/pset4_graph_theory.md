@@ -106,105 +106,178 @@ $|E| = \frac{n(n-1)}{2}$
 $\therefore \frac{n(n-1)}{2} \blacksquare$
 
 
-## Problem 3
+# Problem 3
 
-### (a) Properties Preserved Under Isomorphism
-Which of these properties are preserved under isomorphism?
+**(a) Some properties of a simple graph, G, are described below. Which of these properties is preserved under isomorphism?**
 
-1.  **$G$ has an even number of vertices.**
-    * **Preserved.** If two graphs are isomorphic, there is a bijection between their vertex sets; therefore, $|V_1| = |V_2|$.
-2.  **None of the vertices of $G$ is an even integer.**
-    * **Not Preserved.** This is a property of the labeling/naming of vertices, not the structure of the graph itself.
-3.  **$G$ has a vertex of degree 3.**
-    * **Preserved.** Isomorphism preserves the adjacency and degree of corresponding vertices.
-4.  **$G$ has exactly one vertex of degree 3.**
-    * **Preserved.** Since degrees are preserved, the number of vertices with a specific degree must remain constant.
+1. **G has an even number of vertices.**
+   - Preserved. Otherwise they are not isomorphic.
+2. **None of the vertices of G is an even integer.**
+   - This is labeling, not preserved.
+3. **G has a vertex of degree 3.**
+   - Preserved. Otherwise they are not isomorphic.
+4. **G has exactly one vertex of degree 3.**
+   - Preserved. There is no way of increasing degree without losing isomorphisms.
 
----
-
-### (b) Isomorphism Identification
-**Goal:** Determine which of the four graphs ($G_1, G_2, G_3, G_4$) are isomorphic.
+**(b) Determine which among the four graphs pictured in the Figures are isomorphic. If two of these graphs are isomorphic, describe an isomorphism between them. If they are not, give a property that is preserved under isomorphism such that one graph has the property, but the other does not. For at least one of the properties you choose, prove that it is indeed preserved under isomorphism (you only need prove one of them).**
 
 ![Figure 1: Graphs for Problem 3b](problem_3b.png)
 
+### Filtering for isomorphism
+* **Number of nodes:** are the same.
+* **Number of edges:**
+  - $G_1: 15$, $G_2: 16$, $G_3: 15$, $G_4: 15$
+  - Eliminate $G_2$ because $|E|$ differs from others.
+* **Degree sequence:**
+  - $G_1: (3, 3, \dots, 3)_{10}$
+  - $G_3: (3, 3, \dots, 3)_{10}$
+  - $G_4: (3, 3, \dots, 3)_{10}$
+* **Length of shortest cycle:**
+  - $G_1: 5$, $G_3: 5$, $G_4: 4$
+  - $G_4$ has shorter cycle than other, eliminate $G_4$.
 
-#### 1. Filtering by Invariants
-* **Number of Nodes:** $|V| = 10$ for all graphs.
-* **Number of Edges:**
-    * $G_1: 15$
-    * $G_2: 16$
-    * $G_3: 15$
-    * $G_4: 15$
-    * *Result:* Eliminate $G_2$ because $|E|$ differs.
-* **Degree Sequence:**
-    * $G_1, G_3, G_4$ are all 3-regular (every vertex has degree 3).
-* **Girth (Shortest Cycle):**
-    * $G_1: 5$
-    * $G_3: 5$
-    * $G_4: 4$ (e.g., the cycle $1-6-7-2-1$)
-    * *Result:* Eliminate $G_4$.
+**Isomorphism candidates** = $\{G_1, G_3\}$
 
-**Candidates for Isomorphism:** $\{G_1, G_3\}$.
+### Base mapping
+* **Base cycle:** Outer cycle of $G_1$. Rename vertices in their connectivity order to be: $\{v_1, v_2, v_3, v_4, v_5\}$
+* **Corresponding cycle in $G_3$:** $\{w_1, w_2, w_3, w_4, w_{10}\}$
 
-#### 2. Establishing the Mapping $f: G_1 \to G_3$
-By identifying corresponding cycles and forced adjacencies, we define the following isomorphism:
+**Initial mapping:**
+$f(v_1) = w_1, f(v_2) = w_2, f(v_3) = w_3, f(v_4) = w_4, f(v_5) = w_{10}$
 
-| $G_1$ Vertex | $G_3$ Vertex |
-| :--- | :--- |
-| $v_1$ | $w_1$ |
-| $v_2$ | $w_2$ |
-| $v_3$ | $w_3$ |
-| $v_4$ | $w_4$ |
-| $v_5$ | $w_{10}$ |
-| $v_6$ | $w_9$ |
-| $v_7$ | $w_8$ |
-| $v_8$ | $w_7$ |
-| $v_9$ | $w_6$ |
-| $v_{10}$ | $w_5$ |
+**Forced adjacency:**
+$f(v_8) = w_7, f(v_9) = w_6, f(v_{10}) = w_5$
+
+**Remaining:**
+$\{v_6, v_7\}$ and $\{w_8, w_9\}$
+Because $v_6$ connects to $v_1$ and $v_{10}$ and we know $w_9$ connects to $w_1$ and $w_5$ and $f(v_1) = w_1$ and $f(v_{10}) = w_5 \implies f(v_6) = w_9$.
+This leaves $f(v_7) = w_8$.
+
+**Complete mapping is:**
+$f(v_1) = w_1, f(v_2) = w_2, f(v_3) = w_3, f(v_4) = w_4, f(v_5) = w_{10}, f(v_6) = w_9, f(v_7) = w_8, f(v_8) = w_7, f(v_9) = w_6, f(v_{10}) = w_5$
 
 ---
 
-## Problem 4
+# Problem 4
 
-### (a) Counterexample for $k = 2$
-**Claim:** If $G$ has max degree $\le k$ and has at least one node with degree $< k$, then $G$ is $k$-colorable.
+**(a) Give a counterexample to the False Claim when k = 2.**
 
-**Counterexample:**
-Let $G$ be a disjoint union of two components, $C_1$ and $C_2$:
-* **Component $C_1$:** A triangle ($K_3$) with vertices $\{1, 2, 3\}$.
-    * Max degree is 2.
-    * It is **not** 2-colorable (requires 3 colors).
-* **Component $C_2$:** A single edge ($K_2$) with vertices $\{a, b\}$.
-    * Degree of $a = 1$, which is $< k$ (where $k=2$).
+**Properties of counterexample:**
+* must not be bipartite
+* must have max degree at most 2
+* must have a node of degree 1
 
-**Conclusion:** Even though $G$ has a vertex with degree $< 2$, the entire graph is not 2-colorable because of the odd cycle in $C_1$. Thus, the claim is invalid.
+Let component 1 be $C_1 = (V_1, E_1)$:
+$V_1 = \{1, 2, 3\}$
+$E_1 = \{(1, 2), (2, 3), (1, 3)\}$
+$C_1$ has max degree 2 and is not 2-colorable.
+$deg(1) = 2, deg(2) = 2, deg(3) = 2$.
 
-### (b) Error in the Proof
-**The Sentence:** "Removing $v$ reduces the degree of all vertices adjacent to $v$ by 1. So in $G_n$, each of these vertices has degree less than $k$."
+Let component 2 be $C_2 = (V_2, E_2)$:
+$V_2 = \{a, b\}$
+$E_2 = \{(a, b)\}$
+$C_2$ has a node of degree 1: $deg(a) = 1, deg(b) = 1$.
 
-**The Flaw:** If the removed vertex $v$ has a degree of 0 (it is isolated), it has no neighbors. Therefore, removing it does not reduce the degree of any other vertices, and the inductive step fails to guarantee a vertex of degree $< k$ in $G_n$.
+Let $G$ be a union of $C_1$ and $C_2$ such that $G = (V, E)$ and
+$V = \{1, 2, 3, a, b\}$
+$E = \{(1, 2), (2, 3), (1, 3), (a, b)\}$
+$G$ has $k = 2$ (max deg), and has a node of $deg < k$ (degree 1).
+Because $C_1$, a component of $G$, is not 2-colorable, $G$ is not 2-colorable.
+$\therefore$ the claim is invalid.
+
+**(b) Identify the exact sentence where the proof goes wrong.**
+
+**Sentence:**
+"Removing $v$ reduces the degree of all vertices adjacent to $v$ by 1. So in $G_n$, each of these vertices has degree less than $k$."
+
+**Reasoning:**
+But assume $deg(v) = 0$. The claim that $G_n$ has a vertex of $deg < k$ breaks since $v$ was not connected at all.
 
 ---
 
-## Problem 5: Stable Matching Claim
+# Problem 5
 
-**Claim:** For $n \ge 3$, there exists a preference set such that *every* dating arrangement is stable.
+**Prove or disprove the following claim: for some $n \ge 3$ (n boys and n girls, for a total of 2n people), there exists a set of boys’ and girls’ preferences such that every dating arrangement is stable.**
 
-**Disproof (by Contradiction for $n=3$):**
-Let $V_b = \{b_1, b_2, b_3\}$ and $V_g = \{g_1, g_2, g_3\}$. For every matching to be stable, specific constraints must be met:
-1.  **Constraint 1:** No two boys can share the same first-choice girl.
-2.  **Constraint 2:** No two girls can share the same first-choice boy.
+Let $V_b$ be the set of nodes that represent boys.
+Let $V_g$ be the set of nodes that represent girls.
 
-Consider the following **Preference Matrices**:
+An unstable matching happens if
+$\exists b_1, b_2 \in V_b, g_1, g_2 \in V_g$ such that $(b_1, g_1)$ and $(b_2, g_2)$ are matched but $b_1$ prefers $g_2$ over $g_1$ and $g_2$ prefers $b_1$ over $b_2$.
 
-| Boy | 1st | 2nd | 3rd | | Girl | 1st | 2nd | 3rd |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **$b_1$** | $g_1$ | $g_2$ | $g_3$ | | **$g_1$** | $b_2$ | $b_3$ | $b_1$ |
-| **$b_2$** | $g_2$ | $g_3$ | $g_1$ | | **$g_2$** | $b_3$ | $b_1$ | $b_2$ |
-| **$b_3$** | $g_3$ | $g_1$ | $g_2$ | | **$g_3$** | $b_1$ | $b_2$ | $b_3$ |
+Assume the claim is true $\implies$ every possible matching is stable.
+Let girl $g_i$ be a top choice of boy $b_i$.
+For $g_i$ and $b_i$ to be a couple and be stable, $g_i$ must prefer $b_i$ over other boys who prefer $g_i$.
 
-**Analysis of Matching $M = \{(b_1, g_1), (b_2, g_3), (b_3, g_2)\}$:**
-* $b_3$ is matched with $g_2$ (his 3rd choice), but he prefers **$g_1$** (his 2nd choice).
-* $g_1$ is matched with $b_1$ (her 3rd choice), but she prefers **$b_3$** (her 2nd choice).
+Consider an arbitrary matching $M$ where $b_i$ and $g_i$ are not matched. Instead $b_i$ is matched with some other girl $g_k$ and $g_i$ is matched with some other boy $b_k$.
+We know $b_i$ strictly prefers $g_i$ over his partner $g_k$.
+For matching $M$ to remain stable $b_i$ must rank strictly lower than $b_k$ in $g_i$'s preference list.
 
-**Result:** The pair $(b_3, g_1)$ forms a **rogue couple**, making the matching unstable. Since we established a set of preferences following the "perfect" constraints and still found an unstable matching, the claim is false.
+But since $M$ can be any arbitrary matching, $b_k$ could be any other boy in the set. If $g_i$ must block a rogue couple with $b_i$, $b_i$ must rank lowest in $g_i$'s preference list such that:
+$\nexists \text{ boy } b_k \text{ such that } (g_i, b_k) \text{ but } b_k < b_i \text{ in } g_i \text{ preference list. (1)}$
+
+Now consider a scenario where two distinct boys $b_x$ and $b_y$ share the exact same top choice girl, $g_z$.
+From (1) for a valid matching where both $b_x$ and $b_y$ are not connected to $g_z$ then both $b_x$ and $b_y$ must strictly rank lower than all the boys in $g_z$ preference list (rank is same).
+
+But a strict preference list prohibits ties.
+$	herefore g_z$ cannot rank $b_x$ and $b_y$ simultaneously at the absolute bottom.
+
+**Limitation 1:** No two boys can share the same first-choice girl.
+$	herefore$ Every girl must have is the top choice of exactly one boy.
+
+**Limitation 2:** Since stability is symmetric, No two girls can share the same first choice boy.
+$	herefore$ Every boy is the top choice of exactly one girl.
+
+Consider $n=3$ and
+$V_b = \{b_1, b_2, b_3\}$ and $V_g = \{g_1, g_2, g_3\}$
+
+We must establish stable matching for all $3! = 6$ possible matchings at adhering to Lim 1 and Lim 2.
+
+Without loss of generality, consider a valid set of first choices for the boys that satisfy Lim 1 and Lim 2 :
+* $g_1$ rank $1^{st}$ on $b_1$
+* $g_2$ rank $1^{st}$ on $b_2$
+* $g_3$ rank $1^{st}$ on $b_3$
+
+Using Lim 1 and 2:
+* $b_1$ rank $3^{rd}$ on $g_1$
+* $b_2$ rank $3^{rd}$ on $g_2$
+* $b_3$ rank $3^{rd}$ on $g_3$
+
+Let the girls first choice shift by 1:
+* $b_2$ rank $1^{st}$ on $g_1$
+* $b_3$ rank $1^{st}$ on $g_2$
+* $b_1$ rank $1^{st}$ on $g_3$
+
+Using Lim 1 and 2:
+* $g_1$ rank $3^{rd}$ on $b_2$
+* $g_2$ rank $3^{rd}$ on $b_3$
+* $g_3$ rank $3^{rd}$ on $b_1$
+
+### Preference Matrix
+
+*(Note: Parentheses indicate the elements circled in the original handwritten notes)*
+
+$$
+ egin{array}{c|ccc}
+g_1 & b_2 & (b_3) & b_1 \
+g_2 & b_3 & b_1 & b_2 \
+g_3 & b_1 & b_2 & b_3 
+\end{array}
+\hspace{2cm}
+ egin{array}{c|ccc}
+b_1 & g_1 & (g_2) & g_3 \
+b_2 & g_2 & g_3 & g_1 \
+b_3 & g_3 & (g_1) & g_2 
+\end{array}
+$$
+
+Consider matching
+$M = \{(b_1, g_1), (b_2, g_3), (b_3, g_2)\}$
+
+Notice that the pair $(b_3, g_1)$ is a rogue couple because:
+* $b_3$ prefers $g_1$ more than $g_2$
+* $g_1$ prefers $b_3$ more than $b_1$
+
+Which is a contradiction to the claim that every possible matching is stable
+$	herefore$ The claim is false
+This completes the proof. $ lacksquare$
