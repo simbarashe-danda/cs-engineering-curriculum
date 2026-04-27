@@ -256,7 +256,7 @@ Using Lim 1 and 2:
 
 ### Preference Matrix
 
-*(Note: Parentheses indicate the elements circled in the original handwritten notes)*
+*( Parentheses indicate unstable matching )*
 
 $$
 \begin{array}{c|ccc}
@@ -266,7 +266,7 @@ g_3 & b_1 & b_2 & b_3
 \end{array}
 \hspace{2cm}
 \begin{array}{c|ccc}
-b_1 & g_1 & (g_2) & g_3 \\
+b_1 & g_1 & g_2 & g_3 \\
 b_2 & g_2 & g_3 & g_1 \\
 b_3 & g_3 & (g_1) & g_2 
 \end{array}
