@@ -306,13 +306,20 @@ Hint: First show that a line graph is 2-colorable. Note that a line graph is def
 
 ### Part (a)
 
-Problem 6
-$G = (V,E)$
+Define graph  $G = (V,E)$
+
+Define subgraphs of $G$ to be 
+$G_a = (V, E_a)$ and $G_b = (V, E_b)$.
+
+and
 
 Define
 $E_a = \{ (v_i, v_{i+1}) \mid 1 \leq i \leq n-1 \}$
 
 $E_b = \{ (v_{s_k}, v_{s_{k+1}}) \mid 1 \leq k \leq n-1 \}$
+
+and notice each of them are isomorphic to a line graph.
+
 
 We first must prove a line graph $L_n$ (a path graph) is 2-colourable $\forall n \geq 1$ where n is number of nodes
 
@@ -326,11 +333,6 @@ Assume a graph $L_{n+1}$ that has a node added to it:
 If we remove the last node $n+1$ and its edge, then the resulting graph is 2-colourable by $P(n)$.
 Adding back $n+1$, Since it has a degree of 1, we can give $n+1$ the opposite colour to its neighbor.
 This completes the proof $\blacksquare$
-
-Define subgraphs of $G$ to be 
-$G_a = (V, E_a)$ and $G_b = (V, E_b)$.
-
-and notice each of them are isomorphic to a line graph.
 
 Let a label for valid 2-colouring colors in $G_a$ be different and distinct
 Colors A or B, $A \neq B$ and $G_b$ be X or Y, $X \neq Y$ and $A \neq X,Y$ and $B \neq X,Y$.
