@@ -1,6 +1,6 @@
 ## Problem 1
 
-> **Problem 1. [15 points]** Let $G = (V,E)$ be a graph. A matching in $G$ is a set $M \subset E$ such that no two edges in $M$ are incident on a common vertex.
+> **Problem 1.** Let $G = (V,E)$ be a graph. A matching in $G$ is a set $M \subset E$ such that no two edges in $M$ are incident on a common vertex.
 > 
 > Let $M_1, M_2$ be two matchings of $G$. Consider the new graph $G' = (V, M_1 \cup M_2)$ (i.e. on the same vertex set, whose edges consist of all the edges that appear in either $M_1$ or $M_2$). Show that $G'$ is bipartite.
 > 
@@ -31,9 +31,9 @@ $\therefore$ It follows $G'$ is bipartite $\blacksquare$
 
 ## Problem 2 (a)
 
-> **Problem 2. [20 points]** Let $G = (V, E)$ be a graph. Recall that the degree of a vertex $v \in V$, denoted $d_v$, is the number of vertices $w$ such that there is an edge between $v$ and $w$.
+> **Problem 2.** Let $G = (V, E)$ be a graph. Recall that the degree of a vertex $v \in V$, denoted $d_v$, is the number of vertices $w$ such that there is an edge between $v$ and $w$.
 > 
-> **(a) [10 pts]** Prove that 
+> **(a)** Prove that 
 > $$2|E| = \sum_{v \in V} d_v$$
 
 **Solution:**
@@ -70,7 +70,7 @@ This completes the inductive step and proof by induction $\blacksquare$
 
 ## Problem 2 (b)
 
-> **(b) [5 pts]** At a 6.042 ice cream study session (where the ice cream is plentiful and it helps you study too) 111 students showed up. During the session, some students shook hands with each other (everybody being happy and content with the ice-cream and all). Turns out that the University of Chicago did another spectacular study here, and counted that each student shook hands with exactly 17 other students. Can you debunk this too?
+> **(b)** At a 6.042 ice cream study session (where the ice cream is plentiful and it helps you study too) 111 students showed up. During the session, some students shook hands with each other (everybody being happy and content with the ice-cream and all). Turns out that the University of Chicago did another spectacular study here, and counted that each student shook hands with exactly 17 other students. Can you debunk this too?
 
 **Solution:**
 
@@ -89,7 +89,7 @@ $\therefore$ The claim is false $\blacksquare$
 
 ## Problem 2 (c)
 
-> **(c) [5 pts]** And on a more dull note, how many edges does $K_n$, the complete graph on $n$ vertices, have?
+> **(c)** And on a more dull note, how many edges does $K_n$, the complete graph on $n$ vertices, have?
 
 **Solution:**
 
@@ -282,3 +282,93 @@ Notice that the pair $(b_3, g_1)$ is a rogue couple because:
 Which is a contradiction to the claim that every possible matching is stable
 $\therefore$ The claim is false
 This completes the proof. $\blacksquare$
+
+
+# Problem 6.
+
+Let $(s_1, s_2, \dots, s_n)$ be an arbitrarily distributed sequence of the number $1, 2, \dots, n-1, n$. For instance, for $n = 5$, one arbitrary sequence could be $(5, 3, 4, 2, 1)$.
+
+Define the graph $G=(V,E)$ as follows:
+
+1. $V = \{v_1, v_2, \dots, v_n\}$
+2. $e = (v_i, v_j) \in E$ if either:
+   (a) $j = i + 1$, for $1 \leq i \leq n - 1$
+   (b) $i = s_k$, and $j = s_{k+1}$ for $1 \leq k \leq n - 1$
+
+**(a) [10 pts]** Prove that this graph is 4-colorable for any $(s_1, s_2, \dots, s_n)$.
+Hint: First show that a line graph is 2-colorable. Note that a line graph is defined as follows: The $n$-node graph containing $n - 1$ edges in sequence is known as the line graph $L_n$.
+
+**(b) [10 pts]** Suppose $(s_1, s_2, \dots, s_n) = (1, a_1, 3, a_2, 5, a_3, \dots)$ where $a_1, a_2 \dots$ is an arbitrary distributed sequence of the even numbers in $1, \dots, n - 1$. Prove that the resulting graph is 2-colorable.
+
+---
+
+# Solution
+
+### Part (a)
+
+Problem 6
+$G = (V,E)$
+
+Union of two edge sets
+$E_a = \{ (v_i, v_{i+1}) \mid 1 \leq i \leq n-1 \}$
+$E_b = \{ (v_{s_k}, v_{s_{k+1}}) \mid 1 \leq k \leq n-1 \}$
+
+We first must prove a line graph $L_n$ (a path graph) is 2-colourable $\forall n \geq 1$ where n is number of nodes
+
+By induction - let P(n) be the proposition
+
+Base Case: $n = 2$
+$P(2)$ holds since there are two nodes -
+
+Assume $P(n)$.
+Assume a graph $L_{n+1}$ that has a node added to it:
+If we remove the last node $n+1$ and its edge, then the resulting graph is 2-colourable by $P(n)$.
+Adding back $n+1$, Since it has a degree of 1, we can give $n+1$ the opposite colour to its neighbor.
+This completes the proof $\blacksquare$
+
+Define subgraphs of $G$ to be 
+$G_a = (V, E_a)$ and $G_b = (V, E_b)$.
+
+and notice each of them are isomorphic to a line graph.
+
+Let a label for valid 2-colouring colors in $G_a$ be different and distinct
+Colors A or B, $A \neq B$ and $G_b$ be X or Y, $X \neq Y$ and $A \neq X,Y$ and $B \neq X,Y$.
+Consider assigning a pair of colours to each node in $G$, like a coordinate.
+Notice that there are $2 \times 2 = 4$ possible unique color pairs:
+$\{(A,X) , (A,Y) , (B,X) , (B,Y)\}$
+
+If an edge $e = (v_i, v_j)$ exists in $G$ it must belong to either $E_a$ or $E_b$.
+If we assume $e \in E_a$, then a valid 2-colouring of $G_a$ ($Color_{G_a}$, $Color_{G_b}$) are different, that is $Color_{G_a}(v_i) \neq Color_{G_a}(v_j)$ regardless of what second colour is assigned,
+Since each node has two choice of colours, if color a is taken, the node can take the second color b.
+
+By symmetry the same logic applies if $e \in E_b$, the second coordinate would force the pair to be different.
+
+And since $A \neq X, Y$ and $B \neq X, Y$
+$G$ won't have invalid colorings or clashing colors
+And since there are exactly 4 possible pairs, $G$ is 4 colourable.
+This completes the proof $\blacksquare$
+
+### Part (b)
+
+Suppose $(s_1, s_2, \dots, s_n) = (1, a_1, 3, a_2, 5, a_3, \dots)$ where $a_1, a_2$ is a arbitrary distributed sequence of the even numbers in $1, \dots, n-1$.
+
+Prove that resulting graph is 2-colourable. Let the graph be $G = (V,E)$
+
+Notice that since all $a_i$ are even numbers and the sequence $(1, 3, 5 \dots)$ are odd numbers,
+It follows that every even numbered node in $G$ is connected an odd node.
+Lemma 1: Every even node is connected to odd node
+
+We know that a graph $G$ is bipartite if its nodes can be divided into two disjoint Set $U$ and $W$ such that every single edge in the graph connects a node in $U$ to a node in $W$, that is
+$G = (V,E)$ is bipartite if $\exists$ sets $U, W \subseteq V$ such that
+$U \cup W = V$ ①
+$U \cap W = \emptyset$ ②
+$\forall (u,v) \in E , u \in U \text{ and } v \in W \text{ or } u \in W \text{ and } v \in U$ ③
+
+Let $U = \{ \text{all even nodes in } G \}$
+$W = \{ \text{all odd nodes in } G \}$
+
+① It then follow from lemma 1 that $U \cup W = V$, [ ① holds ]
+② it also follows that $U \cap W = \emptyset$ since an integer k cant be both even and odd, [ ② holds ]
+③ directly follows from lemma 1
+
+$\therefore G$ is bipartite $\implies$ 2-colourable.
