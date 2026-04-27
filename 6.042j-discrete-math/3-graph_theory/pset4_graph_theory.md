@@ -295,10 +295,10 @@ Define the graph $G=(V,E)$ as follows:
    (a) $j = i + 1$, for $1 \leq i \leq n - 1$
    (b) $i = s_k$, and $j = s_{k+1}$ for $1 \leq k \leq n - 1$
 
-**(a) [10 pts]** Prove that this graph is 4-colorable for any $(s_1, s_2, \dots, s_n)$.
+**(a)** Prove that this graph is 4-colorable for any $(s_1, s_2, \dots, s_n)$.
 Hint: First show that a line graph is 2-colorable. Note that a line graph is defined as follows: The $n$-node graph containing $n - 1$ edges in sequence is known as the line graph $L_n$.
 
-**(b) [10 pts]** Suppose $(s_1, s_2, \dots, s_n) = (1, a_1, 3, a_2, 5, a_3, \dots)$ where $a_1, a_2 \dots$ is an arbitrary distributed sequence of the even numbers in $1, \dots, n - 1$. Prove that the resulting graph is 2-colorable.
+**(b)** Suppose $(s_1, s_2, \dots, s_n) = (1, a_1, 3, a_2, 5, a_3, \dots)$ where $a_1, a_2 \dots$ is an arbitrary distributed sequence of the even numbers in $1, \dots, n - 1$. Prove that the resulting graph is 2-colorable.
 
 ---
 
@@ -309,8 +309,9 @@ Hint: First show that a line graph is 2-colorable. Note that a line graph is def
 Problem 6
 $G = (V,E)$
 
-Union of two edge sets
+Define
 $E_a = \{ (v_i, v_{i+1}) \mid 1 \leq i \leq n-1 \}$
+
 $E_b = \{ (v_{s_k}, v_{s_{k+1}}) \mid 1 \leq k \leq n-1 \}$
 
 We first must prove a line graph $L_n$ (a path graph) is 2-colourable $\forall n \geq 1$ where n is number of nodes
