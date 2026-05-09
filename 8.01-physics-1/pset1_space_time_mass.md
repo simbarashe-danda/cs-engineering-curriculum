@@ -157,10 +157,6 @@ $$
 \text{Ratio} = \frac{8.4 \times 10^{24} \text{ molecules}}{(8.4 \times 10^{24} + 4.35 \times 10^{46}) \text{ molecules}}
 $$
 
-Cup with mixture has $250\text{g}$ mixture 
-
-$$= 8.4 \times 10^{24} \text{ molecules}$$
-
 $\therefore$ No of original cup molecules in mixture
 
 $$= \frac{8.4 \times 10^{24}}{(8.4 \times 10^{24} + 4.35 \times 10^{46})} \times 8.4 \times 10^{24} \text{ molecules}$$
