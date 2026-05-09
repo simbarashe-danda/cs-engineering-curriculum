@@ -151,9 +151,11 @@ Using $N_A = 6.02214 \times 10^{23}$
 
 $$\therefore \text{Ocean}_{\text{molecules}} = 4.35 \times 10^{46} \text{ molecules}$$
 
-Assuming thorough mixture, the ratio between $\text{Cup}_{\text{molecules}}$ and $\text{Ocean}_{\text{molecules}}$ in $\text{Mixture}_{\text{molecules}}$
+Assuming thorough mixture, the ratio between $\text{Cup}_{\text{molecules}}$ and $\text{Ocean}_{\text{molecules}}$ in $\text{Mixture}_{\text{molecules}}$:
 
-$$\text{Ratio} = \frac{8.4 \times 10^{24} \text{ molecules}}{(8.4 \times 10^{24} + 4.35 \times 10^{46}) \text{ molecules}}$$
+$$
+\text{Ratio} = \frac{8.4 \times 10^{24} \text{ molecules}}{(8.4 \times 10^{24} + 4.35 \times 10^{46}) \text{ molecules}}
+$$
 
 Cup with mixture has $250\text{g}$ mixture 
 
