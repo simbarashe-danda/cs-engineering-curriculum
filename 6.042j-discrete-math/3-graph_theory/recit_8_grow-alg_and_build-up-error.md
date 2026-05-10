@@ -391,7 +391,9 @@ Since a tree can't have weight lower than absolute minimum, $T^*$ must also be e
 
 $T^{\ast}$ is an MST and $S_{m+1} \subseteq E^{\ast}$
 
-This completes the inductive and $P(m) \implies P(m+1)$ for all m and all possible cases,
+This completes the inductive and
+
+$P(m) \implies P(m+1)$ for all m and all possible cases,
 
 and the proof  follows from it $\blacksquare$
 
@@ -419,7 +421,7 @@ $S_{|V|-1} = S_{|E|}$
 
 And since an MST must have the absolute minimum possible number of edges  
 
-$\therefore$ It follows that $S_{|V|-1} \subseteq E and  |S_{|V|-1}| = |E|$  
+$\therefore$ It follows that $S_{|V|-1} \subseteq E  and    |S_{|V|-1}| = |E|$  
 
 $\therefore S_{|V|-1} = E$ $\blacksquare$  
 
