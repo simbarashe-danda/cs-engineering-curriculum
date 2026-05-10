@@ -274,7 +274,7 @@ It follows that $S \cup \{e\}$ closes the path and creates a cycle,
 
 Which is a contradiction to the premise that $S \cup \{e\}$ does not contain a cycle #  
 
-must cause some path cycle $C'$ such that $e'$ will break it.  
+We know that e must cause some path cycle $C'$ such that $e'$ will break it.  
 
 $\implies e', e \in C'$,  
 
@@ -318,7 +318,7 @@ Therefore case 1 is vacuously true $\blacksquare$
 
 The hypothesis is true,  
 
-$\therefore$ to prove $P(m+1)$ we must prove the conclusion $S_{m+1} \subseteq E^*$ for some MST $T^* = (V, E^*)$ of $G$.  
+$\therefore$ to prove $P(m+1)$ we must prove the conclusion $S_{m+1} \subseteq E^{\ast}$ for some MST $T^{\ast} = (V, E^{\ast})$ of $G$.  
 
 By $P(m)$ we know $S_m \subseteq E$ for a specific MST $T = (V, E)$.  
 
@@ -340,7 +340,7 @@ Since $e \notin E$, it is impossible for $S_{m+1}$ to be subset of $E$.
 
 Therefore to prove $P(m+1)$, we must construct new MST,  
 
-$T^* = (V, E^*)$ and prove that $S_{m+1} \subseteq E^*$  
+$T^{\ast} = (V, E^{\ast})$ and prove that $S_{m+1} \subseteq E^{\ast}$
 
 Mapping our current state to lemma 4,  
 
@@ -375,7 +375,7 @@ it follows that
 $S_{m+1} \subseteq E^*$ $\blacksquare$  
 
 
-### Claim: $T^*$ is still MST
+#### Claim: $T^*$ is still MST
 
 #### Proof
 
@@ -385,11 +385,11 @@ Since $e'$ was not selected
   
 Since $e'$ was not in $S_m$ and ALG-GROW chose $e$ instead, it must be true that the weight $w(e) \le w(e')$.  
 
-Since $T^*$ removes $e'$ and adds $e$, the total weight of $T^*$ is less than or equal to total weight of original MST $T$.  
+Since $T^{\ast}$ removes $e'$ and adds $e$, the total weight of $T^{\ast}$ is less than or equal to total weight of original MST $T$.  
 
 Since a tree can't have weight lower than absolute minimum, $T^*$ must also be exactly minimum weight.  
 
-$T^*$ is an MST and $S_{m+1} \subseteq E^*$  
+$T^{\ast}$ is an MST and $S_{m+1} \subseteq E^{\ast}$
 
 This completes the inductive and $P(m) \implies P(m+1)$,
 
