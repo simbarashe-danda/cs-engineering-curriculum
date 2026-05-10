@@ -395,7 +395,7 @@ This completes the inductive step  $\blacksquare$
 
 We have shown  $P(m) \implies P(m+1)$ for all m and all possible cases,
 
-The completes the proof  $\blacksquare$
+This completes the proof  $\blacksquare$
 
 ---
 
@@ -421,7 +421,7 @@ $S_{|V|-1} = S_{|E|}$
 
 And since an MST must have the absolute minimum possible number of edges  
 
-$\therefore$ It follows that $S_{|V|-1} \subseteq E  and    |S_{|V|-1}| = |E|$  
+$\therefore$ It follows that $S_{|V|-1} \subseteq E$ and $|S_{|V|-1}| = |E|$
 
 $\therefore S_{|V|-1} = E$ $\blacksquare$  
 
