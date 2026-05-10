@@ -391,11 +391,11 @@ Since a tree can't have weight lower than absolute minimum, $T^*$ must also be e
 
 $T^{\ast}$ is an MST and $S_{m+1} \subseteq E^{\ast}$
 
-This completes the inductive and
+This completes the inductive step  $\blacksquare$ 
 
-$P(m) \implies P(m+1)$ for all m and all possible cases,
+We have shown  $P(m) \implies P(m+1)$ for all m and all possible cases,
 
-and the proof  follows from it $\blacksquare$
+The completes the proof  $\blacksquare$
 
 ---
 
