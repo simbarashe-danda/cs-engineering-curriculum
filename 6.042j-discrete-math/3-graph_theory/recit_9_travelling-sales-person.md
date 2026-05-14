@@ -48,7 +48,32 @@ $V_{sum} \equiv 0 \pmod 2$. (1)
 
 $\therefore$ it follows that
 
----
+$\therefore$ It follows that
+
+$$V_{sum} = \left( \sum_{a \in S} d_a + \sum_{b \in S'} d_b \right) \equiv 0 \pmod 2 \quad (2)$$
+
+we know $\sum_{b \in S'} d_b \equiv 0 \pmod 2$ since
+
+$\forall b \in S', d_b = 0 \pmod 2$.
+
+We know that $\forall a \in S, d_a = 1 \pmod 2$.
+
+Since from (2),
+
+$$V_{sum} \equiv 0 \pmod 2$$
+
+it then follow that
+
+$|S| \equiv 0 \pmod 2$ by parity of sum of odd integers.
+
+That is to say that $V_{sum} \equiv 0 \pmod 2$
+
+iif $|S| \equiv 0 \pmod 2$ otherwise
+
+$V_{sum}$ would be odd.
+
+This completes the proof $\blacksquare$
+
 
 ### 3. Prove that the weight of the min weight perfect matching is at most $OPT/2$. *Hint: Consider a minimum cost TSP tour on just the vertices in S.*
 
@@ -144,7 +169,10 @@ From (4) we know that
 
 $Cost(E_{cir}) \le 3OPT/2$
 
-$\Rightarrow Cost(T_{final}) \le 3OPT/2 \; \blacksquare$
+$\Rightarrow \text{Cost}(T_{\text{final}}) \le 3\text{OPT}/2$
+
+
+This completes the proof $\blacksquare$
 
 ---
 
@@ -154,6 +182,4 @@ $\Rightarrow Cost(T_{final}) \le 3OPT/2 \; \blacksquare$
 
 Since $T_{final}$ is a valid round-trip route visiting each city once and has cost atmost $3/2 \cdot OPT$, it then follows that our algorithm outputs a $3/2$-approximation 
 
-$\blacksquare$
-
-This completes the proof $\blacksquare$
+This completes the proof of the algorithm $\blacksquare$
