@@ -82,7 +82,7 @@ Let $S = \{ A \in V : d_A \text{ is odd} \}$
 Let $T_{opt}$ be the optimal TSP tour on the entire graph $G$,
 where $Cost(T_{opt}) = OPT$
 
-Consider a path $C_S$ that visits only the nodes in $S$, bypassing all other nodes but maintaining the same relative visiting order as $T_{opt}$.
+Consider a path $C_S$ that visits only the nodes in $S$, bypassing all other nodes not in $S$ but maintaining the same relative visiting order as $T_{opt}$.
 
 If $A, C \in S$ and $T_{opt}$ visits path
 
