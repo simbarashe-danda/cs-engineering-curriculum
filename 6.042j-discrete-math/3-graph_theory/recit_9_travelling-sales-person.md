@@ -137,9 +137,7 @@ $Cost(M) \le OPT/2 \quad \blacksquare$
 
 **Proof:**
 
-4. Prove $G'$ has an Euler circuit and cost is atmost $3OPT/2$
-
-Recall that $G' = (V, E')$ where $E' = M \cup T$ and $M$ is perfect matching on $S$ and $T$ edges of MST of $G$.
+Let  $G' = (V, E')$ where $E' = M \cup T$ and $M$ is perfect matching on $S$ and $T$ edges of MST of $G$.
 
 a) Proof that $\exists$ Euler circuit in $G'$.
 
