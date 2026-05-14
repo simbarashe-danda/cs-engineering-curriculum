@@ -48,7 +48,7 @@ $V_{sum} \equiv 0 \pmod 2$.
 
 $\therefore$ It follows that
 
-$$V_{sum} = \left( \sum_{a \in S} d_a + \sum_{b \in S'} d_b \right) \equiv 0 \pmod 2 \quad (2)$$
+$$V_{sum} = \left( \sum_{a \in S} d_a + \sum_{b \in S'} d_b \right) \equiv 0 \pmod 2 \quad (1)$$
 
 we know $\sum_{b \in S'} d_b \equiv 0 \pmod 2$ since
 
@@ -56,7 +56,7 @@ $\forall b \in S', d_b = 0 \pmod 2$.
 
 We know that $\forall a \in S, d_a = 1 \pmod 2$.
 
-Since from (2),
+From (2),
 
 $$V_{sum} \equiv 0 \pmod 2$$
 
