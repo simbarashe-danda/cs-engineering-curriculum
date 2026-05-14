@@ -30,7 +30,7 @@ This completes the proof $\blacksquare$
 
 **Proof:**
 
-2. Let S be the set of all nodes in G that have odd degree
+Let S be the set of all nodes in G that have odd degree
 
 $S = \{ A \in G : d_A \text{ is odd} \}$ where $d_A$ is degree of node A.
 
