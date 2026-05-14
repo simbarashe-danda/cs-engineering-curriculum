@@ -56,7 +56,7 @@ $\forall b \in S', d_b = 0 \pmod 2$.
 
 We know that $\forall a \in S, d_a = 1 \pmod 2$.
 
-From (2),
+From (1),
 
 $$V_{sum} \equiv 0 \pmod 2$$
 
