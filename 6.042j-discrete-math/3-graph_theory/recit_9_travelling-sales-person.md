@@ -44,9 +44,7 @@ It follows from this lemma that if
 
 $V_{sum} = \sum_{v \in V} d_v$ then
 
-$V_{sum} \equiv 0 \pmod 2$. (1)
-
-$\therefore$ it follows that
+$V_{sum} \equiv 0 \pmod 2$.
 
 $\therefore$ It follows that
 
