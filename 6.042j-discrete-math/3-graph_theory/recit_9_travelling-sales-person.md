@@ -75,37 +75,65 @@ $V_{sum}$ would be odd.
 This completes the proof $\blacksquare$
 
 
-### 3. Prove that the weight of the min weight perfect matching is at most $OPT/2$. *Hint: Consider a minimum cost TSP tour on just the vertices in S.*
+### 3. Prove that the weight of the min weight perfect matching is at most $OPT/2$.
 
 **Proof:**
 
+Let $S = \{ A \in V : d_A \text{ is odd} \}$
+
+Let $T_{opt}$ be the optimal TSP tour on the entire graph $G$,
+where $Cost(T_{opt}) = OPT$
+
+Consider a $C_S$ that visits only the nodes in $S$, bypassing all other nodesbut maintaining the same relative visiting order as $T_{opt}$.
+
+If $A, C \in S$ and $T_{opt}$ visits path
+
+$A \to B \to C$ and $B \notin S$
+
+then by triangle rule we know
+
+$d(A, C) \le d(A, B) + d(B, C)$.
+
+It then follows that
+$Cost(C_S) \le OPT$.
+
+We know $|S|$ is even.
+
+Then $C_S$ consist of an even number of edges.
+
+Consider alternate 2-colouring of the edges of $C_S$ into two distinct set of edges.
+
 The resulting edges are entirely disconnected from one another,
 
-However every single node in the set $S$ is touched by exactly one of these edges
+However every single node in the set
+$S$ is touched by exactly one of these
+edges
 
 $\therefore$ this a perfect matching.
 
-Let the two alternating set of edges be $M_1$ and $M_2$.
+Let the two alternating set of edges
 
-let $M$ be the minimum weight perfect matching on $S$.
+be $M_1$ and $M_2$.
 
-It then follows that
+Let $M'$ be the minimum weight
+perfect matching on $S$.
 
-$Cost(M) \le Cost(M_1) \le Cost(G_S) \le OPT$,
+It the follows that
 
-same for $Cost(M_2)$.
+$Cost(M) \le Cost(M_1) \le Cost(C_S) \le OPT$,
+
+same for $Cost(M_2)$
 
 Since $|S|$ is even then
 
 $|M_1| = |M_2|$
 
-$\Rightarrow Cost(M_1) \le \frac{OPT}{2} \land Cost(M_2) \le \frac{OPT}{2}$
+$\implies Cost(M_1) \le \frac{OPT}{2} \land Cost(M_2) \le \frac{OPT}{2}$
 
-$\therefore$ It follows that
+The follows conclusion that
 
-$Cost(M) \le OPT/2 \; \blacksquare$
+$Cost(M) \le OPT/2 \quad \blacksquare$
 
----
 
 ### 4. Prove that $G'$ has an Euler circuit, and its cost is at most $3OPT/2$.
 
