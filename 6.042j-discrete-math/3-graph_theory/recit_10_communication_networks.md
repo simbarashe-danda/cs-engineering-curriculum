@@ -2,7 +2,7 @@
 
 Two communication networks are shown below. Complete the table of properties and be prepared to justify your answers.
 
-![Neworks](networks.png)
+![Neworks](network.png)
 
 * **$N$**: number of inputs/outputs
 
