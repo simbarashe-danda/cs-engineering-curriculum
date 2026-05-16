@@ -34,13 +34,15 @@ Subnetworks
 ![subnetworks ](subnetworks.png)
 
 Each packet must be routed through either the upper subnetwork or the lower subnetwork.
-Constructing a graph with vertices 0, 1, ..., 7 and drawing a dashed edge between each pair of packets that can not go through the same subnetwork because a collision would occur in the second column of switches.
+Constructing a graph with vertices 0, 1, ..., 7 and 
+drawing a dashed edge between each pair of packets that can not go through the same subnetwork because a collision would occur in the second column of switches.
 
 $$E_{dashed} = \{(0,4), (1,5), (2,6), (3,7)\}$$
 
 That is to say, packets connected by the dashed edges must not pass through the same subnetwork or a collision will occur. 
 
-This follows from the observation that packets $u$ and $v$ connected by a dashed edge, if both must pass through the same subgraph $n$, must use the same switch $S_{ij}$ in the second-from-first column.
+This follows from the observation that packets $u$ and $v$ connected by a dashed edge, 
+if both must pass through the same subgraph $n$,they must use the same switch $S_{ij}$ in the second-from-first column.
 
 ---
 
