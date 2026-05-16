@@ -69,6 +69,7 @@ Let $N(l)$ be a function that returns number of nodes for number of leaves input
 By analyzing first terms we see that
 
 $N(1) = 1$
+
 $N(2) = 3$      
 $N(3) = 5$      
 $N(4) = 7$              
