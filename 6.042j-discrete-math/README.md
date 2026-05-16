@@ -9,12 +9,10 @@ This directory contains materials, notes, and implementations specific to this m
 All proofs, derivations, and written solutions contained in this directory are my own work unless otherwise stated.
 
 ## Credits
-
 Problem statements and question images in this directory are sourced from:
 
 - MIT OpenCourseWare  
-  :contentReference[oaicite:0]{index=0}  
-  Course: :contentReference[oaicite:1]{index=1}  
+  Course: 6.042J / 18.062J Mathematics for Computer Science Fall 2010
   http://ocw.mit.edu
 
 ## Notes
