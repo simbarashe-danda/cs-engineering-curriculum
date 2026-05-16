@@ -650,7 +650,7 @@ Proof this is minimum colouring
 
 Assume for the purpose of contradiction that $G$ is two colourable.
 
-This is the case iff $G$ has no odd-noded cycle.
+This is the case iff $G$ has no odd cycle.
 
 But consider the cycle $1 - 2 - 4 - 1$ which is odd.
 
