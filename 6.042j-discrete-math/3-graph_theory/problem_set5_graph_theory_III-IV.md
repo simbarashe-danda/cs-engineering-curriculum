@@ -5,7 +5,8 @@
 ## Problem 1
 
 Recall that a tree is a connected acyclic graph.
-In particular, a single vertex is a tree. We define a *Splitting Binary Tree*, or *SBTree* for short, as either the lone vertex, or a tree with the following properties:
+In particular, a single vertex is a tree.
+We define a *Splitting Binary Tree*, or *SBTree* for short, as either the lone vertex, or a tree with the following properties:
 
 1. exactly one node of degree 2 (called the root).
 2. every other node is of degree 3 or 1 (called internal nodes and leaves, respectively).
@@ -57,7 +58,7 @@ This completes the proof. $\blacksquare$
 
 ---
 
-**(b) [10 pts]** Prove that two SBTrees with the same number of leaves must also have the same total number of nodes.
+**(b)** Prove that two SBTrees with the same number of leaves must also have the same total number of nodes.
 
 ### Proof for 1(b)
 
@@ -70,11 +71,18 @@ Let $N(l)$ be that returns number of nodes for number of leaves input $l$.
 By analyzing first terms we see that
 
 $N(1) = 1$
-$N(2) = 3$      We can see that all $N(l)$ are odd, then
-$N(3) = 5$      $N(l) = 2k+1$.
-$N(4) = 7$      By analyzing pattern we see that
-               $N(l) = 2(l-1)+1$
-               $N(l) = 2l - 1$
+$N(2) = 3$      
+$N(3) = 5$      
+$N(4) = 7$              
+
+We can see that all $N(l)$ are odd, then
+
+$N(l) = 2k+1$.
+
+By analyzing pattern we see that
+
+$N(l) = 2(l-1)+1$
+$N(l) = 2l - 1$
 
 Proposition: $\forall k$ leaves SB-Tree where $k>0$, $N(k) = 2k-1$ where $N(k)$ is number of nodes.
 
