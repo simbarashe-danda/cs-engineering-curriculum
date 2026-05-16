@@ -652,7 +652,7 @@ Assume for the purpose of contradiction that $G$ is two colourable.
 
 This is the case iff $G$ has no odd-noded cycle.
 
-But consider the cycle $1 - 2 - 4$ which is odd.
+But consider the cycle $1 - 2 - 4 - 1 $ which is odd.
 
 $\therefore G$ is not two colourable.
 
