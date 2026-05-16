@@ -400,7 +400,7 @@ Lemma 1: Given a simple connected graph $G$ with $n$ nodes and exactly $n-1$ edg
 
 Assume for contradiction purposes that for all $v \in G$, $deg(v) \ge 2$.
 
-By the hand Sum of degree is 
+Sum of degrees is 
 
 $$
 \sum_{v \in G} deg(v) \ge 2n
