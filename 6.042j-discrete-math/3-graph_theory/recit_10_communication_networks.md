@@ -116,4 +116,4 @@ This contradicts the assumption and completes the proof $\blacksquare$.
 
 
 Routing a Benes Network
-![Routing in Benes Network ](Benes_Routing.png)
+![Routing in Benes Network ](Routing_Benes.png)
