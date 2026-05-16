@@ -64,7 +64,7 @@ Proof:
 
 Deriving conjecture:
 
-Let $N(l)$ be that returns number of nodes for number of leaves input $l$.
+Let $N(l)$ be a function that returns number of nodes for number of leaves input $l$.
 
 By analyzing first terms we see that
 
