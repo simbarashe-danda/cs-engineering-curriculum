@@ -2,6 +2,8 @@
 
 Two communication networks are shown below. Complete the table of properties and be prepared to justify your answers.
 
+![Neworks](networks.png)
+
 * **$N$**: number of inputs/outputs
 
 * **Diameter**: number of edges on the shortest path between input and output that are farthest apart
@@ -27,6 +29,9 @@ $$
 \pi(3) &= 5 & \pi(7) &= 4
 \end{aligned}
 $$
+
+Subnetworks
+![subnetworks ](subnetworks.png)
 
 Each packet must be routed through either the upper subnetwork or the lower subnetwork. Construct a graph with vertices 0, 1, ..., 7 and draw a dashed edge between each pair of packets that can not go through the same subnetwork because a collision would occur in the second column of switches.
 
@@ -72,30 +77,40 @@ $$C_{blue} = \{4, 6, 5, 3\}$$
 ### Proof that it must be possible regardless of permutation $\pi$
 
 Let $G = (V, E_{dashed} \cup E_{solid})$.  
+
 Assume for contradiction purposes that $\exists$ permutation $\pi$ such that $G$ is not 2-colourable.  
 
 This is the case if there exists an odd cycle:
+
 $$C_{odd} \in E_{dashed} \cup E_{solid}$$
 
 Consider nodes $u,v$ that are adjacent to each other in $G$ and in $C_{odd}$.  
+
 First notice that $u$ and $v$ are either adjacent in $E_{dashed}$ or $E_{solid}$ but not both.  
 
-1. **(i)** If they are adjacent in both $E_{dashed}$ and $E_{solid}$, then $u$ and $v$ are not adjacent to any other nodes, which contradicts the assumption that they are elements of $C_{odd}$.
-2. **(ii)** So they are not adjacent in both.  
+1. **(i)** If they are adjacent in both $E_{dashed}$ and $E_{solid}$, then $u$ and $v$ are not adjacent to any other nodes,
+which contradicts the assumption that they are elements of $C_{odd}$.
 
-Now notice that if edge $e_1$ exists between $u$ and $v$, then edge $e_1$ must also exist between $u$ and $v$ and some arbitrary node $k$.  
+1. **(ii)** So they are not adjacent in both.  
+
+Now notice that if edge $e_1$ exists between $u$ and $v$, then edge $e_1$ must also exist between $u$ and $v$ and some arbitrary node $k$.
+
 This follows from the realization that adjacency in $E_{dashed}$ or $E_{solid}$ is only two pairs, and since $u$ and $v$ are adjacent in only $E_{dashed}$ or $E_{solid}$, then they are not adjacent to any other node in $E_{dashed}$ or $E_{solid}$.  
 
 Formally,  
 $\forall$ node $u_i \in E_{dashed} \land \forall$ node $v_i \in E_{solid}$, $deg(u_i)$ and $deg(v_i)$ is exactly 2.  
 
 It then follows that edges between nodes in $G$ must alternate between dashed and solid.  
+
 It then follows that it is mathematically impossible for $C_{odd}$ to exist.  
 
 Consider the starting node of $C_{odd}$ to be $n_0$ and the end node of $C_{odd}$ to be $n_k$.  
+
 Then edges $(n_0, n_1)$ and $(n_k, n_0)$ must be different, which can happen iff $C_{odd}$ is not an odd cycle.  
 $\implies$ 2-colourable.  
 
 This contradicts the assumption and completes the proof $\blacksquare$.
 
+
+Routing a Benes Network
 ![Routing in Benes Network ](Benes_Routing.png)
