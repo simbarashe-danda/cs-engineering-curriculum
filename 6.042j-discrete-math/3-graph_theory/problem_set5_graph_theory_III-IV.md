@@ -1,7 +1,5 @@
 # Problem Set 5
 
-**Credit:** Problem Questions are from MIT OpenCourseWare http://ocw.mit.edu 6.042J / 18.062J Mathematics for Computer Science Fall 2010
-
 ## Problem 1
 
 Recall that a tree is a connected acyclic graph.
@@ -127,20 +125,31 @@ This completes the proof by Mathematical induction and (b) follows from it. $\bl
 
 ## Problem 2
 
-In "Die Hard: The Afterlife", the ghosts of Bruce and Sam have been sent by the evil Simon on another mission to save midtown Manhattan. They have been told that there is a bomb on a street corner that lies in Midtown Manhattan, which Simon defines as extending from 41st Street to 59th Street and from 3rd Avenue to 9th Avenue. Additionally, the code that they need to defuse the bomb is on another street corner. Simon, in a good mood, also tosses them two carrots:
+In "Die Hard: The Afterlife", the ghosts of Bruce and Sam have been sent by the evil Simon on another mission to save midtown Manhattan.
+They have been told that there is a bomb on a street corner that lies in Midtown Manhattan, which Simon defines as extending from 41st Street to 59th Street and from 3rd Avenue to 9th Avenue.
+Additionally, the code that they need to defuse the bomb is on another street corner.
+Simon, in a good mood, also tosses them two carrots:
 
 * He will have a helicopter initially lower them to the street corner where the bomb is.
 * He promises that the code is placed only on a corner of a numbered street and a numbered avenue, so they don't have to search Broadway.
 
 The map of midtown Manhattan is an example of an $N \times M$ (undirected) grid. In particular, midtown Manhattan is a $19 \times 7$ grid.
 
-Bruce and Sam need to check all $19 \cdot 7 = 133$ street corners for the code. Once they are at a corner, they don't need any additional time to verify if the code is there. Once they find the code and return to the bomb, they can disarm it in 2 minutes (even, or especially, as the timer ticks down to 0). Also, they can run one block (in any of the four directions) in exactly 1 minute. They are given 135 minutes total in which to find the code and disarm the bomb, which means that they need to return to the bomb, code in hand, in 133 minutes.
+Bruce and Sam need to check all $19 \cdot 7 = 133$ street corners for the code.
+Once they are at a corner, they don't need any additional time to verify if the code is there.
+Once they find the code and return to the bomb, they can disarm it in 2 minutes (even, or especially, as the timer ticks down to 0).
+Also, they can run one block (in any of the four directions) in exactly 1 minute.
+They are given 135 minutes total in which to find the code and disarm the bomb, which means that they need to return to the bomb, code in hand, in 133 minutes.
 
-Sam realizes that the map of NYC is actually a graph, and that they need to use a cool new 6.042 concept: A *Hamiltonian cycle* is a path that visits each vertex in a graph exactly once and ends at its starting point (so it is a cycle). A graph is *Hamiltonian* if it has a Hamiltonian cycle.
+Sam realizes that the map of NYC is actually a graph, and that they need to use a cool new 6.042 concept:
+A *Hamiltonian cycle* is a path that visits each vertex in a graph exactly once and ends at its starting point (so it is a cycle).
+A graph is *Hamiltonian* if it has a Hamiltonian cycle.
 
 Hamiltonian graphs are really useful because you can visit each node and return to the starting point by taking only $n$ steps, where $n$ is the number of nodes - if a graph is not Hamiltonian, you would need at least $n+1$ steps to visit each of the $n$ nodes and return to the starting point.
 
-In general, we don't know how to efficiently determine whether a general graph is Hamiltonian or not. However, Sam is very excited because he thinks that he can show that Midtown Manhattan is Hamiltonian. If it is, Bruce and Sam can save the day! Will they make it?
+In general, we don't know how to efficiently determine whether a general graph is Hamiltonian or not.
+However, Sam is very excited because he thinks that he can show that Midtown Manhattan is Hamiltonian.
+If it is, Bruce and Sam can save the day! Will they make it?
 
 **(a)** Show that they cannot do it - that is, more generally, show that if both $N$ and $M$ are odd, then the $N \times M$ grid is *not* Hamiltonian.
 
@@ -246,7 +255,8 @@ This completes the proof. $\blacksquare$
 
 ## Problem 3
 
-An $n$-node graph is said to be *tangled* if there is an edge leaving every set of $\lceil n/3 \rceil$ or fewer vertices. As a special case, the graph consisting of a single node is considered tangled. (Recall that the notation $\lceil x \rceil$ refers to the smallest integer greater than or equal to $x$.)
+An $n$-node graph is said to be *tangled* if there is an edge leaving every set of $\lceil n/3 \rceil$ or fewer vertices. As a special case, the graph consisting of a single node is considered tangled.
+(Recall that the notation $\lceil x \rceil$ refers to the smallest integer greater than or equal to $x$.)
 
 ### (a) Find the error in the proof of the following claim.
 
@@ -302,7 +312,9 @@ $E = \{(a,b), (b,c), (d,e), (e,f)\}$ $\blacksquare$
 
 ---
 
-### (c) An $n$-node graph is said to be *mangled* if there is an edge leaving every set of $\lceil n/2 \rceil$ or fewer vertices. Again, as a special case, the graph consisting of a single node is considered mangled. Prove the following claim. 
+### (c) An $n$-node graph is said to be *mangled* if there is an edge leaving every set of $\lceil n/2 \rceil$ or fewer vertices.
+Again, as a special case, the graph consisting of a single node is considered mangled.
+Prove the following claim. 
 
 **Claim.** Every non-empty, mangled graph is connected.
 
@@ -574,7 +586,8 @@ Removing duplicates, $E = \{(1,2), (1,3), (1,4), (1,6), (2,4), (2,5), (2,6), (3,
 
 ---
 
-### (b) In a graph, we define the distance between to vertices to be the length of the shortest path between them. We define the diameter of a graph to be the largest distance between any two nodes. What is the diameter of this graph? Explain why.
+### (b) In a graph, we define the distance between to vertices to be the length of the shortest path between them. We define the diameter of a graph to be the largest distance between any two nodes.
+What is the diameter of this graph? Explain why.
 
 Claim: if nodes $X$ and $Y$ in $G$, don't share an edge, they are possible contributors to diameter of $G$.
 
