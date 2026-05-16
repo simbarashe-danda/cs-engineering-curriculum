@@ -1,6 +1,6 @@
 # Analysis of Two Networks
 
-Two communication networks are shown below. Complete the table of properties and be prepared to justify your answers.
+Two communication networks are shown below.
 
 ![Neworks](network.png)
 
@@ -33,7 +33,8 @@ $$
 Subnetworks
 ![subnetworks ](subnetworks.png)
 
-Each packet must be routed through either the upper subnetwork or the lower subnetwork. Construct a graph with vertices 0, 1, ..., 7 and draw a dashed edge between each pair of packets that can not go through the same subnetwork because a collision would occur in the second column of switches.
+Each packet must be routed through either the upper subnetwork or the lower subnetwork.
+Constructing a graph with vertices 0, 1, ..., 7 and drawing a dashed edge between each pair of packets that can not go through the same subnetwork because a collision would occur in the second column of switches.
 
 $$E_{dashed} = \{(0,4), (1,5), (2,6), (3,7)\}$$
 
@@ -43,7 +44,7 @@ This follows from the observation that packets $u$ and $v$ connected by a dashed
 
 ---
 
-**3. Add a solid edge in your graph between each pair of packets that can not go through the same subnetwork because a collision would occur in the next-to-last column of switches.**
+**3. Adding a solid edge in your graph between each pair of packets that can not go through the same subnetwork because a collision would occur in the next-to-last column of switches.**
 
 We know that packets will collide if they take the same subgraph if their destination ports force them to share a switch in the last column. 
 
