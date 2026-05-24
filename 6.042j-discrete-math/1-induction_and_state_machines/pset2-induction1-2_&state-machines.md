@@ -9,117 +9,79 @@ Assume that $a_1 < a_2$. Show that if there is no 3-chain in our sequence, then 
 
 **Proof:**
 
-$a_1 < a_2$
-If no 3-chain then $a_3 < a_1$
-Assume for contradiction that $a_1 < a_3$
+We are given $a_1 < a_2$.
+If there is no 3-chain, then we must have $a_3 < a_1$.
+Assume for contradiction that $a_1 < a_3$.
 
-Case 1: $a_2 < a_3$
-$a_1 < a_2 < a_3$ is 3-chain #
+Case 1: $a_2 < a_3$.
+Then $a_1 < a_2 < a_3$ is a 3-chain. #
 
-Case 2: $a_3 < a_2$
-$a_1 < a_3 < a_2$
+Case 2: $a_3 < a_2$.
+Then $a_1 < a_3 < a_2$.
 
-Consider $a_4$.
-i) if $a_2 < a_4$
-then $a_1 < a_2 < a_4$ is 3-chain #
-ii) if $a_4 < a_1$
-then $a_4 < a_3 < a_2 \implies a_2 > a_3 > a_4$ is 3-chain #
-iii) if $a_1 < a_3 < a_4 < a_2$
-then $a_1 < a_3 < a_4$ is 3-chain #
-iv) if $a_1 < a_4 < a_3 < a_2$
-then $a_4 < a_3 < a_2 \implies a_2 > a_3 > a_4$ is 3-chain #
+Now consider $a_4$.
+i) If $a_2 < a_4$, then $a_1 < a_2 < a_4$ is a 3-chain. #
+ii) If $a_4 < a_1$, then $a_4 < a_3 < a_2$, i.e. $a_2 > a_3 > a_4$, is a 3-chain. #
+iii) If $a_1 < a_3 < a_4 < a_2$, then $a_1 < a_3 < a_4$ is a 3-chain. #
+iv) If $a_1 < a_4 < a_3 < a_2$, then $a_4 < a_3 < a_2$, i.e. $a_2 > a_3 > a_4$, is a 3-chain. #
 
-For all cases when $a_1 < a_3$ there is 3-chain,
-$\therefore$ it must be the case that $a_3 < a_1$ .
+For all cases when $a_1 < a_3$ there is a 3-chain,
+$\therefore$ it must be the case that $a_3 < a_1$. $\blacksquare$
 
 #### b)
 Using the previous part, show that if $a_1 < a_2$ and there is no 3-chain in our sequence, then $a_3 < a_4 < a_2$.
 
 **Proof:**
 
-$a_1 < a_2 \cap \text{no 3-chain} \implies a_3 < a_4 < a_2$
-We know from (a) $a_3 < a_1 < a_2$
+Assume $a_1 < a_2$ and no 3-chain. We must show $a_3 < a_4 < a_2$.
+From (a) we know $a_3 < a_1 < a_2$.
 
 Consider $a_4$.
-Case 1: $a_2 < a_4$
-$\therefore a_3 < \underline{a_1 < a_2 < a_4}$ is 3-chain #
+Case 1: $a_2 < a_4$.
+Then $a_3 < a_1 < a_2 < a_4$ is a 3-chain. #
 
-Case 2: $a_4 < a_3$
-$\therefore \underline{a_4 < a_3 < a_1} < a_2$ is 3-chain #
+Case 2: $a_4 < a_3$.
+Then $a_4 < a_3 < a_1 < a_2$ is a 3-chain. #
 
 $\therefore$ It must be the case that
-$a_3 < a_4 < a_2$
+$a_3 < a_4 < a_2$. $\blacksquare$
 
 #### c)
 Assuming that $a_1 < a_2$ and $a_3 < a_4 < a_2$, show that any value of $a_5$ must result in a 3-chain.
 
 **Proof:**
 
-To cover all cases we will assume these cases
+To cover all cases we consider these possibilities for $a_5$:
 i) $a_2 < a_5$
 ii) $a_5 < a_3$
 iii) $a_3 < a_5 < a_2$
 
-Case (i) $a_2 < a_5$ .
-Then $a_1 < a_2 < a_5$ is 3-chain
+Case (i): $a_2 < a_5$.
+Then $a_1 < a_2 < a_5$ is a 3-chain.
 
-Case (ii) $a_5 < a_3$
-Then $a_5 < a_3 < a_2$ is 3-chain
+Case (ii): $a_5 < a_3$.
+Then $a_5 < a_3 < a_2$ is a 3-chain.
 
-By case (i) and (ii)
-for there to be no 3-chain , it must be the
-case that $a_3 < a_5 < a_2$
+From cases (i) and (ii), for there to be no 3-chain it must be the case that $a_3 < a_5 < a_2$. So we consider subcases of (iii):
 
-(case iii a) $a_4 < a_5$
-$\therefore a_3 < a_4 < a_5$ is 3-chain #
+a) $a_4 < a_5$
+$\therefore a_3 < a_4 < a_5$ is a 3-chain. #
 
 b) $a_5 < a_4$
-$a_5 < a_4 < a_2 \implies a_2 > a_4 > a_5$ is 3-chain #
+Then $a_5 < a_4 < a_2$, i.e. $a_2 > a_4 > a_5$, is a 3-chain. #
+
+Thus any value of $a_5$ results in a 3-chain. $\blacksquare$
 
 #### d)
 Using the previous parts, prove by contradiction that any sequence of five distinct integers must contain a 3-chain.
 
 **Proof:**
 
-Assume for contradiction that
-There is a sequence of Five distinct integers
-that contain no 3-chain.
-
-from (a) it must be the case that for there
-to be no 3-chain then
-$a_1 < a_3$
-
-we have $a_2 < a_1$ and $a_1 < a_3$
-$\implies a_2 < a_1 < a_3$ .
-
-by (b) it must the case that for there to be
-no 3-chain then
-$a_3 > a_4 > a_2$
-
-$\therefore$ we must show , there is sequence of
-$a_2 < a_1$ and $a_2 < a_4 < a_3$ where there
-is no 3-chain.
-
-Consider $a_5$.
-
-Case (i) $a_5 < a_2$
-$a_5 < a_2 < a_1$ is 3-chain #
-
-Case (ii) $a_3 < a_5$
-$a_2 < a_3 < a_5$ is 3-chain #
-
-By case (i) and (ii) we know it must be
-the case that
-$a_2 < a_5 < a_3$ for there to be no 3-chain
-
-Case iii a) $a_5 < a_4$
-$a_5 < a_4 < a_3 \implies a_3 > a_4 > a_5$ is 3-chain #
-
-Case iii b) $a_4 < a_5$
-$a_2 < a_4 < a_5$ is 3-chain #
-
-Since for all cases there is 3-chain,
-this contradicts the assumption .
+Assume, for contradiction, that there exists a sequence of five distinct integers that contains no 3-chain.
+From parts (a), (b), and (c), we know that if $a_1 < a_2$, then the sequence must contain a 3-chain. Therefore, to avoid a 3-chain, we must have $a_2 < a_1$.
+Now, applying the symmetric version of part (a) to the case $a_2 < a_1$ (the same reasoning as in (a) but with the inequalities reversed), we conclude that $a_1 < a_3$ must also hold.
+Thus we obtain $a_2 < a_1 < a_3$, which is a 3-chain, contradicting the assumption.
+Hence, any sequence of five distinct integers contains a 3-chain. $\blacksquare$
 
 ---
 
@@ -131,66 +93,43 @@ $$\sum_{i=0}^{n} i^3 = \left(\frac{n(n+1)}{2}\right)^2$$
 
 **Proof:**
 
-That is
-$1 + 8 + \dots + n^3 = \left(\frac{n(n+1)}{2}\right)^2$
-
-Proof by well ordering principle.
+Proof by the Well Ordering Principle.
 
 Let $P(n)$ be the proposition that
 
-$$\sum_{i=0}^{n} i^3 = \left(\frac{n(n+1)}{2}\right)^2$$
+$$\sum_{i=0}^{n} i^3 = \left(\frac{n(n+1)}{2}\right)^2.$$
 
-Let $C$ be the set of all non negative integers that
-do not satisfies $P(n)$ such that
-$C = \{ x : P(x) \text{ is false} \} .$
+Let $C$ be the set of all nonnegative integers that do not satisfy $P(n)$:
+$C = \{ x : P(x) \text{ is false} \}$.
 
-Assume $C$ is non empty such that
-$|C| \neq 0 .$
+Assume $C$ is nonempty, i.e. $|C| \neq 0$.
+Let $m$ be the smallest element in $C$, which by the Well Ordering Principle must exist. We also know $0 \le m$.
 
-Let $m$ be the smallest element in $C$,
-which by well ordering we know it must exist.
-we also know $0 \le m .$
-
-Base case $P(0)$
-
+Base case $P(0)$:
 $$0 = \left(\frac{0(0+1)}{2}\right)^2 = 0$$
+holds. $\therefore 0 \notin C$ since $P(0)$ is true.
 
-holds
-$\therefore 0 \notin C$ since $P(0)$
-
-Consider an integer $m-1$ that we know
-$0 \le m-1 < m .$
-
+Consider the integer $m-1$, which satisfies $0 \le m-1 < m$.
 Applying $m-1$ to $P(n)$ we have
 
-$$\sum_{i=0}^{m-1} i^3 = \left(\frac{(m-1)((m-1)+1)}{2}\right)^2$$
-
-$$= \left(\frac{m^2-m}{2}\right)^2$$
+$$\sum_{i=0}^{m-1} i^3 = \left(\frac{(m-1)((m-1)+1)}{2}\right)^2 = \left(\frac{m^2-m}{2}\right)^2.$$
 
 We know
 
-$$1 + \dots + (m-1)^3 + m^3 = \left(\frac{m^2-m}{2}\right)^2 + m^3 \quad \text{(must be false for } P(m) \text{)}$$
+$$\sum_{i=0}^{m} i^3 = \left(\frac{m^2-m}{2}\right)^2 + m^3 \quad \text{(which must be false for } P(m) \text{)}.$$
 
-We have
+Now we simplify the right-hand side:
 
 $$\left(\frac{m^2 - m}{2}\right)^2 + m^3$$
-
 $$= \left(\frac{m^2 - m}{2}\right)\left(\frac{m^2 - m}{2}\right) + m^3$$
-
-$$= \left(\frac{m^2 - m}{2}\right)\left(\frac{m^2 - m}{2}\right) + \frac{2^2 m^3}{2^2}$$
-
-$$= \frac{m^4 - m^3 - m^3 + m^2 + 2^2 m^3}{2^2}$$
-
+$$= \frac{m^4 - m^3 - m^3 + m^2}{2^2} + \frac{2^2 m^3}{2^2}$$
+$$= \frac{m^4 - 2m^3 + m^2 + 4m^3}{2^2}$$
 $$= \frac{m^4 + 2m^3 + m^2}{2^2}$$
+$$= \frac{m^2(m+1)^2}{2^2} = \left(\frac{m(m+1)}{2}\right)^2.$$
 
-$$= \frac{m^2(m+1)^2}{2^2} = \left(\frac{m(m+1)}{2}\right)^2$$
-
-This shows that $P(m)$ holds ,
-which is contradicts the assumption that
-$m \in C$ and $P(m)$ is false
-$\therefore$ our assumption that $|C| \neq 0$ was
-wrong
-$\therefore \forall m \in \mathbb{Z}^+ \cup \{0\} , P(m) .$
+This shows that $P(m)$ holds, which contradicts the assumption that $m \in C$ and $P(m)$ is false.
+$\therefore$ our assumption that $|C| \neq 0$ was wrong.
+$\therefore \forall m \in \mathbb{Z}^+ \cup \{0\}, P(m)$. $\blacksquare$
 
 ---
 
@@ -207,7 +146,7 @@ Now the infection begins to spread every minute (in discrete time-steps). Two st
 * the student was previously infected (since beaver flu lasts forever), or
 * the student is adjacent to *at least two* already-infected students.
 
-![](images/img1.png)
+![](images/img2.png)
 
 In this example, over the next few time-steps, all the students in class become infected.
 
@@ -217,45 +156,41 @@ Prove this theorem.
 
 **Proof:**
 
-Let $S_t$ represent the set of infected cell at time step $t$
-Each square (student) has is a $1 \times 1$ square
-Let $p$ the perimeter of each student
-Let $p'$ be the total perimeter of infected students.
+Let $S_t$ represent the set of infected cells at time step $t$.
+Each square (student) is a $1 \times 1$ square.
+Let $p$ be the perimeter of a single student.
+Let $p'$ be the total perimeter of the infected region.
+Define $M(S_t)$ to be the geometric function that maps $S_t$ to the total perimeter $p'$.
 
 Let $k$ be the number of initially infected students, where $k < n$.
-Define $M(S_t)$ to be a geometric function that maps $S_t$ to $p'$
 
-Base case
-$0 \le |S_0| = k < n$
-$M(S_0) \le 4k$ since each student has perimeter = 4
-Since $k \le n-1$
-$\therefore M(S_0) \le 4n - 4 < 4n$
+**Base case:**
+$0 \le |S_0| = k < n$.
+$M(S_0) \le 4k$ since each student has perimeter $4$.
+Since $k \le n-1$,
+$\therefore M(S_0) \le 4n - 4 < 4n$.
 
-Invariant
+**Invariant:**
 According to the rules of infection, the transition $S_t \to S_{t+1}$ guarantees that
 $M(S_{t+1}) \le M(S_t)$.
 
-Proof
+*Proof of the invariant:*
 Assume a single cell becomes infected at time $t+1$.
 By the infection rules, this cell must share $E$ edges with the currently infected set $S_t$, where $E \ge 2$.
 
-$\therefore \Delta M = M(S_{t+1}) - M(S_t)$
+Define $\Delta M = M(S_{t+1}) - M(S_t)$.
 
-Case 1: $E=2$
-$\therefore$ Adding new cell $i$ such that $S_{t+1} = S_t \cup \{i\}$, we can see that the two shared edges become part of the internal structure and 2 edges of $i$ that were not part of $S_t$ are added such that
-$\Delta m = -2 \text{ edges} + 2 \text{ edges}$
-$\therefore \Delta m = 0$
+Case 1: $E=2$.
+Adding the new cell $i$ such that $S_{t+1} = S_t \cup \{i\}$, the two shared edges become internal, and the $2$ remaining edges of $i$ are added to the perimeter.
+$\Delta M = -2 \text{ edges} + 2 \text{ edges} = 0$.
 
-Case 2: $E=3$
-Cell $i$ has 3 edges shared with $S_t$. It follows that adding $i$ to $S_t$ adds only a single edge and internalize 3.
-Such that
-$\Delta M = -3 \text{ edges} + 1 \text{ edge}$
-$\therefore \Delta M = -2$
+Case 2: $E=3$.
+Cell $i$ has $3$ edges shared with $S_t$. Adding $i$ internalizes those $3$ edges and adds the single remaining edge.
+$\Delta M = -3 \text{ edges} + 1 \text{ edge} = -2$.
 
-Case 3: $E=4$
-Cell $i$ shares all its edges with $S_t$.
-$\therefore$ adding $i$ to $S_t$ adds no edges and internalize 4
-$\therefore \Delta M = -4$
+Case 3: $E=4$.
+Cell $i$ shares all its edges with $S_t$. Adding $i$ internalizes all $4$ edges and adds none.
+$\Delta M = -4$.
 
 $$\therefore \Delta M = 
 \begin{cases} 
@@ -264,31 +199,21 @@ $$\therefore \Delta M =
       -4, & E=4 
 \end{cases}$$
 
-for all infected edges $2 \le E \le 4$ of cell $i$
+for any newly infected cell with $2 \le E \le 4$ shared edges.
 
-$\therefore$ Property 1: $\Delta m \le 0$ for all cells $i$ that have infected edges $E \ge 2$.
+Thus property 1 holds: $\Delta M \le 0$ for all cells $i$ that have infected edges $E \ge 2$.
 
-Assume at time step $t$, Invariant holds
-$M(S_t) = p$
+Assume at time step $t$ the invariant holds with $M(S_t) = p$.
+Then $M(S_{t+1}) = p + \Delta M$, and since $\Delta M \le 0$,
+$M(S_{t+1}) \le M(S_t)$. This proves the invariant.
 
-It then follows that
-$M(S_{t+1}) = p + \Delta m$
-But $\Delta m \le 0$ by property 1
-
-$\therefore M(S_{t+1}) \le M(S_t)$
-
-Let $M(S_{\text{full}})$ be the perimeter of the entire $n \times n$ grid (class).
+Now let $M(S_{\text{full}})$ be the perimeter of the entire $n \times n$ grid (class).
 $\therefore M(S_{\text{full}}) = 4n$.
 
-By the base case it follows that
-$M(S_0) \le 4n - 4 < M(S_{\text{full}})$.
+By the base case, $M(S_0) \le 4n - 4 < M(S_{\text{full}})$.
+And by the invariant, $\forall t, M(S_{t+1}) \le M(S_t) \le M(S_0) \le 4n - 4 < M(S_{\text{full}})$.
 
-And by the invariant and the proof,
-$\forall S_t, M(S_t) \ge M(S_{t+1})$
-
-$\therefore M(S_{t+1}) \le M(S_t) \le M(S_0) \le 4n - 4 < M(S_{\text{full}})$
-
-This shows that $M(S_{\text{full}})$ can never be reached if $M(S_0) < M(S_{\text{full}})$ and this completes the proof. $\blacksquare$
+This shows that the full perimeter $M(S_{\text{full}})$ can never be reached if $M(S_0) < M(S_{\text{full}})$, completing the proof. $\blacksquare$
 
 ---
 
@@ -313,9 +238,8 @@ which implies that $P(n+1)$ holds. It follows by induction that $P(n)$ holds for
 **Proof:**
 
 Error in proof:
-
-Because $P(n)$ is restricted to all $n \ge k \ge 0$, the assumption $a^{n-1} = 1$ is invalid operation during the transition $P(0)$ to $P(1)$.
-For $n=0$, $a^{n-1}$ is unknown.
+Because $P(n)$ is restricted to $n \ge k \ge 0$, the assumption that $a^{n-1} = 1$ is an invalid operation during the transition from $P(0)$ to $P(1)$.
+For $n=0$, $a^{n-1}$ is undefined. $\blacksquare$
 
 ---
 
@@ -327,31 +251,36 @@ Prove that for all $n \in \mathbb{N}, G_n = 3^n - 2^n$.
 
 **Proof:**
 
-Let $G_0, G_1, G_2$ be defined recursively as
-$G_0 = 0$, $G_1 = 1$, $G_n = 5G_{n-1} - 6G_{n-2}$ for $n \in \mathbb{N}, n \ge 2$
+Let $G_0, G_1, G_2, \dots$ be defined recursively as
+$G_0 = 0$, $G_1 = 1$, and $G_n = 5G_{n-1} - 6G_{n-2}$ for $n \in \mathbb{N}, n \ge 2$.
 
-Proposition: $\forall n \in \mathbb{N}, G_n = 3^n - 2^n$
+Proposition: $\forall n \in \mathbb{N}, G_n = 3^n - 2^n$.
 
-By induction: let $P(n)$ be the proposition
+We prove this by strong induction. Let $P(n)$ be the proposition $G_n = 3^n - 2^n$.
 
-Base case $n=0$.
-$G_0 = 3^0 - 2^0 = 0$ $\therefore$ holds.
+**Base case $n=0$:**
+$G_0 = 3^0 - 2^0 = 1 - 1 = 0$, so $P(0)$ holds.
 
-Assume $P(n)$ for all $n \ge 0$.
-We need to show
-$G_{n+1} = 3^{n+1} - 2^{n+1}$
+**Base case $n=1$:**
+$G_1 = 3^1 - 2^1 = 3 - 2 = 1$, so $P(1)$ holds.
 
-By $P(n)$
-$5(3^n - 2^n) - 6(3^{n-1} - 2^{n-1})$
+**Inductive step:**
+Assume $P(k)$ holds for all $k \le n$, where $n \ge 1$.
+We need to show $G_{n+1} = 3^{n+1} - 2^{n+1}$.
 
+By the recurrence and the induction hypothesis,
+$$G_{n+1} = 5G_n - 6G_{n-1} = 5(3^n - 2^n) - 6(3^{n-1} - 2^{n-1}).$$
+
+Now simplify:
 $G_{n+1} = 5 \cdot 3^n - 5 \cdot 2^n - 6 \cdot 3^{n-1} + 6 \cdot 2^{n-1}$
-$G_{n+1} = 5 \cdot 3^n - 6 \cdot 3^{n-1} - 5 \cdot 2^n + 6 \cdot 2^{n-1}$
-$G_{n+1} = 5 \cdot 3^n - 2 \cdot 3^n - 5 \cdot 2^n + 3 \cdot 2^n$
-$G_{n+1} = 3^n(5 - 2) - 2^n(5 - 3)$
-$G_{n+1} = 3^{n+1} - 2^{n+1}$
+$= 5 \cdot 3^n - 6 \cdot 3^{n-1} - 5 \cdot 2^n + 6 \cdot 2^{n-1}$
+$= 5 \cdot 3^n - 2 \cdot 3^n - 5 \cdot 2^n + 3 \cdot 2^n$
+$= 3^n(5 - 2) - 2^n(5 - 3)$
+$= 3^n \cdot 3 - 2^n \cdot 2$
+$= 3^{n+1} - 2^{n+1}$.
 
 $\therefore P(n) \implies P(n+1)$,
-This completes the inductive step and the proof.
+which completes the inductive step and the proof. $\blacksquare$
 
 ---
 
@@ -373,46 +302,40 @@ Can a row move change the order of the tiles? Prove your answer.
 
 **Proof:**
 
-a) Let $S$ be the sequence of the 15-lettered tiles read left-to-right, top-to-bottom.
-A blank space $\notin S$.
+Let $S$ be the sequence of the 15 lettered tiles read left-to-right, top-to-bottom.
+The blank space is not included in $S$.
 
-Define a row move to be a swap in position between a letter $L$ and a blank space, horizontally.
+Define a row move to be a swap in position between a letter $L$ and the blank space, moving horizontally.
 
-Invariant 1: A row move does not change the sequence $S$.
-For a row move to be possible, there must exist a blank space in the direction of the move.
-And since a row move is one tile at a time horizontally, it is impossible for letter $L$ to jump over letter $L_0$.
-Since blank space $\notin S$,
-$S$ is unchanged after a row move.
-This completes the proof of Invariant 1.
+**Invariant 1:** A row move does not change the sequence $S$.
+For a row move to be possible, there must exist a blank space horizontally adjacent to $L$.
+Since a row move shifts one tile at a time horizontally, it is impossible for letter $L$ to jump over any other letter $L_0$.
+Because the blank space is not part of $S$, the order of the letters in $S$ is unchanged after a row move.
+This completes the proof of Invariant 1. $\blacksquare$
 
 #### b)
 How many pairs of tiles will have their relative order changed by a column move? More formally, for how many pairs of letters $L_1$ and $L_2$ will $L_1$ appear earlier in the order of the tiles than $L_2$ before the column move and later in the order after the column move? Prove your answer correct.
 
 **Proof:**
 
-Invariant 2: For a $N \times N$ board, a column move of letter $L$ changes the order of $N-1$ tiles relative to letter $L$.
+**Invariant 2:** For an $N \times N$ board, a column move of a letter $L$ changes the order of $N-1$ tiles relative to $L$.
 
-Proof:
-Given letter $L$ is on row $(r,c)$ then a column move swaps $L$ with a blank space on $(r-1, c)$ or $(r+1, c)$.
-Notice that the original column stays unchanged.
+Suppose letter $L$ is at row $r$, column $c$. A column move swaps $L$ with the blank space at $(r-1, c)$ or $(r+1, c)$.
+Note that the relative order of all other tiles among themselves remains unchanged.
 
-Therefore by symmetry,
-Consider a column move on $L$:
-$(r, c) \rightarrow (r+1, c)$
-under the constraint $0 \leq r \leq N-1$ for any $r$
+Consider a column move downward: $(r, c) \rightarrow (r+1, c)$,
+with $0 \leq r \leq N-1$.
 
-* Notice that there are $(N-1) - c$ tiles after $(r,c)$ in row $r$
-* There are $c - 0$ tiles before $(r+1, c)$ in row $r+1$
+* There are $(N-1) - c$ tiles after $(r,c)$ in row $r$.
+* There are $c - 0$ tiles before $(r+1, c)$ in row $r+1$.
 
-Let $T_{sum}$ be sum of tiles between $(r,c)$ and $(r+1, c)$.
-$T_{sum} = (N-1) - c + (c - 0)$
-$T_{sum} = N - 1$
+The total number of tiles between the old and new positions of $L$ in the sequence $S$ is
+$T_{\text{sum}} = (N-1) - c + c = N - 1$.
 
-It then follows that $(r,c) \rightarrow (r+1, c)$ moves $L$ ahead of $N-1$ letters that were previously ahead
-Since $N=4$
-$\therefore 3$ letters had their order relative to $L$ changed.
-By symmetry this is true for $(r, c) \rightarrow (r-1, c)$.
-This completes the proof of the invariant.
+Thus the move places $L$ ahead of $N-1$ letters that were previously before it in the order.
+For $N=4$, exactly $3$ letters have their relative order with respect to $L$ changed.
+By symmetry, the same holds for an upward move $(r, c) \rightarrow (r-1, c)$.
+This completes the proof of the invariant. $\blacksquare$
 
 #### c)
 We define an *inversion* to be a pair of letters $L_1$ and $L_2$ for which $L_1$ precedes $L_2$ in the alphabet, but $L_1$ appears after $L_2$ in the order of the tiles. For example, consider the following configuration:
@@ -422,54 +345,37 @@ What effect does a row move have on the parity of the number of inversions? Prov
 
 **Proof:**
 
-c) Invariant 3: A row move has no effect on the parity of the number of inversions.
+**Invariant 3:** A row move has no effect on the parity of the number of inversions.
 
-Proof
-Consider letters $L_1$ and $L_2$ such
-$L_1 < L_2$ alphabetically but
-$L_2 < L_1$ on the board.
-Consider a sequence $S$ of the letters on the board such that
-$L_1, L_2 \in S$ and $L_2 < L_1$.
-
-By Invariant 1, a row move has no effect on $S$.
-It follows that a row move wont change the order $L_2 < L_1$ in $S$.
-This completes the proof.
-
-Consider the inversion pair $(L_2, L_1)$
-It then follows that swapping $L_2$ such that $L_1 < L_2$ on the board is guaranteed to remove this inversion
-If however it was the case that $L_1 < L_2$ on the board, we now have inversion: $(L_2, L_1)$.
-Therefore a general rule:
-Swapping two letter $L_1$ and $L_2$ increase or decrease inversion by exactly 1.
+Consider any two letters $L_1$ and $L_2$ such that $L_1 < L_2$ alphabetically but $L_2$ appears before $L_1$ on the board. Their relative order in the sequence $S$ determines whether they form an inversion.
+By Invariant 1, a row move does not change the sequence $S$.
+It follows that a row move will not change the order of any pair of letters in $S$, so the set of inversions remains identical, and the parity of the number of inversions is unchanged.
+This completes the proof. $\blacksquare$
 
 #### d)
 What effect does a column move have on the parity of the number of inversions? Prove your answer.
 
 **Proof:**
 
-And therefore follows lemma 1.
+First, observe a general rule: swapping two distinct letters $L_1$ and $L_2$ in the sequence $S$ changes the total number of inversions by exactly $\pm 1$. If they were previously an inversion pair, swapping them removes that inversion; if they were not an inversion pair, swapping them creates one.
 
-For a column move of $L$ and a set of letters $L_k$ who have their order relative to $L$ changed, by Invariant 2, for each letter $L_i \in L_k$, the inversion of $L_i$ relative to $L$ decrease or increase by 1.
+**Lemma 1:** For a column move of $L$, consider the set of letters $L_k$ whose order relative to $L$ is changed. By Invariant 2, exactly three such letters exist on a $4 \times 4$ board. For each $L_i \in L_k$, swapping its relative order with $L$ changes the inversion count with respect to that pair by exactly $1$ (either increasing or decreasing the total inversion count by $1$ per pair).
 
-We know that there are exactly 3 letters that get their relative order to $L$ changed, by Invariant 2.
+Now consider the possible numbers of inversion pairs involving $L$ and the three affected letters before the column move.
 
-Consider the following cases before a column move on $L$.
+Case 1: Inversion count among those three pairs $I_{\text{cnt}} = 3$ (odd).
+All three inversions are removed, so $I_{\text{cnt}}' = 0$ (even).
 
-Case 1: Inversion count $I_{cnt} = 3$ (odd)
-$\therefore$ all 3 letters get inversion decrease by 1.
-$\therefore I_{cnt}' = 0$ (even)
+Case 2: $I_{\text{cnt}} = 0$ (even).
+All three pairs become inversions, so $I_{\text{cnt}}' = 3$ (odd).
 
-Case 2: $I_{cnt} = 0$ (even)
-Inversion increase for all 3
-$I_{cnt}' = 3$ (odd)
+Case 3: $I_{\text{cnt}} = 1$ (odd) or $2$ (even).
+If $I_{\text{cnt}} = 1$, one inversion is removed and two are added, giving $I_{\text{cnt}}' = 2$ (even).
+If $I_{\text{cnt}} = 2$, two inversions are removed and one is added, giving $I_{\text{cnt}}' = 1$ (odd).
 
-Case 3: $I_{cnt} = 1$ (odd) or 2 (even)
-if $I_{cnt} = 1$, 1 inversion removed, 2 added,
-$I_{cnt}' = 2$ (even)
-if $I_{cnt} = 2$, 2 inversions removed, 1 added,
-$I_{cnt}' = 1$ (odd)
+In every case, the parity of the number of inversions among these three pairs flips. Since all other inversion pairs are unaffected, the total number of inversions changes parity.
 
-Invariant 4 theorem follows from these cases that:
-Invariant 4: A column move inverts parity of the number of inversions for any $4 \times 4$ board.
+**Invariant 4:** A column move flips the parity of the total number of inversions on a $4 \times 4$ board. $\blacksquare$
 
 #### e)
 The previous problem part implies that we must make an *odd* number of column moves in order to exchange just one pair of tiles (N and O, say). But this is problematic, because each column move also knocks the blank square up or down one row. So after an *odd* number of column moves, the blank can not possibly be back in the last row, where it belongs! Now we can bundle up all these observations and state an *invariant*, a property of the puzzle that never changes, no matter how you slide the tiles around.
@@ -480,72 +386,51 @@ Prove this lemma.
 
 **Proof:**
 
-Lemma: In every configuration reachable from the position shown below, the parity of the number of inversions is different from the parity of the row containing the blank square.
+We prove the lemma by induction on the number of moves.
+Let $r$ be the row index of the blank square (counting rows from $1$) and $I$ be the number of inversions.
+Let $P_A(x)$ denote the parity of $x$ (even or odd).
 
-Proof by Induction
-Let $r, I$ be the row index and inversion count respectively.
-We start counting rows at 1.
-Let $P_A$ be a function that returns parity of $r$ or $I$
+**Base case:**
+The initial configuration is $K_0$.
+For $K_0$,
+$r = 4$ (even), because the blank is in row $4$.
+$I = 1$ (odd), since the only inversion is the pair $(O, N)$.
+$P_A(r)$ is even, $P_A(I)$ is odd, so $P_A(I) \neq P_A(r)$. The base case holds.
 
-Base case:
-The base case is the intial given configuration
-$K=0$.
-For $K=0$,
-$r = 4$ (even). blank is on row 4
-$I = 1$ (odd). inversion is $(O, N)$ only.
-Base case holds since $r$ is even and $I$ is odd.
+**Inductive step:**
+Assume that for an arbitrary reachable configuration $K$, $P_A(I_K) \neq P_A(r_K)$.
+Consider a move that transforms configuration $K$ into $K'$.
 
-By Induction assume that in a arbitrary reachable configuration $K$,
-$P_A(I_K) \neq P_A(r_K)$
+Case 1: The move is a row move.
+A row move keeps the blank in the same row, so $r_{K'} = r_K$.
+By Invariant 3, a row move does not change the parity of inversions, so $P_A(I_{K'}) = P_A(I_K)$.
+Therefore $P_A(I_{K'}) \neq P_A(r_{K'})$.
 
-Consider a transition in configuration from
-$K \rightarrow K+1$.
+Case 2: The move is a column move.
+A column move changes the row of the blank by $\pm 1$, so $P_A(r_{K'})$ flips.
+By Invariant 4, a column move also flips the parity of inversions, so $P_A(I_{K'})$ flips.
+Since both parities flip together, the inequality $P_A(I) \neq P_A(r)$ remains true.
 
-Case 1: $K \rightarrow K+1$ is a row move.
-Assume without loss of generality that
-$P_A(I_K) = 2k$ and $P_A(r_K) = 2k+1$
-We defined a row move for a configuration $K$ to $K+1$ to be
-$(r, c) \rightarrow (r, c \pm 1)$.
-It follows that the row of the [blank] is unchanged.
-By Invariant 3, parity of inversion is unchanged,
-$\therefore$ after $K \rightarrow K+1$,
-$P_A(I_{K+1}) \neq P_A(r_{K+1})$
-
-Case 2: $K \rightarrow K+1$ is a column move.
-Assume WLOG that $P_A(I_K) = 2k$ and $P_A(r_K) = 2k+1$.
-By Invariant 4
-after $K \rightarrow K+1$, $P_A(I_{K+1}) = 2k+1$.
-We defined a column move to be from $K$ to $K+1$ to be
-$(r, c) \rightarrow (r \pm 1, c)$.
-if $r-1$ then $P_A(r_{K+1}) = 2k$.
-if $r+1$ then $P_A(r_{K+1}) = 2(k+1)$.
-$\therefore$ After $K \rightarrow K+1$,
-$P_A(I_{K+1}) \neq P_A(r_{K+1})$.
-
-This completes the inductive step and the proof of the lemma follows from the proof.
+This completes the inductive step, and the lemma follows. $\blacksquare$
 
 #### f)
 Prove the theorem that we originally set out to prove.
 
 **Proof:**
 
-f) Theorem: No sequence of moves transforms the given configuration on the left to the target on the right.
+**Theorem:** No sequence of moves transforms the given configuration on the left into the target configuration on the right.
 
-Let target configuration be $K_T$.
-For $K_T$,
-Inversion count $I_T = 0$
-Blank space row $r_T = 4$
-Parity $P_A(I_T) = P_A(r_T)$.
+Let the target configuration be $K_T$.
+In $K_T$,
+the inversion count $I_T = 0$ (all tiles are in alphabetical order).
+The blank square is in row $4$, so $r_T = 4$.
+Thus $P_A(I_T) = \text{even}$ and $P_A(r_T) = \text{even}$, so $P_A(I_T) = P_A(r_T)$.
 
-Let $C$ be the infinite set of configurations reachable after initial given configuration $K_0$.
+Let $C$ be the set of all configurations reachable from the initial configuration $K_0$.
+By the lemma proved in part (e), for every configuration $K_i \in C$, $P_A(I_i) \neq P_A(r_i)$.
 
-By the lemma we proved,
-$\forall K_i \in C$,
-$P_A(I_i) \neq P_A(r_i)$
-
-This implies $K_T \notin C$, since $P_A(I_T) = P_A(r_T)$.
-Therefore it is completely impossible to reach $K_T$ from $K_0$.
-This completes the proof of the theorem.
+Therefore $K_T \notin C$, since $P_A(I_T) = P_A(r_T)$.
+Hence it is impossible to reach $K_T$ from $K_0$, which completes the proof of the theorem. $\blacksquare$
 
 ---
 
@@ -553,7 +438,7 @@ This completes the proof of the theorem.
 
 There are two types of creature on planet Char, Z-lings and B-lings. Furthermore, every creature belongs to a particular generation. The creatures in each generation reproduce according to certain rules and then die off. The subsequent generation consists entirely of their offspring.
 
-The creatures of Char pair with a mate in order to reproduce. First, as many Z-B pairs as possible are formed. The remaining creatures form Z-Z pairs or B-B pairs, depending on whether there is an excess of Z-lings or of B-lings. If there are an odd number of creatures, then one in the majority species dies without reproducing. The number and type of offspring is determined by the types of the parents
+The creatures of Char pair with a mate in order to reproduce. First, as many Z-B pairs as possible are formed. The remaining creatures form Z-Z pairs or B-B pairs, depending on whether there is an excess of Z-lings or of B-lings. If there are an odd number of creatures, then one in the majority species dies without reproducing. The number and type of offspring is determined by the types of the parents:
 
 * If both parents are Z-lings, then they have three Z-ling offspring.
 * If both parents are B-lings, then they have two B-ling offspring and one Z-ling offspring.
@@ -563,170 +448,62 @@ There are 200 Z-lings and 800 B-lings in the first generation. Use induction to 
 
 **Proof:**
 
-Proposition : Given there are 200 Z-lings and 800 B-lings in the first generation, The number of Z-lings will always be atmost twice the number of B-lings.
+Proposition: Given 200 Z-lings and 800 B-lings in the first generation, the number of Z-lings will always be at most twice the number of B-lings.
 
-Assume an arbitrary state at generation $n$ is $Z_n, B_n$.
+Assume an arbitrary state at generation $n$ has $Z_n$ Z-lings and $B_n$ B-lings.
+We derive the transition functions for $Z_{n+1}$ and $B_{n+1}$.
 
-Define the transition functions $Z_{n+1}$ and $B_{n+1}$.
+**State A:** $Z_n \le B_n$, excess B-lings.
+There are $Z_n$ Z-B pairs formed.
+The number of B-lings remaining is $B'_n = B_n - Z_n$.
 
-State A: $Z_n \le B_n$, Excess B-lings
+If $B'_n$ is even, i.e. $B'_n = 2k$, then $B'_n/2$ B-B pairs are formed.
+Using the offspring rules:
+$$Z_{n+1} = Z_n + B'_n/2 = Z_n + (B_n - Z_n)/2 = (Z_n + B_n)/2,$$
+$$B_{n+1} = Z_n + 2(B'_n/2) = Z_n + B'_n = Z_n + (B_n - Z_n) = B_n.$$
 
-* there are $Z_n$, Z-B pairs formed.
-* Notice that there are $B_n - Z_n$ B-lings left.
+If $B'_n$ is odd, i.e. $B'_n = 2k+1$, then $(B'_n - 1)/2$ B-B pairs are formed.
+$$Z_{n+1} = Z_n + (B'_n - 1)/2 = Z_n + ((B_n - Z_n) - 1)/2 = (Z_n + B_n - 1)/2,$$
+$$B_{n+1} = Z_n + 2((B'_n - 1)/2) = Z_n + B'_n - 1 = Z_n + (B_n - Z_n) - 1 = B_n - 1.$$
 
-$$B'_n = B_n - Z_n \quad (1)$$
-
-if $B'_n = 2k$, then are $B'_n/2$ BB pairs formed.
-if $B'_n = 2k+1$, then are $(B'_n - 1)/2$ BB pairs formed.
-
-Using offspring rules,
-
-$$Z_{n+1} = Z_n + B'_n/2 \quad \text{if} \quad B'_n = 2k$$
-
-by (1)
-
-$$Z_{n+1} = Z_n + (B_n - Z_n)/2$$
-
-$$\therefore Z_{n+1} = (Z_n + B_n)/2$$
-
-if $B'_n = 2k+1$
-
-$$\therefore Z_{n+1} = Z_n + (B'_n - 1)/2$$
-
-by (1)
-
-$$Z_{n+1} = Z_n + ((B_n - Z_n) - 1)/2$$
-
-$$Z_{n+1} = \frac{2Z_n + B_n - Z_n - 1}{2}$$
-
-$$Z_{n+1} = \frac{Z_n + B_n - 1}{2} \quad (4)$$
-
-$$B_{n+1} = Z_n + 2(B'_n/2) \quad \text{if} \quad B'_n = 2k$$
-
-$$B_{n+1} = Z_n + B'_n$$
-
-by (1)
-
-$$B_{n+1} = Z_n + B_n - Z_n$$
-
-$$B_{n+1} = B_n \quad (5)$$
-
-$$B_{n+1} = Z_n + 2((B'_n - 1)/2) \quad \text{if} \quad B'_n = 2k+1$$
-
-$$\therefore B_{n+1} = Z_n + B'_n - 1$$
-
-by (1)
-
-$$B_{n+1} = Z_n + B_n - Z_n - 1$$
-
-$$B_{n+1} = B_n - 1 \quad (6)$$
-
-Therefore per State A.
-
-* if $B_n - Z_n$ is even:
-
-$$Z_{n+1} = (Z_n + B_n)/2$$
-
-$$B_{n+1} = B_n$$
-
-* if $B_n - Z_n$ is odd:
-
-$$Z_{n+1} = (Z_n + B_n - 1)/2$$
-
-$$B_{n+1} = B_n - 1$$
-
-State B : $Z_n > B_n$, Excess Z-lings.
+**State B:** $Z_n > B_n$, excess Z-lings.
 There are $B_n$ Z-B pairs formed.
+The number of Z-lings remaining is $Z'_n = Z_n - B_n$.
 
-* There are $Z'_n = Z_n - B_n$ Z-lings left,
+If $Z_n - B_n$ is even, there are $(Z_n - B_n)/2$ Z-Z pairs.
+$$B_{n+1} = B_n,$$
+$$Z_{n+1} = B_n + 3(Z_n - B_n)/2 = (3Z_n - B_n)/2.$$
 
-$$Z'_n = Z_n - B_n \quad (1)$$
+If $Z_n - B_n$ is odd, there are $(Z_n - B_n - 1)/2$ Z-Z pairs.
+$$B_{n+1} = B_n,$$
+$$Z_{n+1} = B_n + 3(Z_n - B_n - 1)/2 = (3Z_n - B_n - 3)/2.$$
 
-if $Z_n - B_n$ is even
-There are $\frac{Z_n - B_n}{2}$ ZZ pairs.
+We now use a stronger hypothesis to make the induction work.
+Let $P(n)$ be the proposition that for generation $n \ge 1$, the number of Z-lings is at most the number of B-lings, i.e.
+$P(n): Z_n \le B_n$, for all $n \ge 1$.
+Since the population is nonnegative ($B_n > 0$), $Z_n \le B_n$ immediately implies $Z_n \le 2B_n$, so proving $P(n)$ is sufficient to prove the theorem.
 
-$$3\left(\frac{Z_n - B_n}{2}\right) \text{ Z-ling offsprings, } 0 \text{ B-lings}$$
+**Base case $P(1)$:**
+We are in State A with $Z_1 = 200$, $B_1 = 800$, $B_1 - Z_1 = 600$ (even).
+$$Z_1 = (200+800)/2 = 500,$$
+$$B_1 = 800.$$
+$500 \le 800$, so $P(1)$ holds.
 
-$$\therefore B_{n+1} = B_n$$
+**Inductive step:**
+Assume $P(n)$ for some arbitrary $n \ge 1$. We must show $P(n+1)$.
+By $P(n)$ we have $Z_n \le B_n$, so we are in State A.
 
-$$Z_{n+1} = B_n + \frac{3(Z_n - B_n)}{2}$$
+Case 1: $B_n - Z_n$ is even.
+$$Z_{n+1} = (Z_n + B_n)/2, \quad B_{n+1} = B_n.$$
+From $Z_n \le B_n$, adding $B_n$ to both sides gives $Z_n + B_n \le 2B_n$.
+Dividing by $2$, $(Z_n + B_n)/2 \le B_n$, hence $Z_{n+1} \le B_{n+1}$.
 
-$$Z_{n+1} = (3Z_n - B_n)/2$$
+Case 2: $B_n - Z_n$ is odd.
+$$Z_{n+1} = (Z_n + B_n - 1)/2, \quad B_{n+1} = B_n - 1.$$
+If $B_n - Z_n$ is odd, then $Z_n \neq B_n$, so by $P(n)$ we must have $Z_n \le B_n - 1$ (since populations are integers).
+Adding $B_n - 1$ to both sides gives $Z_n + B_n - 1 \le 2B_n - 2$.
+Dividing by $2$, $(Z_n + B_n - 1)/2 \le B_n - 1$, hence $Z_{n+1} \le B_{n+1}$.
 
-if $Z_n - B_n$ is odd,
-There are $\frac{Z_n - B_n - 1}{2}$ ZZ pairs
-
-$$B_{n+1} = B_n$$
-
-$$Z_{n+1} = B_n + \frac{3(Z_n - B_n - 1)}{2}$$
-
-$$Z_{n+1} = (3Z_n - B_n - 3)/2$$
-
-Using a stronger hypothesis,
-Let $P(n)$ be the proposition that for generation $n \ge 1$, the number of Z-lings is atmost the number of B-lings,
-that is
-$P(n) : Z_n \le B_n$, For all $n \ge 1$.
-
-Note that since the population cannot be negative ($B_n > 0$) if $Z_n \le B_n$ is true, then $Z_n \le 2B_n$ is strictly implied.
-Therefore proving $P(n)$ is sufficient to prove the theorem.
-
-Base case, $P(1)$.
-
-$$Z_1 = (200+800)/2 = 500$$
-
-$$B_1 = 800. \text{ So}$$
-
-$$500 \le 800 \quad \therefore P(1) \text{ holds }.$$
-
-Assume $P(n)$ for some arbitrary integer $n \ge 1$.
-We need to show $P(n) \Rightarrow P(n+1)$.
-By $P(n)$ we know
-
-$$Z_n \le B_n$$
-
-By State A
-Case 1 : $B_n - Z_n$ is even
-
-$$\therefore Z_{n+1} = \frac{Z_n + B_n}{2}$$
-
-$$B_{n+1} = B_n$$
-
-Proof : by $P(n)$, $Z_n \le B_n$
-
-Adding $B_n$ both sides
-
-$$Z_n + B_n \le 2B_n$$
-
-Dividing by 2
-
-$$\frac{Z_n + B_n}{2} \le B_n \quad \therefore Z_{n+1} \le B_{n+1}$$
-
-Case 2 : $B_n - Z_n$ is odd
-
-$$Z_{n+1} = \frac{Z_n + B_n - 1}{2}$$
-
-$$B_{n+1} = B_n - 1$$
-
-Proof : if $B_n - Z_n$ is odd, then $Z_n$ cannot equal $B_n$
-by $P(n)$,
-$Z_n \le B_n$ then it must be the case that
-$Z_n < B_n$
-
-$$\therefore Z_n \le B_n - 1 \text{ since populations are whole integers}$$
-
-Adding $B_n - 1$ both sides
-
-$$Z_n + B_n - 1 \le 2B_n - 2$$
-
-Dividing by 2
-
-$$\frac{Z_n + B_n - 1}{2} \le B_n - 1$$
-
-$$\therefore Z_{n+1} \le B_{n+1}$$
-
-Therefore,
-
-$$P(n) \Rightarrow P(n+1)$$
-
-And since $Z_{n+1} \le B_{n+1}$ then $Z_{n+1} \le 2B_{n+1}$
-This completes the inductive step and the proof follows from it.
+In both cases $P(n) \Rightarrow P(n+1)$.
+Since $Z_{n+1} \le B_{n+1}$, we also have $Z_{n+1} \le 2B_{n+1}$.
+This completes the inductive step, and the theorem follows. $\blacksquare$
