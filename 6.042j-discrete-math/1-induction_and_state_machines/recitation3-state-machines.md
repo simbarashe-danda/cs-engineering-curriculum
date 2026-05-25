@@ -1,6 +1,6 @@
 
 
-# Recitation 3 State Machines
+# Recitation 3 State Machines 
 
 ## Problem 1: Breaking a Chocolate Bar
 
