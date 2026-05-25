@@ -1,4 +1,3 @@
-
 ## Recitation 3 State Machines
 
 ### Problem 1: Breaking a Chocolate Bar
@@ -50,6 +49,7 @@ Because $m$ and $n$ are fixed initial conditions, $k_F$ is a constant independen
 ---
 
 ### Problem 2: The Temple of Forever
+
 Each monk entering the Temple of Forever is given a bowl with 15 red beads and 12 green beads. Each time the Gong of Time rings, a monk must do one of two things:
 
 1. **Exchange:** If he has at least 3 red beads, he may exchange 3 red beads for 2 green beads.
@@ -241,7 +241,3 @@ $$
 $$
 
 But $52 < 108$, contradicting the assumption that 108 distinct states can be visited. Hence it is impossible. $\blacksquare$
-
----
-
-**Why the original failed:** GitHub only renders math inside `$...$` and `$$...$$`. The delimiters `\( ... \)` and `\[ ... \]` are from standard LaTeX and are not supported by GitHub’s MathJax implementation. Simply replacing them as shown above will make everything render correctly.
