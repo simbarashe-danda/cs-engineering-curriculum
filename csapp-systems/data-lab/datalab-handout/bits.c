@@ -1,7 +1,7 @@
 /* 
  * CS:APP Data Lab 
  * 
- * <Please put your name and userid here>
+ * < Simbarashe Danda >
  * 
  * bits.c - Source file with your solutions to the Lab.
  *          This is the file you will hand in to your instructor.
@@ -143,7 +143,9 @@ NOTES:
  *   Rating: 1
  */
 int bitXor(int x, int y) {
-  return 2;
+ /* logically, x ^ y is equivalent to (~x & y) | (x & ~y) which is equialent to 
+    ~(~(~x & y) & ~(x & ~y)) */
+  return ~(~(x & ~y) & ~(~x & y));  // x ^ y
 }
 /* 
  * tmin - return minimum two's complement integer 
@@ -153,7 +155,7 @@ int bitXor(int x, int y) {
  */
 int tmin(void) {
 
-  return 2;
+  return 1 << 31; // 2^31, Tmin
 
 }
 //2
@@ -165,7 +167,10 @@ int tmin(void) {
  *   Rating: 1
  */
 int isTmax(int x) {
-  return 2;
+  int Tmin; // decl
+
+  Tmin = x + 1;  // Tmax if x was Tmax
+  return !(~x ^ Tmin) & !(!Tmin); // check condition
 }
 /* 
  * allOddBits - return 1 if all odd-numbered bits in word set to 1
@@ -176,7 +181,18 @@ int isTmax(int x) {
  *   Rating: 2
  */
 int allOddBits(int x) {
-  return 2;
+  int y; // decl
+
+  y = x;  
+  /* invert all odd bits: 0 if 1, 1 if 0 */
+  y =  y ^ 0xAA;  // byte 0
+  y = y ^ (0xAA << 8); // byte 1
+  y = y ^ (0xAA << 16);  // byte 2
+  y = y ^ (0xAA << 24);  // byte 3
+
+  /* now all  odd bit in the word are inverted, all 0 now if they were all 1 */
+  return !(~x & y); // all even bits are set to 0. all odd must also be 0 now, then word must be 0 now,
+  // but if an odd bit x, was 0 in the first place, its now 1 (0 ^ 1 is 1. (~0 is 1). 1 & 1 is 1)
 }
 /* 
  * negate - return -x 
@@ -186,7 +202,7 @@ int allOddBits(int x) {
  *   Rating: 2
  */
 int negate(int x) {
-  return 2;
+  return ~x + 1;
 }
 //3
 /* 
@@ -199,7 +215,18 @@ int negate(int x) {
  *   Rating: 3
  */
 int isAsciiDigit(int x) {
-  return 2;
+  /* declarations */
+  int sign, cond1, cond2;
+
+  sign = 1 << 31; // sign bit mask
+  cond1 = x + (~0x30 + 1);  // condition 1, 0x30 <= x
+  cond2 = 0x39 + (~x + 1); // condition 2, x <= 0x39
+
+  /* extract sign bits. if both are 0, condition holds */
+  cond1 = cond1 & sign;
+  cond2 = cond2 & sign;
+
+  return !(cond1 | cond2);  // 1 if both sign bits are 0
 }
 /* 
  * conditional - same as x ? y : z 
@@ -209,7 +236,10 @@ int isAsciiDigit(int x) {
  *   Rating: 3
  */
 int conditional(int x, int y, int z) {
-  return 2;
+  x = (!x) + ~0;  // -1 if true, 0 if false
+  // same y and (1/0) OR z and ~(1/0)
+  return (y & x) | (z & ~x );
+
 }
 /* 
  * isLessOrEqual - if x <= y  then return 1, else return 0 
@@ -219,7 +249,10 @@ int conditional(int x, int y, int z) {
  *   Rating: 3
  */
 int isLessOrEqual(int x, int y) {
-  return 2;
+  x = ~x + 1; // -x
+  x = y + x;  // conditional check, 0 <= y-x
+  x = x & (1 << 31);  // extract sign bit, 0 if condition is true
+  return !x;  // 1 if condition holds
 }
 //4
 /* 
@@ -231,7 +264,15 @@ int isLessOrEqual(int x, int y) {
  *   Rating: 4 
  */
 int logicalNeg(int x) {
-  return 2;
+  /* for the below process, it is guaranteed that if there exists atleast a bit set to 1 in x, lsb will also have bit set to 1. */
+  /* keep "folding" the bit vector  */
+  x = x | (x >> 16);
+  x = x | (x >> 8);
+  x = x | (x >> 4);
+  x = x | (x >> 2);
+  x = x | (x >> 1);
+  /* lsb now 1 for all non zero */
+  return (x & 0x1) ^ 0x1; // first mask lsb then invert it
 }
 /* howManyBits - return the minimum number of bits required to represent x in
  *             two's complement
@@ -246,7 +287,33 @@ int logicalNeg(int x) {
  *  Rating: 4
  */
 int howManyBits(int x) {
-  return 0;
+  /* declarations */
+  int b16, b8, b4, b2, b1, b0, mask, x_norm;
+
+  mask = x >> 31; // all 1 if x<0, all 0 if 0<=x 
+  x_norm = x ^ mask;  //normalize x, invert 1 to 0 if x<0
+
+  /* binary search */
+  b16 = (!!(x_norm >> 16)) << 4; // check if there is any bit set to 1 in higher 16 bits. b16 is 16 or 0
+  x_norm = x_norm >> b16; // if b is 16, focus on upper 16, else lower 16
+
+  /* same logic upto lower or upper 0*/
+
+  b8 = (!!(x_norm >> 8)) << 3;
+  x_norm = x_norm >> b8; 
+
+  b4 = (!!(x_norm >> 4)) << 2;
+  x_norm = x_norm >> b4;
+
+  b2 = (!!(x_norm >> 2)) << 1;
+  x_norm = x_norm >> b2; 
+
+  b1 = !!(x_norm >> 1);
+  x_norm = x_norm >> b1;
+
+  b0 = x_norm;  // 1 or 0
+  return (b16 + b8 + b4 + b2 + b1 + b0) + 1; // sum recorded bit counts + sign bit count
+
 }
 //float
 /* 
@@ -261,7 +328,18 @@ int howManyBits(int x) {
  *   Rating: 4
  */
 unsigned floatScale2(unsigned uf) {
-  return 2;
+  /* declarations */
+  unsigned sign, exp, frac;
+
+  sign = uf >> 31;    // sign bit
+  exp = (uf >> 23) & 0xFF;    // exponent 
+  frac = uf & 0x7FFFFF;   // fraction
+
+  if (exp == 0xFF) return uf;   // case1 uf is special value: -inf , inf, NaN
+  if (exp == 0) return (sign << 31) | (frac << 1); // case2 f is denormalized
+  if (exp == 0xFE) return (sign << 31) | ((exp + 1) << 23);  // case3.1  f is normalized , 2*uf is overflow
+  return (sign << 31) | ((exp + 1) << 23) | frac; // case3.2 f is normalized and no 2*uf overflow
+
 }
 /* 
  * floatFloat2Int - Return bit-level equivalent of expression (int) f
@@ -276,7 +354,28 @@ unsigned floatScale2(unsigned uf) {
  *   Rating: 4
  */
 int floatFloat2Int(unsigned uf) {
-  return 2;
+  /* declarations */
+  unsigned sign, exp, frac, M; int E;
+
+  sign = uf >> 31;    // sign bit
+  exp = (uf >> 23) & 0xFF;    // exponent 
+  frac = uf & 0x7FFFFF;   // fraction
+  E = exp - 127; // unbiasing
+
+  /* over and underflow cases */
+  if (E < 0) return 0;  // underflow
+  if (E >= 31) return 0x80000000; // overflow
+
+  /* restoring implicit leading 1 */
+  M = (1 << 23) | frac;  // restore implict 1
+  if (E > 23) M <<= (E - 23); // exponent too large
+  else if (E < 23) M >>= (23 - E);  // exponent too large
+  // else M is in correct range, no shift required
+
+  /* sign bit */
+  if (sign) return -M;
+  return M;
+
 }
 /* 
  * floatPower2 - Return bit-level equivalent of the expression 2.0^x
@@ -292,5 +391,15 @@ int floatFloat2Int(unsigned uf) {
  *   Rating: 4
  */
 unsigned floatPower2(int x) {
-    return 2;
+
+    if (x > 127) return 0x7F800000; // too large, return +inf
+    if (x < -149) return 0; // too small
+
+    // exp = x + 127
+    if (-126 <= x)  // normalized. frac = 0
+      return (x + 127) << 23;   // shift exp into correct position. s=0, f=0
+
+    // shift amount S for denorm is, S = 149 + x
+    // denormalized
+    return 1 << (149 + x);  // shift 1 into correct frac position
 }
