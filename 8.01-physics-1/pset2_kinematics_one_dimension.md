@@ -1,208 +1,508 @@
-# Kinematics in One Dimension – Problem Set Solutions
+### **Problem 20**
+
+The equation of the worldline of a particle is given by $X = A\cos(bt)$, where $A$ and $b$ are constants. Assume that $A = 2.0\text{ m}$ and $b = 1.0\text{ rad/s}$.
+
+(a) Roughly plot the worldline of this particle for the time interval $0\text{ s} \le t \le 7.0\text{ s}$.
+
+**Solution:**
+
+The worldline is defined by:
+
+$$x = A \cos(bt) \quad \text{①}$$
+
+where $A$ and $b$ are constants.
+
+Assume $A = 2.0\text{ m}$ and $b = 1.0\text{ rad/s}$.
+
+**a) Plot of worldline for this particle for time interval $0\text{ s} \le t \le 7.0\text{ s}$**
+
+$\text{Amplitude} = A = 2.0\text{ m}$
+$\text{frequency} = b = 1.0\text{ rad/s}$
+
+Thus, the period $T$ is given by:
+
+$$\text{Period} = T = 2\pi / b = \frac{2\pi\text{ rad}}{1.0\text{ rad/s}}$$
+
+$$T = 2\pi\text{ s} \approx 6.3\text{ s}$$
+
+<img src="./images/harmonic.png" alt="Worldline for the particle" width="500">
+
+
+**(b) At what time does the particle pass the origin ($x=0$)? What are its velocity and acceleration at this instant?**
+
+Time $t$ when $x = 0$
+
+If $x = 0$, then from $\text{①}$:
+
+$$A \cos(bt) = 0$$
+
+Therefore,
+
+$$\therefore bt = \cos^{-1}(0)$$
+
+Solving for $t$:
+
+$$t = \frac{\cos^{-1}(0)}{b} = \frac{\cos^{-1}(0)\text{ rad}}{1.0\text{ rad/s}}$$
+
+$$t \approx 1.6\text{ s} \quad \text{when } x = 0$$
+
+and also all time factors of $1.6\text{ s}$.
+
+**(c) At what time does the particle reach maximum distance from the origin? What are its velocity and acceleration at this instant?**
+
+The first time particle is at max distance from origin $x=0$ is when $t=0\text{ s}$
+
+And for the sequence $0\text{ s}, \pi\text{ s}, 2\pi\text{ s}, 3\pi\text{ s}, \dots$, the particle is at max distance from the origin.
+
+**Velocity $v$ at $t=0\text{ s}$**
+
+Taking the first derivative of $\text{①}$:
+
+$$v = x' = -Ab \sin(bt)$$
+
+Substituting the known values:
+
+$$v = -2.0\text{ m}(1.0\text{ rad/s}) \sin(0) \quad \text{at } t=0\text{ s}$$
+
+Thus,
+
+$$v = 0\text{ m/s} \quad \text{at } t=0\text{ s}$$
+
+$\therefore$ for all $v = 0\text{ m/s}$, $t$ is max dist from origin.
+$\therefore$ follows the conclusion: Velocity $v$ at $t = \pi\text{ s}$.
+
+**Acceleration $a$ at this instant**
+
+Taking the second derivative of $\text{①}$:
+
+$$a = x'' = -A b^2 \cos(bt)$$
+
+Substituting the known values:
+
+$$a = -2.0\text{ m} \cdot (1.0\text{ rad}^2/\text{s}^2)(\cos(0))$$
+
+Thus,
+
+$$a = \pm 2.0\text{ m/s}^2 \quad \text{for all cases when } t \text{ is at max dist from origin}$$
+
+$\blacksquare$
 
 ---
 
-## Problem 20 – Simple Harmonic Motion
+### **Problem 30**
 
-### Given
-Worldline:  
-$$x(t) = A \cos(bt)$$  
-with \(A = 2.0\ \text{m}\) and \(b = 1.0\ \text{rad/s}\).
+In a “drag” race a car starts at rest and attempts to cover $440\text{ yd}$ in the shortest possible time.
+The world record for a piston-engined car is $5.637\text{ s}$; while setting this record, the car reached a final speed of $250.69\text{ mi/h}$ at the $440\text{-yd}$ mark.
 
-### (a) Rough plot for \(0 \le t \le 7.0\ \text{s}\)
-- Amplitude: \(A = 2.0\ \text{m}\)
-- Angular frequency: \(b = 1.0\ \text{rad/s}\)
-- Period: \(T = \frac{2\pi}{b} = 2\pi\ \text{s} \approx 6.28\ \text{s}\)
+(a) What was the average acceleration for the run?
+(b) Prove that the car did not move with constant acceleration.
+(c) What would have been the final speed if the car had moved with constant acceleration so as to reach $440\text{ yd}$ in $5.637\text{ s}$?
 
-The graph is a cosine wave starting at \(x = +2.0\ \text{m}\) at \(t = 0\), crossing the time axis at \(t = \pi/2,\ 3\pi/2,\ \dots\), reaching \(x = -2.0\ \text{m}\) at \(t = \pi,\ 3\pi,\ \dots\), and returning to \(+2.0\ \text{m}\) at \(t = 2\pi\).
+**Solution:**
 
-**DIAGRAM** – Plot of \(x\) vs. \(t\) with the features described above.
+**a) Acceleration $\bar{a}\text{ m/s}^2$ for the run**
 
-### (b) Time when the particle passes the origin (\(x = 0\))
-Set \(x = 0\):
-$$A \cos(bt) = 0 \ \Longrightarrow \ \cos(bt) = 0.$$
-Then
-$$bt = \frac{\pi}{2} + n\pi \qquad (n = 0, 1, 2, \dots)$$
-$$t = \frac{\frac{\pi}{2} + n\pi}{b} = \frac{\pi}{2} + n\pi \ \text{s}.$$
-First passage: \(t = \pi/2 \approx 1.57\ \text{s}\). Later passages every \(\pi\ \text{s}\).
+$$v_1 = 250\text{ mi/hr} \approx 111.75\text{ m/s}$$
 
-Velocity and acceleration:
-$$v = \frac{dx}{dt} = -Ab \sin(bt) = -2.0 \sin(bt)$$
-$$a = \frac{dv}{dt} = -Ab^2 \cos(bt) = -2.0 \cos(bt)$$
+Then, the average acceleration is:
 
-At \(bt = \frac{\pi}{2} + n\pi\):
-- \(\sin(bt) = \pm 1 \ \Rightarrow \ v = -2.0(\pm 1) = \mp 2.0\ \text{m/s}\).
-- \(\cos(bt) = 0 \ \Rightarrow \ a = 0\ \text{m/s}^2\).
+$$\therefore \bar{a} \approx \frac{111.75\text{ m/s}}{5.637\text{ s}}$$
 
-So at each origin passage the speed is \(2.0\ \text{m/s}\) and the acceleration is zero.
+$$\bar{a} \approx 19.83\text{ m/s}^2$$
 
-### (c) Maximum distance from the origin
-Maximum \(|x|\) occurs when \(\cos(bt) = \pm 1\), i.e.  
-$$bt = n\pi \ \Longrightarrow \ t = n\pi\ \text{s} \quad (n = 0, 1, 2, \dots).$$
+**b) Proof that car did not move with constant acceleration.**
 
-At these times:
-$$v = -2.0 \sin(n\pi) = 0\ \text{m/s}$$
-$$a = -2.0 \cos(n\pi) = -2.0(\pm 1) = \mp 2.0\ \text{m/s}^2.$$
-Magnitude of acceleration: \(2.0\ \text{m/s}^2\), velocity zero.
+Assume constant acceleration $a = \bar{a}$.
 
-### Problem Statement (20)
-The equation of the worldline of a particle is given by \(X = A \cos(bt)\) where \(A\) and \(b\) are constants. Assume that \(A = 2.0\ \text{m}\) and \(b = 1.0\ \text{rad/s}\).  
-(a) Roughly plot the worldline of this particle for the time interval \(0\ \text{s} \le t \le 7.0\ \text{s}\).  
-(b) At what time does the particle pass the origin (\(x = 0\))? What are its velocity and acceleration at this instant?  
-(c) At what time does the particle reach maximum distance from the origin? What are its velocity and acceleration at this instant.
+If the object moved with constant acceleration $a$, then:
 
----
+$$a = \bar{a} = \frac{v_1 - v_0}{t_1 - t_0} = 19.83\text{ m/s}^2$$
 
-## Problem 30 – Drag Race
+Using the kinematic equation:
 
-### Given
-- Distance: \(d = 440\ \text{yd} = 440 \times 0.9144\ \text{m} = 402.336\ \text{m}\)
-- Record time: \(t_f = 5.637\ \text{s}\)
-- Final speed: \(v_f = 250.69\ \text{mi/h} = 250.69 \times 0.44704\ \text{m/s} = 112.07\ \text{m/s}\)
-- Starts from rest: \(v_0 = 0\)
+$$x - x_0 = v_0 t + \frac{1}{2} a t^2 \quad \text{①}$$
 
-### (a) Average acceleration
-$$a_{\text{avg}} = \frac{\Delta v}{\Delta t} = \frac{v_f - v_0}{t_f} = \frac{112.07}{5.637} \approx 19.88\ \text{m/s}^2.$$
+Assume $x - x_0$ is unknown.
+We know $v_0 = 0\text{ m}$.
 
-### (b) Proof that the car did not move with constant acceleration
-Assume constant acceleration \(a = a_{\text{avg}}\). The distance would be:
-$$d_{\text{const}} = \frac{v_0 + v_f}{2}\, t_f = \frac{0 + 112.07}{2} \times 5.637 = 56.035 \times 5.637 \approx 315.8\ \text{m}.$$
-Actual distance: \(402.336\ \text{m}\).  
-Since \(315.8\ \text{m} \neq 402.336\ \text{m}\), acceleration cannot have been constant.
+$$a = 19.83\text{ m/s}^2$$
 
-### (c) Final speed with constant acceleration to cover 440 yd in 5.637 s
-For constant acceleration from rest:
-$$d = \frac{1}{2} a t_f^2 \ \Longrightarrow \ a = \frac{2d}{t_f^2}.$$
-Then final speed:
-$$v = a t_f = \frac{2d}{t_f} = \frac{2 \times 402.336}{5.637} \approx 142.8\ \text{m/s}.$$
-(This is about \(319\ \text{mi/h}\), much higher than the record.)
+$$t = 5.637\text{ s}$$
 
-### Problem Statement (30)
-In a “drag” race a car starts at rest and attempts to cover 440 yd in the shortest possible time. The world record for a piston-engined car is 5.637 s; while setting this record, the car reached a final speed of 250.69 mi/h at the 440-yd mark.  
-(a) What was the average acceleration for the run?  
-(b) Prove that the car did not move with constant acceleration.  
-(c) What would have been the final speed if the car had moved with constant acceleration so as to reach 440 yd in 5.637 s?
+Substituting these into $\text{①}$ yields:
 
----
+$$\therefore x - x_0 = \frac{1}{2}(19.83\text{ m/s}^2) \cdot (5.637\text{ s})^2$$
 
-## Problem 32 – World Trade Center Elevator
+$$x = 315.06\text{ m}$$
 
-### Given
-- Descent from 107th floor to ground: distance \(D = 400\ \text{m}\)
-- Total time: \(T = 55\ \text{s}\)
-- Starts and ends at rest.
+But $x_{\text{real}} = 440\text{ yd} \approx 402.34\text{ m}$.
+Thus, since $x \neq x_{\text{real}}$
+$\Rightarrow$ Acceleration was not constant ($a \neq \bar{a}$).
 
-### (a) Average speed
-$$v_{\text{avg}} = \frac{D}{T} = \frac{400}{55} \approx 7.27\ \text{m/s}.$$
+**c) Final speed under constant acceleration to reach $440\text{ yd}$ in $5.637\text{ s}$.**
 
-### (b) Minimum acceleration/deceleration program
-To minimise peak acceleration for a given distance and time, use a symmetric triangular velocity profile.
+$$x - x_0 = 440\text{ yd} \approx 402.34\text{ m}$$
 
-**DIAGRAM** – Velocity vs. time graph. Triangle of base \(T\) and height \(v_{\text{max}}\). Area = \(D\).
+$$v_0 = 0\text{ m/s}$$
 
-Area under \(v\)–\(t\) curve equals distance:
-$$D = \frac{1}{2} T v_{\text{max}}.$$
-$$v_{\text{max}} = \frac{2D}{T} = \frac{800}{55} \approx 14.55\ \text{m/s}.$$
+$$t = 5.637\text{ s}$$
 
-Acceleration (magnitude) during first half:
-$$a_{\text{min}} = \frac{v_{\text{max}}}{T/2} = \frac{2 v_{\text{max}}}{T} = \frac{4D}{T^2}.$$
-$$a_{\text{min}} = \frac{4 \times 400}{55^2} = \frac{1600}{3025} \approx 0.529\ \text{m/s}^2.$$
+Using $\text{①}$ again:
 
-Motion program:
-- Accelerate at \(+0.529\ \text{m/s}^2\) for the first \(27.5\ \text{s}\).
-- Reach maximum speed \(14.55\ \text{m/s}\) at \(t = 27.5\ \text{s}\).
-- Decelerate at \(-0.529\ \text{m/s}^2\) for the remaining \(27.5\ \text{s}\).
+$$x - x_0 = v_0 t + \frac{1}{2} a t^2$$
 
-### Problem Statement (32)
-(a) At the World Trade Center in New York City, the elevator takes 55 s to descend from the 107th floor to ground level, a distance of 400 m. What is the average speed of the elevator for this trip?  
-(b) The elevator is at rest at the beginning and at the end of the trip. If you wanted to program the elevator so that it completes the trip in the specified time with a minimum acceleration and a minimum deceleration, how would you have to accelerate and decelerate the elevator? What would be these minimum values of the acceleration and deceleration? What would be the maximum speed during the trip?
+$$\therefore 402.34\text{ m} = \frac{1}{2}(5.637\text{ s})^2 a$$
+
+Solving for $a$:
+
+$$a = \frac{2(402.34\text{ m})}{(5.637\text{ s})^2}$$
+
+$$a \approx 25.32\text{ m/s}^2$$
+
+From these knowns, we can use the velocity equation:
+
+$$v - v_0 = at \quad \text{②}$$
+
+Substituting the values into $\text{②}$:
+
+$$v = (25.32\text{ m/s}^2) \cdot (5.637\text{ s})$$
+
+$$v \approx 142.73\text{ m/s}$$
+
+$\therefore$ Final speed would be $142.73\text{ m/s}$ which is $\approx 3.98$ times the world record.
+
+$\blacksquare$
 
 ---
 
-## Problem 34 – Cow on the Road
+### **Problem 32**
 
-### Given
-- Initial speed: \(90\ \text{km/h} = 25\ \text{m/s}\)
-- Reaction time: \(t_r = 0.75\ \text{s}\)
-- Distance to cow: \(30\ \text{m}\)
-- Deceleration: \(a = -0.80\,g\) with \(g \approx 9.8\ \text{m/s}^2\)
+(a) At the World Trade Center in New York City, the elevator takes $55\text{ s}$ to descend from the 107th floor to ground level, a distance of $400\text{ m}$.
+What is the average speed of the elevator for this trip?
 
-### Solution
-#### State 1 – Reaction phase (constant speed)
-Distance travelled before braking:
-$$\Delta x_1 = v_0 t_r = 25 \times 0.75 = 18.75\ \text{m}.$$
+(b) The elevator is at rest at the beginning and at the end of the trip.
+If you wanted to program the elevator so that it completes the trip in the specified time with a minimum acceleration and a minimum deceleration, how would you have to accelerate and decelerate the elevator? What would be these minimum values of the acceleration and deceleration? What would be the maximum speed during the trip?
 
-#### State 2 – Braking phase
-Remaining distance: \(\Delta x_2 = 30 - 18.75 = 11.25\ \text{m}\).  
-Initial speed for braking: \(v_0 = 25\ \text{m/s}\).  
-Acceleration: \(a = -0.80 \times 9.8 = -7.84\ \text{m/s}^2\).
+**Solution:**
 
-Using the time‑independent kinematic equation:
-$$v^2 = v_0^2 + 2a \Delta x_2.$$
-$$v^2 = 25^2 + 2(-7.84)(11.25) = 625 - 176.4 = 448.6\ \text{m}^2/\text{s}^2.$$
-$$v = \sqrt{448.6} = \pm 21.18\ \text{m/s}.$$
-The positive root gives the speed at impact: \(v = 21.18\ \text{m/s}\).
+**1. Avg Speed =** $\left| \frac{x_1 - x_0}{t_1 - t_0} \right|$
 
-### Additional – Minimum safe distance to stop completely
-Set final velocity \(v = 0\):
-$$0 = v_0^2 + 2a \Delta x_{\text{brake}} \ \Longrightarrow \ \Delta x_{\text{brake}} = \frac{-v_0^2}{2a} = \frac{-(25)^2}{2(-7.84)} = \frac{625}{15.68} = 39.86\ \text{m}.$$
-Total distance needed:
-$$\Delta x_{\text{total}} = \Delta x_1 + \Delta x_{\text{brake}} = 18.75 + 39.86 = 58.61\ \text{m}.$$
-The cow would need to be at least \(58.6\ \text{m}\) away to avoid being hit.
+$$x_0 = 400\text{ m}$$
 
-### Problem Statement (34)
-An automobile is traveling at 90 km/h on a country road when the driver suddenly notices a cow in the road 30 m ahead. The driver attempts to brake the automobile, but the distance is too short. With what velocity does the automobile hit the cow? Assume that, as in Problem 33, the reaction time of the driver is 0.75 s and that the deceleration of the automobile is 0.80 G when the brakes are applied.
+$$x_1 = 0\text{ m}$$
+
+$$t_1 = 55\text{ s}$$
+
+Then,
+
+$$\therefore \text{Avg}_{\text{speed}} = \left| \frac{-400\text{ m}}{55\text{ s}} \right|$$
+
+$$\text{Avg}_{\text{speed}} \approx 7.27\text{ m/s}$$
+
+**State space: Velocities $v(t)$**
+
+<img src="./images/velocity-profile.png" alt="Triangular velocity profile" width="500">
+[Diagram: A triangular velocity vs. time graph. The x-axis is time $t$ with markings at $T/2$ and $T$. The y-axis is velocity $v$ with a peak at $v_{\text{max}}$. The rising line is labeled 'slope = $a_{\text{min}}$' and the falling line is labeled 'slope = $-a_{\text{min}}$'. The triangular area under the curve is shaded and labeled 'D'.]
+
+Let the area under the curve be $D$:
+
+$$D = \text{area} = 400\text{ m} \quad \text{①}$$
+
+$$T = 55\text{ s}$$
+
+From the geometry of the velocity triangle:
+
+$$D = \frac{1}{2} T v_{\text{max}} \quad \text{②}$$
+
+Rearranging $\text{②}$ for $v_{\text{max}}$:
+
+$$v_{\text{max}} = 2D / T$$
+
+Substituting the known values from $\text{①}$:
+
+$$v_{\text{max}} = 2 \cdot 400\text{ m} / 55\text{ s}$$
+
+$$v_{\text{max}} = 14.55\text{ m/s}$$
+
+$a_{\text{min}}$ happens in the interval $0 \le t \le T/2$.
+We know the definition of acceleration:
+
+$$a = \frac{\Delta v}{\Delta t}$$
+
+Therefore,
+
+$$\therefore a_{\text{min}} = \frac{v_{\text{max}}}{T/2} = \frac{2v_{\text{max}}}{T}$$
+
+Substituting $v_{\text{max}}$:
+
+$$a_{\text{min}} = \frac{2 \cdot 14.55\text{ m/s}}{55\text{ s}}$$
+
+Thus,
+
+$$a_{\text{min}} = 0.53\text{ m/s}^2$$
+
+$$-a_{\text{min}} = -0.53\text{ m/s}^2$$
+
+**Final System State**
+
+1. Accelerate constantly at $+0.53\text{ m/s}^2$ for the first $27.5\text{ s}$.
+2. Reach a maximum speed of $14.55\text{ m/s}$ precisely at the midpoint $(t = 27.5\text{ s})$.
+3. Decelerate constantly at $-0.53\text{ m/s}^2$ for the remaining $27.5\text{ s}$.
+
+$\blacksquare$
 
 ---
 
-## Problem 36 – Passing Acceleration
+### **Problem 34**
 
-### Given (from manual figure)
-- Truck speed: \(v_{\text{truck}} = 32\ \text{km/h} = 8.89\ \text{m/s}\) (constant)
-- Car speed during pass: \(v_{\text{car,pass}} = 56\ \text{km/h} = 15.56\ \text{m/s}\)
-- Car starts the pass at the same speed as the truck: \(v_{\text{car,initial}} = v_{\text{truck}}\)
-- Relative passing distance (from geometry of clearances and vehicle lengths): \(\Delta x_{\text{rel}} = 46\ \text{m}\)
+An automobile is traveling at $90\text{ km/h}$ on a country road when the driver suddenly notices a cow in the road $30\text{ m}$ ahead.
+The driver attempts to brake the automobile, but the distance is too short. With what velocity does the automobile hit the cow? Assume that the reaction time of the driver is $0.75\text{ s}$ and that the deceleration of the automobile is $0.80g$ when the brakes are applied.
 
-**DIAGRAM** – Top‑view schematic with initial and final positions of car and truck, showing lengths and gaps.
+**Solution:**
 
-### Solution – Relative motion
-Define relative quantities (car relative to truck):
+Let the two states be:
 
-$$x_{\text{rel}}(t) = x_{\text{car}}(t) - x_{\text{truck}}(t) \tag{1}$$
-$$v_{\text{rel}}(t) = v_{\text{car}}(t) - v_{\text{truck}}(t) \tag{2}$$
+State 1: Delay Phase
 
-Initial relative velocity: \(v_{\text{rel,0}} = v_{\text{car,initial}} - v_{\text{truck}} = 0\).  
-Final relative velocity: \(v_{\text{rel}} = 15.56 - 8.89 = 6.67\ \text{m/s}\).  
-Relative displacement: \(\Delta x_{\text{rel}} = 46\ \text{m}\).
+State 2: Deceleration Phase.
 
-Assume constant acceleration \(a_{\text{rel}}\) (and thus \(a_{\text{car}} = a_{\text{rel}}\) because \(a_{\text{truck}} = 0\)).
+We assume velocity was not being acted upon by another force.
 
-From the definitions of constant acceleration:
-$$\Delta x = v_0 t + \frac{1}{2} a t^2, \qquad a = \frac{v - v_0}{t}.$$
+$\text{Velocity} = 90\text{ km/h} = 25\text{ m/s}$.
 
-Eliminate \(t\) to get a relation between \(\Delta x\) and \(v\):
-\begin{align}
-\Delta x &= v_0 t + \frac{1}{2}\left(\frac{v - v_0}{t}\right) t^2
-          = \left(v_0 + \frac{1}{2}(v - v_0)\right) t
-          = \frac{v_0 + v}{2}\,t \tag{3}\\[4pt]
-t &= \frac{v - v_0}{a} \ \Longrightarrow\ 
-\Delta x = \frac{v_0 + v}{2}\,\frac{v - v_0}{a}
-        = \frac{v^2 - v_0^2}{2a} \tag{4}
-\end{align}
+Delay distance $= \Delta x_1 = 0.75\text{ s} \cdot 25\text{ m/s}$
 
-Apply equation (4) to the relative quantities:
-$$\Delta x_{\text{rel}} = \frac{v_{\text{rel}}^2 - v_{\text{rel,0}}^2}{2a_{\text{rel}}}.$$
-$$46 = \frac{(6.67)^2 - 0^2}{2a_{\text{rel}}} = \frac{44.49}{2a_{\text{rel}}}.$$
-$$a_{\text{rel}} = \frac{44.49}{2 \times 46} = \frac{44.49}{92} \approx 0.4836\ \text{m/s}^2. \tag{5}$$
+Thus,
 
-Time required for the pass:
-$$t = \frac{v_{\text{rel}} - v_{\text{rel,0}}}{a_{\text{rel}}} = \frac{6.67}{0.4836} \approx 13.8\ \text{s}. \tag{6}$$
+$$\Delta x_1 = 18.75\text{ m} \quad \text{①}$$
 
-Since the truck’s acceleration is zero,
-$$a_{\text{car}} = a_{\text{rel}} \approx 0.48\ \text{m/s}^2.$$
+**State 2**
+Initial position condition at the start of state 2:
 
-### Result
-The car accelerates at \(0.48\ \text{m/s}^2\) for \(13.8\ \text{s}\) to complete the pass.
+$$\Delta x_2 = 30\text{ m} - \Delta x_1$$
 
-### Problem Statement (36)
+Substituting $\text{①}$:
+
+$$\Delta x_2 = 11.25\text{ m}$$
+
+$$v_0 = 25\text{ m/s}$$
+
+$$a = -0.50g, \quad g \approx 9.81\text{ m/s}^2$$
+
+From the standard kinematic equations:
+
+$$x - x_0 = v_0 t + \frac{1}{2} a t^2 \quad \text{②}$$
+
+and
+
+$$t = \frac{v - v_0}{a} \quad \text{③}$$
+
+Substituting $\text{③}$ into $\text{②}$ yields:
+
+$$x - x_0 = v_0 \left(\frac{v - v_0}{a}\right) + \frac{1}{2} a \left(\frac{v - v_0}{a}\right)^2$$
+
+Simplifying:
+
+$$\therefore a(x - x_0) = \frac{1}{2} (v^2 - v_0^2)$$
+
+$$v^2 = 2a(x - x_0) + v_0^2 \quad \text{④}$$
+
+Using $\text{④}$ for our specific system parameters:
+
+$$V^2 = 2(-0.80g)(\Delta x_2) + (25\text{ m/s})^2$$
+
+$$V^2 = 2(-0.80g)(11.25\text{ m}) + (25\text{ m/s})^2$$
+
+$$V^2 = -22.50\text{ m}(0.80g) + (25\text{ m/s})^2$$
+
+Given $g \approx 9.8\text{ m/s}^2$, then:
+
+$$V^2 = 448.4\text{ m}^2\text{/s}^2$$
+
+$$V = \pm 21.18\text{ m/s}$$
+
+Therefore,
+
+$$\therefore V = 21.18\text{ m/s} \quad \text{when cow is hit.}$$
+
+It is not $-21.18\text{ m/s}$ because the cow would not have gotten hit.
+
+What is the minimum distance away the cow should be for a final velocity of impact $V = 0\text{ m/s}$?
+
+Let the new final state be:
+
+$$V = 0\text{ m/s}, \quad a = -0.8g$$
+
+$$V_0 = 25\text{ m/s}$$
+
+Rearranging $\text{④}$ for the required stopping distance:
+
+$$x - x_0 = \frac{V^2 - V_0^2}{2a} = \frac{-(25\text{ m/s})^2}{2(-0.8g)}$$
+
+$$\Delta x_2 = x - x_0 = 39.82\text{ m}$$
+
+The total stopping distance is:
+
+$$\Delta x = \Delta x_1 + \Delta x_2$$
+
+$$\Delta x = 18.75\text{ m} + 39.82\text{ m}$$
+
+Thus,
+
+$$\Delta x = 58.57\text{ m}$$
+
+$\blacksquare$
+
+---
+
+### **Problem 36**
+
 Figure 2.13 (copied from the operation manual of an automobile) describes the passing ability of the automobile at low speed. From the data supplied in this figure, calculate the acceleration of the automobile during the pass and the time required for the pass. Assume constant acceleration.
+
+**Solution:**
+
+Truck constant velocity $= 32\text{ km/h} = 8.89\text{ m/s}$
+
+<img src="./images/overtaking.png" alt="Operational manual" width="500">
+
+Total passing distance is the sum of the components:
+
+$$12\text{ m} + 17\text{ m} + x_m + 17\text{ m} + 12\text{ m} + 5\text{ m}$$
+
+$$D = 63\text{ m} + x_m$$
+
+$$D_1 = Y + 5\text{ m}$$
+
+Equating the distances:
+
+$$63\text{ m} + x_m = Y + 5\text{ m}$$
+
+Then,
+
+$$63\text{ m} + x_m = Y$$
+
+Define the front bumper of the $17\text{ m}$ truck to be the origin:
+
+$$\therefore X=0, t=0$$
+
+Let the front of the car be $X_{\text{start}}$.
+
+$$X_{\text{start}} = X - 29\text{ m}, \quad t = t_0$$
+
+Let the front of the car after passing be $X_{\text{end}}$.
+
+$$X_{\text{end}} = X_0 + 17\text{ m}$$
+
+Thus, the car's absolute displacement is:
+
+$$\Delta x_{\text{car}} = X_{\text{end}} - X_{\text{start}} = X + 46\text{ m}$$
+
+Let the displacement relative to the truck bumper be $\Delta x_{\text{rel}}$.
+
+$$\therefore \Delta x_{\text{rel}} = 46\text{ m}$$
+
+The relative position function is:
+
+$$x_{\text{rel}}(t) = x_{\text{car}}(t) - x_{\text{truck}}(t) \quad \text{①}$$
+
+Let $v$ represent velocity:
+
+$$v_{\text{car}} = 15.56\text{ m/s}$$
+
+$$v_{\text{truck}} = 8.89\text{ m/s}$$
+
+Relative to the $17\text{ m}$ truck bumper:
+
+$$v_{\text{car}} = v_{\text{truck}} + 6.67\text{ m/s}$$
+
+$$\Delta v_{\text{rel}} = 6.67\text{ m/s}$$
+
+The relative velocity function is:
+
+$$v_{\text{rel}}(t) = v_{\text{car}}(t) - v_{\text{truck}}(t)$$
+
+$$v_{\text{rel}}(t) = v_{\text{car}}(t) - 8.89\text{ m/s} \quad \text{②}$$
+
+We know the general position equation:
+
+$$\Delta x = v_0 t + \frac{1}{2} a t^2$$
+
+We also know the acceleration definition:
+
+$$a = \frac{v - v_0}{t}$$
+
+Substituting $a$ into the position equation:
+
+$$\Delta x = v_0 t + \frac{1}{2} \left( \frac{v - v_0}{t} \right) t^2$$
+
+Factoring out $t$:
+
+$$\Delta x = \left( v_0 + \frac{1}{2}(v - v_0) \right) t$$
+
+$$\Delta x = \left( \frac{1}{2}v_0 + \frac{1}{2}v \right) t$$
+
+Yielding the average velocity form:
+
+$$\Delta x = \left( \frac{v_0 + v}{2} \right) t \quad \text{③}$$
+
+From $a = \frac{v - v_0}{t}$, we solve for $t$:
+
+$$t = \frac{v - v_0}{a}$$
+
+Substituting this $t$ into $\text{③}$:
+
+$$\Delta x = \left( \frac{v_0 + v}{2} \right) \left( \frac{v - v_0}{a} \right)$$
+
+$$\Delta x = \frac{(v + v_0)(v - v_0)}{2a}$$
+
+Which simplifies to the timeless equation:
+
+$$\Delta x = \frac{v^2 - v_0^2}{2a} \quad \text{④}$$
+
+From $\text{②}$, we know $v_{\text{rel}}(t) = v_{\text{car}}(t) - v_{\text{truck}}(t)$.
+Evaluating at the boundaries:
+
+$$\therefore v_0 = v_{\text{rel}}(0) = 0\text{ m/s}$$
+
+$$v = v_{\text{rel}}(\text{final}) = 15.56\text{ m/s} - 8.89\text{ m/s}$$
+
+$$\therefore v = 6.67\text{ m/s}$$
+
+Using the relative displacement and acceleration variables:
+
+$$\Delta x = \Delta x_{\text{rel}} = 46\text{ m}$$
+
+$$a = a_{\text{rel}}$$
+
+Substituting these parameters into $\text{④}$:
+
+$$\therefore 46\text{ m} = \frac{(6.67\text{ m/s})^2 - (0\text{ m/s})^2}{2 a_{\text{rel}}}$$
+
+Solving for $a_{\text{rel}}$:
+
+$$a_{\text{rel}} = \frac{(6.67\text{ m/s})^2}{2 \cdot 46\text{ m}}$$
+
+$$\therefore a_{\text{rel}} = 0.48\text{ m/s}^2 \quad \text{⑤}$$
+
+Using the time relation again:
+
+$$a = \frac{v - v_0}{t}$$
+
+$$t = \frac{v - v_0}{a}$$
+
+Substituting the known relative values:
+
+$$\therefore t = \frac{6.67\text{ m/s}}{0.48\text{ m/s}^2}$$
+
+$$\therefore t = 13.90\text{ s} \quad \text{⑥}$$
+
+Because the truck is moving at constant velocity:
+$a_{\text{truck}} = 0\text{ m/s}^2$
+
+Therefore, the acceleration of the car relative to the road is:
+
+$$\therefore a_{\text{car}} = 0.48\text{ m/s}^2$$
+
+$\therefore$ The car accelerates at $0.48\text{ m/s}^2$ for $13.90\text{ s}$.
+
+$\blacksquare$
