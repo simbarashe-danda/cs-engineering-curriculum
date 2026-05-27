@@ -202,7 +202,6 @@ $$\text{Avg}_{\text{speed}} \approx 7.27\text{ m/s}$$
 **State space: Velocities $v(t)$**
 
 <img src="./images/velocity-profile.png" alt="Triangular velocity profile" width="500">
-[Diagram: A triangular velocity vs. time graph. The x-axis is time $t$ with markings at $T/2$ and $T$. The y-axis is velocity $v$ with a peak at $v_{\text{max}}$. The rising line is labeled 'slope = $a_{\text{min}}$' and the falling line is labeled 'slope = $-a_{\text{min}}$'. The triangular area under the curve is shaded and labeled 'D'.]
 
 Let the area under the curve be $D$:
 
