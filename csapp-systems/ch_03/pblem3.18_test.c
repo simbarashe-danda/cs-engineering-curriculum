@@ -1,4 +1,4 @@
-// translating assembly in pblem3.7_scale2.s to C
+// translating assembly in pblem3.18_test.s to C
 
 long test(long x, long y, long z) {
     /* x in %rdi, y in %rsi , z in %rdx */
