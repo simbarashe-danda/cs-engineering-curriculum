@@ -328,8 +328,25 @@ def minimum_energy_seam(cem):
     return a set of the indices into the pixels list associated with the
     vertical seam that should be removed from the original image.
     """
-    pass
+    ht, wt = cem["height"],cem["width"]
+    pix = cem["pixels"] # reference 
+    idx = min( # min val index, last row
+        range(wt*(ht-1), ht*wt), key=lambda i:pix[i])    
 
+    indices = [idx]
+    for _ in range(ht-1):
+        x = idx-wt   # upper row direct adjacent
+        f1,f2= x != 0, x != (wt-1)  # flags for far right and far left
+        idx = min(range(x-f1, x+1+f2), key=lambda i:pix[i])
+        indices.append(idx)
+    return set(indices)
+
+def image_without_seam(color_image, seam):
+    """
+    given an image and a set of indices,
+    return a new image with the associated pixels removed.
+    """
+    pass
 # HELPER FUNCTIONS FOR DISPLAYING, LOADING, AND SAVING IMAGES
 # code below is from MIT stuff
  
@@ -451,3 +468,71 @@ def save_image(image, filename, buffer_filetype="PNG"):
     else:
         out.save(filename, buffer_filetype)
     out.close()
+
+
+if __name__ == "__main__":
+    # tests
+
+    img = load_image("test_images/pigbird.png")
+    # save_image(blurred(img, 13), "pump_blurred.png")
+    save_image(
+        round_and_clip_image(correlate(img, {(-4, -6): 0.5, (3, 2): 0.5})),
+        "pigbird_correlated_ext.png",
+    )
+    save_image(
+        round_and_clip_image(
+            correlate(img, {(-4, -6): 0.5, (3, 2): 0.5}, get_pixel_wrap)
+        ),
+        "pigbird_correlated_wrap.png",
+    )
+    save_image(
+        round_and_clip_image(correlate(img, {(-4, -6): 0.5, (3, 2): 0.5}, get_pixel)),
+        "pigbird_correlated_norm.png",
+    )
+
+    # img = load_image("test_images/cat.png")
+    # save_image(blurred(img, 13), "cat_blurred_ext.png")
+
+    # img = load_image("test_images/construct.png")
+    # save_image(edges(img), "construct_edge.png")
+
+    # img = load_image("test_images/cat.png", mode="color")
+    # save_image(
+    #     color_filter_from_greyscale_filter(inverted) (img),
+    #     "cat_color_inverted.png"
+    # )
+
+    # img = load_image("test_images/frog.png", mode="color")
+    # save_image(
+    #     color_filter_from_greyscale_filter(inverted) (img),
+    #     "frog_color_inverted.png"
+    # )
+
+    # img = load_image("test_images/python.png", mode="color")
+    # save_image(
+    #     color_filter_from_greyscale_filter(blurred, kernel_size=9) (img),
+    #     "python_color_blurred.png"
+    # )
+
+    # img = load_image("test_images/sparrowchick.png", mode="color")
+    # save_image(
+    #     color_filter_from_greyscale_filter(sharpened, kernel_size=7) (img),
+    #     "sparrowchick_color_sharpened.png"
+    # )
+
+    # filter1 = color_filter_from_greyscale_filter(edges)
+    # filter2 = color_filter_from_greyscale_filter(blurred, kernel_size=5)
+    # filt = filter_cascade([filter1, filter1, filter2, filter1])
+
+    # img = load_image("test_images/frog.png", mode="color")
+    # save_image(
+    #     filt(img),
+    #     "frog_color_cascade.png"
+    # )
+    
+    img = load_image("test_images/pattern.png", mode="color")
+    print(minimum_energy_seam(cumulative_energy_map(compute_energy(greyscale_image_from_color_image(img)))))
+    
+    # img = load_image("nature.png")
+    # save_image(inverted(img), "nature_inverted.png")
+    # save_image(sharpened(img, 11), "nature_sharpened.png")
