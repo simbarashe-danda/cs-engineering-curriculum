@@ -52,6 +52,7 @@ def get_pixel(image, r, c):
     )
 
 
+
 # CORE OPERATIONS
 
 def correlate(img, kernel, get_pix=get_pixel_extend):
@@ -76,7 +77,6 @@ def correlate(img, kernel, get_pix=get_pixel_extend):
             
             new_pix[i] = cr
             i += 1
-
     return {
         "mode": "greyscale",
         "height": h,
@@ -90,11 +90,7 @@ def round_and_clip_image(image):
     Rounds pixel values and clips them strictly to [0, 255].
     """
     pix_list = image["pixels"]
-    clip_list = []
-    
-    for pix in pix_list:
-        clipped = 0 if pix < 0 else (255 if pix > 255 else round(pix))
-        clip_list.append(clipped)
+    clip_list = [0 if pix < 0 else 255 if pix > 255 else round(pix) for pix in pix_list]
 
     return {
         "mode": "greyscale",
@@ -209,9 +205,10 @@ def edges(image):
 
 # FILTER COMPOSITION & COLOR
 
-def color_filter_from_greyscale_filter(filt, kernel_size=None):
+def color_filter_from_greyscale_filter(filt, *args):
     """
     Adapts a greyscale filter to process RGB color images per channel.
+    Args: Kernel size or None
     """
     def color_filter(image):
         h, w = image["height"], image["width"]
@@ -229,14 +226,9 @@ def color_filter_from_greyscale_filter(filt, kernel_size=None):
         filt_r, filt_g, filt_b = [], [], []
         
         # Apply filter per channel
-        if kernel_size is None:
-            filt_r = filt(image1(r_pix))[p]
-            filt_g = filt(image1(g_pix))[p]
-            filt_b = filt(image1(b_pix))[p]
-        else:
-            filt_r = filt(image1(r_pix), kernel_size)[p]
-            filt_g = filt(image1(g_pix), kernel_size)[p]
-            filt_b = filt(image1(b_pix), kernel_size)[p]
+        filt_r = filt(image1(r_pix), *args)[p]
+        filt_g = filt(image1(g_pix), *args)[p]
+        filt_b = filt(image1(b_pix), *args)[p]
 
         # Recombine channels
         filt_pixels = list(zip(filt_r, filt_g, filt_b))
@@ -336,7 +328,7 @@ def minimum_energy_seam(cem):
     indices = [idx]
     for _ in range(ht-1):
         x = idx-wt   # upper row direct adjacent
-        f1,f2= x != 0, x != (wt-1)  # flags for far right and far left
+        f1,f2 = (x % wt) != 0, (x % wt) != (wt-1)  # flags for far right and far left
         idx = min(range(x-f1, x+1+f2), key=lambda i:pix[i])
         indices.append(idx)
     return set(indices)
@@ -346,7 +338,19 @@ def image_without_seam(color_image, seam):
     given an image and a set of indices,
     return a new image with the associated pixels removed.
     """
-    pass
+    pix = color_image["pixels"]
+    new_pix = [val for (i, val) in enumerate(pix) if i not in seam]
+
+    return {
+        "mode": color_image["mode"],
+        "height": color_image["height"],
+        "width": color_image["width"]-1,    # only a column is lost
+        "pixels": new_pix,
+    }
+
+
+
+
 # HELPER FUNCTIONS FOR DISPLAYING, LOADING, AND SAVING IMAGES
 # code below is from MIT stuff
  
@@ -489,50 +493,3 @@ if __name__ == "__main__":
         round_and_clip_image(correlate(img, {(-4, -6): 0.5, (3, 2): 0.5}, get_pixel)),
         "pigbird_correlated_norm.png",
     )
-
-    # img = load_image("test_images/cat.png")
-    # save_image(blurred(img, 13), "cat_blurred_ext.png")
-
-    # img = load_image("test_images/construct.png")
-    # save_image(edges(img), "construct_edge.png")
-
-    # img = load_image("test_images/cat.png", mode="color")
-    # save_image(
-    #     color_filter_from_greyscale_filter(inverted) (img),
-    #     "cat_color_inverted.png"
-    # )
-
-    # img = load_image("test_images/frog.png", mode="color")
-    # save_image(
-    #     color_filter_from_greyscale_filter(inverted) (img),
-    #     "frog_color_inverted.png"
-    # )
-
-    # img = load_image("test_images/python.png", mode="color")
-    # save_image(
-    #     color_filter_from_greyscale_filter(blurred, kernel_size=9) (img),
-    #     "python_color_blurred.png"
-    # )
-
-    # img = load_image("test_images/sparrowchick.png", mode="color")
-    # save_image(
-    #     color_filter_from_greyscale_filter(sharpened, kernel_size=7) (img),
-    #     "sparrowchick_color_sharpened.png"
-    # )
-
-    # filter1 = color_filter_from_greyscale_filter(edges)
-    # filter2 = color_filter_from_greyscale_filter(blurred, kernel_size=5)
-    # filt = filter_cascade([filter1, filter1, filter2, filter1])
-
-    # img = load_image("test_images/frog.png", mode="color")
-    # save_image(
-    #     filt(img),
-    #     "frog_color_cascade.png"
-    # )
-    
-    img = load_image("test_images/pattern.png", mode="color")
-    print(minimum_energy_seam(cumulative_energy_map(compute_energy(greyscale_image_from_color_image(img)))))
-    
-    # img = load_image("nature.png")
-    # save_image(inverted(img), "nature_inverted.png")
-    # save_image(sharpened(img, 11), "nature_sharpened.png")
