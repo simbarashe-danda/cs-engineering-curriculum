@@ -80,7 +80,9 @@ $$y = \sin^{-1}(1/2 - \sin x) \quad (1)$$
 
 
 We establish that $\cos y \neq 0$.
+
 Therefore, $\frac{-\cos x}{\cos y}$ is continuous at $x = \pi/2$.
+
 Substituting $x$ in $\sin x + \sin y = 1/2$:
 
 
@@ -90,8 +92,11 @@ $$y = -\pi/6 \quad \text{from } (1)$$
 
 
 Since $x \to x + 2\pi$ (shifting) looks identical and $y \to y + 2\pi$ (shifting) look identical, we only solve for the $2\pi$ window.
+
 Therefore, the coordinate points are $(\pi/2, -\pi/6)$.
+
 Since $\sin(-\pi/6) = \sin(7\pi/6)$,
+
 Then, all coordinates in the $2\pi$ window are:
 
 
@@ -131,6 +136,7 @@ $$t = \frac{-\ln(y/y_0)}{k} \quad (1)$$
 
 
 When the amount halves, $y = \frac{1}{2}y_0$.
+
 Then, substituting this into our equation for $t$:
 
 
@@ -193,7 +199,7 @@ $\blacksquare$
 
 ---
 
-**1H-2** If a solution containing a heavy concentration of hydrogen ions (i.e., a strong acid) is diluted with an equal volume of water, by approximately how much is its pH changed? (Express $(\text{pH})_{\text{diluted}}$ in terms of $(\text{pH})_{\text{original}}$.)
+**1H-2** If a solution containing a heavy concentration of hydrogen ions (i.e., a strong acid) is diluted with an equal volume of water, by approximately how much is its pH changed? 
 
 **Solution:**
 Let the initial pH in terms of hydrogen ions $[H^+]_{\text{initial}}$ be:
@@ -238,7 +244,7 @@ $\blacksquare$
 
 ---
 
-**1H-5** Solve for $x$ (hint: put $u = e^x$, solve first for $u$):
+**1H-5** Solve for $x$ :
 b) $y = e^x + e^{-x}$
 
 **Solution:**
