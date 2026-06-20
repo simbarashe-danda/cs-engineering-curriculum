@@ -36,13 +36,16 @@
 
 > **Solution:**
 > $a \mid b$ is not symmetric.
+> 
 > $a \mid b$ does not imply $b \mid a$.
+> 
 > $\therefore$ Not an equivalence relation.
 
 **(b) The "implies" relation on propositional formulas.**
 
 > **Solution:**
 > $p \implies q$ is not symmetric, since
+> 
 > $p \implies q$ does not imply $q \implies p$.
 
 ---
@@ -99,7 +102,9 @@
 **(e) What is the maximum number of classes that you could possibly take at once?**
 
 > **Solution:**
-> You can take at most $5$ subject classes at once, from the antichain result above. These classes are not related to each other in the prerequisite chain.
+> You can take at most $5$ subject classes at once, from the antichain result above.
+>
+> These classes are not related to each other in the prerequisite chain.
 
 **(f) Identify a topological sort of the classes. (A *topological sort* of a poset $(A, \preceq)$ is a total order of all the elements such that if $a_i \preceq a_j$ in the partial order, then $a_i$ precedes $a_j$ in the total order.)**
 
@@ -111,19 +116,23 @@
 
 > **Solution:**
 > There are $15$ courses. If you were to take $2$ courses per term, you would need $\lceil 15/2 \rceil$ terms.
+> 
 > $\therefore 8 \text{ terms.}$
 
 **(h) What if you could take three courses per term?**
 
 > **Solution:**
 > If we were to try to take $3$ courses per term, that would need only $5$ terms. But from (c), the absolute minimum is $6$ terms.
+> 
 > $\therefore 6 \text{ terms are required.}$
 
 **(i) Stanford's computer science department offers $n$ courses, limits students to at most $k$ classes per term, and has its own complicated prerequisite structure. Describe two different lower bounds on the number of terms required to complete all the courses. One should be based on your answers to parts (b) and (c) and a second should be based on your answer to part (g).**
 
 > **Solution:**
 > Let the longest prerequisite chain on the $n$ courses be $m$.
+> 
 > It follows from (b) and (c) that $m$ terms is the lower bound.
+> 
 > From (g), given a limit of at most $k$ classes per term, we can use at least $\lceil n/k \rceil$ terms.
 > 
 > $$
