@@ -127,5 +127,8 @@
 > From (g), given a limit of at most $k$ classes per term, we can use at least $\lceil n/k \rceil$ terms.
 > 
 > $$
-> T = \begin{cases} \text{at least } m, & \lceil n/k \rceil \leq m \\ \text{at least } \lceil n/k \rceil, & m \leq \lceil n/k \rceil \end{cases}
+> T = \begin{cases} 
+> \text{at least } m, & \lceil n/k \rceil \leq m \\\\ 
+> \text{at least } \lceil n/k \rceil, & m \leq \lceil n/k \rceil 
+> \end{cases}
 > $$
