@@ -11,63 +11,47 @@
 
 **Solution:**
 
-Assume a vertical and horizontal block is $x \times 1$.
+Assume a vertical and horizontal block is $x \times 1$. Let $L_0$ be the first bottom L-shape. 
 
-Let $L_0$ be the first bottom L-shape. 
+Let the x-axis range of the horizontal block of $L_0$ be $[-x, 0]$. **(1)**
 
-   Let the x-axis range of the horizontal block of $L_0$ be $[-x, 0]$. (1)
+Since the vertical block of $L_0$ starts at $-x$ then, let the range of the vertical block of $L_0$ be $[-x, -x+1]$. **(2)**
 
-Since the vertical block of $L_0$ starts at $-x$ then,
+It then follows that the center of mass of $L_0$, using center of masses (COMs) of vertical and horizontal block is:
 
-let the range of the vertical block of $L_0$ be $[-x, -x+1]$. (2)
+$$X_{\text{com}} = \frac{-3x+1}{4}$$ **(3)**
 
-It then follows that the center of mass of $L_0$,
+Since the base vertical block ends at $0$, let the range of Base be $[-1, 0]$. **(4)**
 
-$$X_{\text{com}} = \frac{-3x+1}{4}$$
-using center of masses (COMs) of vertical and horizontal block. (3)
+**Claim:** *"If $k$ is too small then the tower falls to the left."*
 
-Since the base vertical block ends at $0$, let the range of Base be $[-1, 0]$. (4)
+Let $k=1$ and $x=4$. Then $X_{\text{com}} = -11/4$.
 
-**Claim:** "If $k$ is too small then the tower falls to the left."
+Since $-11/4 < -1 \implies X_{\text{com}}$ is strictly to the left of the edge of Base. It follows that the tower will truly fall to the left.
 
-Let $k=1$ and $x=4$.
-
-Then $X_{\text{com}} = -11/4$.
-
-Since $-11/4 < -1 \implies X_{\text{com}}$ is strictly to the left of the edge of Base. 
-
-It follows that the tower will truly fall to the left.
-
-Let the center of mass of $k$ L-shapes be $X_{\text{com}}(k)$.
-
-First notice that, as we stack the L-shapes, they are shifted to the right relative to $L_0$.
+Let the center of mass of $k$ L-shapes be $X_{\text{com}}(k)$. First notice that, as we stack the L-shapes, they are shifted to the right relative to $L_0$.
 
 Then:
 
-$L_1 : [-x+1, 1]$ horizontal
+* $L_1 : [-x+1, 1]$ horizontal
+* $L_2 : [-x+2, 2]$ horizontal
+* $\vdots$
+* $L_n : [-x+n, n]$ horizontal
 
-$L_2 : [-x+2, 2]$ horizontal
+Consequently, the CoM of each L-shape is also shifted right by $1$ relative to the L below. Let $C_0$ be the CoM of $L_0$. Then:
 
-$\vdots$
-
-$L_n : [-x+n, n]$ horizontal
-
-Consequently, the CoM of each L-shape is also shifted right by 1 relative to the L below. 
-
-let $C_0$ be the CoM of $L_0$.
-
-Then:
-
-$$C_1 = C_0 + 1$$
-$$C_2 = C_0 + 2$$
-$$\vdots$$
-$$C_n = C_0 + n$$
+$$
+\begin{aligned}
+C_1 &= C_0 + 1 \\
+C_2 &= C_0 + 2 \\
+&\vdots \\
+C_n &= C_0 + n
+\end{aligned}
+$$
 
 Then,
 
 $$X_{\text{com}}(k) = \frac{1}{k}(C_0 + C_0 + 1 + C_0 + 2 + \dots + C_0 + n)$$
-
-Then,
 
 $$X_{\text{com}}(k) = \frac{1}{k}\left(k \cdot C_0 + \sum_{i=1}^{k-1} i\right)$$
 
@@ -75,49 +59,37 @@ Using the summation formula, then:
 
 $$X_{\text{com}}(k) = C_0 + \frac{k-1}{2}$$
 
-From (3) Then:
+From **(3)** Then:
 
 $$X_{\text{com}}(k) = \frac{2k - 3x - 1}{4}$$
 
-From (4) Then:
+From **(4)** Then:
 
 $$-1 \le \frac{2k - 3x - 1}{4} \le 0$$
 
-Then:
-
 $$-4 + 3x + 1 \le 2k$$
-
-Then:
 
 $$\frac{3x - 3}{2} \le k$$
 
-Because "The L-tower is stable if each of its subparts is stable".
+Because *"The L-tower is stable if each of its subparts is stable"*, if $k$ becomes too large, the tower falls to the right.
 
-Then if $k$ becomes too large, the tower falls to the right. 
-
-The pivot point for falling here however is the right edge of $L_0$. 
-
-Then the top $k-1$ sitting on $L_0$ need to be stable.
+The pivot point for falling here however is the right edge of $L_0$. Then the top $k-1$ sitting on $L_0$ need to be stable.
 
 Then,
 
-$$X_{\text{com}}(\text{top } k-1) = \sum_{i=1}^{k-1} (C_0 + i)$$ *(Note: divided by $k-1$ in next step)*
+$$X_{\text{com}}(\text{top } k-1) = \sum_{i=1}^{k-1} (C_0 + i)$$
 
-Then,
+*(Note: divided by $k-1$ in next step)*
 
 $$X_{\text{com}}(\text{top } k-1) = \frac{(k-1)C_0 + \frac{k(k-1)}{2}}{k-1}$$
 
-Then,
-
 $$X_{\text{com}}(\text{top } k-1) = C_0 + \frac{k}{2}$$
 
-For the top $k-1$ to be stable, $X_{\text{com}}(\text{top } k-1)$ must not exceed the right edge of $L_0$, which is $0$.
-
-Then:
+For the top $k-1$ to be stable, $X_{\text{com}}(\text{top } k-1)$ must not exceed the right edge of $L_0$, which is $0$. Then:
 
 $$C_0 + k/2 \le 0$$
 
-From (3):
+From **(3)**:
 
 $$\frac{-3x+1}{4} + \frac{2k}{4} \le 0 \implies -3x + 1 + 2k \le 0$$
 
@@ -125,7 +97,7 @@ Thus:
 
 $$k \le \frac{3x-1}{2}$$
 
-It then follows that our entire system to be stable... $\left[ \text{requires } \frac{3x-3}{2} \le k \le \frac{3x-1}{2} \right]$.
+It then follows that for our entire system to be stable... $\left[ \text{requires } \frac{3x-3}{2} \le k \le \frac{3x-1}{2} \right]$. $\blacksquare$
 
 ---
 
@@ -148,7 +120,7 @@ $$
 \end{aligned}
 $$
 
-$$\therefore \sum_{i=1}^n \sum_{j=1}^i j = \frac{n(n+1)(n+2)}{6}$$
+$$\therefore \sum_{i=1}^n \sum_{j=1}^i j = \frac{n(n+1)(n+2)}{6} \quad \blacksquare$$
 
 ---
 
@@ -160,10 +132,12 @@ $$\therefore \sum_{i=1}^n \sum_{j=1}^i j = \frac{n(n+1)(n+2)}{6}$$
 **Solution:**
 
 Because the $k$-th harmonic number is 
+
 $$H_k = \sum_{j=1}^k \frac{1}{j}$$
 
 Then,
-$$\sum_{k=1}^n H_k = \sum_{k=1}^n \sum_{j=1}^k \frac{1}{j}$$
+
+$$\sum_{k=1}^n H_k = \sum_{k=1}^n \sum_{j=1}^k \frac{1}{j} \quad \blacksquare$$
 
 ---
 
@@ -172,35 +146,37 @@ $$\sum_{k=1}^n H_k = \sum_{k=1}^n \sum_{j=1}^k \frac{1}{j}$$
 
 **Solution:**
 
-$H_k \approx \ln k$
-
-Evaluating $\int_1^n \ln(x) \, dx$
+Given $H_k \approx \ln k$, we evaluate $\int_1^n \ln(x) \, dx$.
 
 Integrating by parts:
 
 $$\int u \, dv = uv - \int v \, du$$
 
-Let $u = \ln(x) \implies \frac{du}{dx} = \frac{1}{x} \implies du = \frac{1}{x} \, dx$
+Let $u = \ln(x) \implies du = \frac{1}{x} \, dx$
 
-$dv = dx \implies v = x$
+Let $dv = dx \implies v = x$
 
 Then:
 
-$$\int \ln(x) \, dx = x \ln(x) - \int x \cdot \frac{1}{x} \, dx$$
-
-$$= x(\ln x - 1)$$
+$$
+\begin{aligned}
+\int \ln(x) \, dx &= x \ln(x) - \int x \cdot \frac{1}{x} \, dx \\
+&= x(\ln x - 1)
+\end{aligned}
+$$
 
 Using the Fundamental Theorem of Calculus:
 
 $$\int_a^b f(x) \, dx = F(b) - F(a)$$
 
-$$F(x) = x(\ln x - 1) \quad , \quad a = 1 \quad , \quad b = n$$
+Where $F(x) = x(\ln x - 1)$, $a = 1$, and $b = n$. Then:
 
-Then:
-
-$$\int_1^n \ln(x) \, dx = n(\ln n - 1) - 1(\ln 1 - 1)$$
-
-$$= n \ln(n) - n + 1$$
+$$
+\begin{aligned}
+\int_1^n \ln(x) \, dx &= n(\ln n - 1) - 1(\ln 1 - 1) \\
+&= n \ln(n) - n + 1 \quad \blacksquare
+\end{aligned}
+$$
 
 ---
 
@@ -218,18 +194,19 @@ $$= n \ln(n) - n + 1$$
 | $\vdots$ | | | | | | |
 | **$n$** | $1$ | $1/2$ | $1/3$ | $1/4$ | $\dots$ | $1/n$ |
 
-From this table we can conclude that, the term $1/j$ appear $n-j+1$ times. (1)
+From this table, we can conclude that the term $1/j$ appears $n-j+1$ times. **(1)**
 
-We know that 
+We know that:
 
 $$\sum_{k=1}^n H_k = \sum_{k=1}^n \sum_{j=1}^k \frac{1}{j}$$
+
 is summing each row then adding the row sums.
 
-However by summing columns then adding column sums then we get:
+However, by summing columns then adding column sums, we get:
 
 $$\sum_{k=1}^n H_k = \sum_{j=1}^n \sum_{k=j}^n \frac{1}{j}$$
 
-This follows (1) Hence the above sum is summing the term $1/j$ , $n-j+1$ times.
+This follows **(1)**. Hence the above sum is summing the term $1/j$, exactly $n-j+1$ times. $\blacksquare$
 
 ---
 
@@ -249,10 +226,6 @@ $$
 \end{aligned}
 $$
 
-Because, 
+Because $H_n = \sum_{j=1}^n \frac{1}{j}$, then:
 
-$H_n = \sum_{j=1}^n \frac{1}{j}$
-
-Then:
-
-$$\sum_{k=1}^n H_k = (n+1)H_n - n$$
+$$\sum_{k=1}^n H_k = (n+1)H_n - n \quad \blacksquare$$
