@@ -2,7 +2,7 @@
 
 ## 1. The L-tower problem
 
-<img src="Ltower.png" width="500" alt="L-tower">
+<img src="images/Ltower.png" width="500" alt="L-tower">
 
 > **Question:**
 > Observe the structures shown in Figure 1. One has 2 L-shapes, the other 5 L-shapes. Consider a tower with $k$ L-shapes. Assume that the blocks are all of size $x \times 1$ where $x > 1$. As the picture indicates, if $k$ is too small then the tower falls to the left. On the other hand, if $k$ is too large the tower would fall to the right. Will the tower be stable for some $k$? Prove there is at least one value of $k$ for which the L-tower is stable. Assume that a structure is stable if and only if its center of gravity is not hanging in the air horizontally. The L-tower is stable if and only if each of its subparts is stable.
