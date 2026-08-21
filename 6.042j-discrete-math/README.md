@@ -4,17 +4,21 @@
 See root `README.md` for full curriculum architecture and execution standards.
 
 ## Local Content
-This directory contains materials, notes, and implementations specific to this module.
+This directory contains Mathematics for Computer Science Problem Sets, Recitation Problems, proofs, and solutions.
 
 All proofs, derivations, and written solutions contained in this directory are my own work unless otherwise stated.
 
 ## Credits
 Problem statements and question images in this directory are sourced from:
 
-- MIT OpenCourseWare  
-  Course: 6.042J / 18.062J Mathematics for Computer Science Fall 2010
-  http://ocw.mit.edu
+- **MIT OpenCourseWare**  
+  Course: 6.042J / 18.062J Mathematics for Computer Science (Fall 2010)  
+  https://mit.edu
 
 ## Notes
-- All work follows repository-wide systems + mathematical rigor constraints
-- WSL/Linux toolchain assumed
+- All work follows repository-wide systems and mathematical rigor constraints.
+- WSL/Linux toolchain assumed.
+
+## Abbreviations
+- **Pset**: Problem Set
+- **Recit**: Recitation Problems
