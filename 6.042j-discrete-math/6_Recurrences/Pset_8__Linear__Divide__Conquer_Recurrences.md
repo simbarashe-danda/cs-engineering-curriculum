@@ -1,4 +1,4 @@
-# Problem Set 8: Divide-and-Conquer & Linear Recurrences
+# Problem Set 8: Divide-and-Conquer & Linear Recurrences 
 
 ## Notes: Akra-Bazzi Theorem (Strong Form)
 
