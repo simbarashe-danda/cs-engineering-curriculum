@@ -3,7 +3,7 @@
 ## Notes: Akra-Bazzi Theorem (Strong Form)
 
 Suppose that $T(x) = \sum_{i=1}^{k} a_i T(b_i x + h_i(x)) + g(x)$ for $x > x_0$ where:
-
+ 
 *   $a_1, a_2, \dots, a_k$ are positive constants
 *   $b_1, b_2, \dots, b_k$ are constants between 0 and 1
 *   $x_0$ is "large enough"
