@@ -1,27 +1,46 @@
-# 6.1010-python-labs
+# 6.1010 — Fundamentals of Programming Labs
 
 ## Module Scope
+
 See root `README.md` for full curriculum architecture and execution standards.
 
-## Local Content
+## Course
 
-This repository contains my personal solutions and implementations for labs from course 6.1010: Fundamentals of Programming.
+**MIT 6.1010: Fundamentals of Programming**
+[py.mit.edu/spring26](https://py.mit.edu/spring26)
 
-Course website: [MIT 6.1010 Spring 2026](https://py.mit.edu/spring26)
+## Labs Completed
+
+| Lab | Description | Status |
+|-----|-------------|--------|
+| Image Processing | Inversion, correlation, blur, sharpen | ✓ |
+| Mice-sleeper | 2D and N-D Minesweeper, flood-fill reveal | ✓ |
+| Bacon Number | BFS graph search, shortest path | ✓ |
+| Snekoban | State-space search, Sokoban solver | ✓ |
+| SAT Solver | Pending | ... |
+| Symbolic Algebra | Pending | ... |
 
 ## Contents
 
-- `lab.py` — my implementations and solutions
-- personal notes and experiments written by me
+- `labN/lab.py` — my implementations for each lab
+- Personal notes and experiments where applicable
+
+## Methodology
+
+Labs approached with planning-first discipline — algorithm and data
+structure design on paper before implementation. Emphasis on
+correctness, efficiency, and clean abstraction.
 
 ## Attribution
 
-The original lab structure, specifications, interfaces, and course materials were created by MIT and the course staff.
+Original lab structure, specifications, interfaces, test suites,
+and course materials are the work of MIT and the 6.1010 course staff.
 
-I do not claim ownership of the original assignment materials.
-
-All solution code contained in this repository, unless otherwise stated, is my own work.
+All solution code in this repository is my own original work unless
+explicitly noted otherwise.
 
 ## Notes
-- All work follows repository-wide systems + mathematical rigor constraints
-- WSL/Linux toolchain assumed
+
+- All work follows repository-wide rigor standards
+- WSL2/Linux toolchain assumed
+- No external imports beyond lab-specified allowances
