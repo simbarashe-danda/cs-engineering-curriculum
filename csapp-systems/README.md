@@ -30,8 +30,8 @@ before each optimization attempt.
 
 ## Environment
 
-- OS: Ubuntu 22.04 (WSL2)\
-- Hardware: ThinkPad E16 Core i5 13th gen\
+- OS: Ubuntu 22.04 (WSL2)
+- Hardware: ThinkPad E16 Core i5 13th gen
 - Compiler: GCC 11, flags per lab specification
 
 ## Attribution
