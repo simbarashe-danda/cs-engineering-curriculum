@@ -6,7 +6,7 @@ completed as part of an independent MIT 6-3 curriculum study.
 
 ## Labs Completed
 
-```
+
 | Lab | Description | Status |
 |-----|-------------|--------|
 | Data Lab | Bit manipulation puzzles | ✓ |
@@ -16,7 +16,7 @@ completed as part of an independent MIT 6-3 curriculum study.
 | Cache Lab | In progress | ... |
 | Shell Lab | Pending | ... |
 | Malloc Lab | Pending | ... |
-```
+
 
 ## Methodology
 
