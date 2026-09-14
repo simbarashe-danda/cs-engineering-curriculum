@@ -1,14 +1,9 @@
-## Attribution
+This directory contains materials, disassembly, and reverse engineering analysis for the CS:APP Bomb Lab.
 
-The lab structure, binary, and supporting infrastructure for this lab 
-are the work of Randal E. Bryant and David R. O'Hallaron, authors of 
-"Computer Systems: A Programmer's Perspective" (CS:APP), Carnegie Mellon 
-University.
+### Files
 
-Source: https://csapp.cs.cmu.edu
+* **`phase*_analysis.md`**  
+  Detailed reverse engineering notes and logic derivation for defusing phases 1 through 6.
 
-The reverse engineering analysis, solution derivations, and writeups, code comments
-in this repository are my own original work, produced through independent 
-study of the provided binaries using GDB and paper-based assembly analysis.
-
-This repository is shared for educational purposes only.
+* **`phase*_asm.s`**  
+  Extracted assembly code for each corresponding phase of the bomb.
