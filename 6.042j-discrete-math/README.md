@@ -1,24 +1,28 @@
-# 6.042j-discrete-math
+# 6.042J — Mathematics for Computer Science
 
-## Module Scope
-See root `README.md` for full curriculum architecture and execution standards.
+Formal proofs and discrete mathematics following
+MIT 6.042J, 2010 (Leighton & Meyer).
 
-## Local Content
-This directory contains Mathematics for Computer Science Problem Sets, Recitation Problems, proofs, and solutions.
+## Structure
 
-All proofs, derivations, and written solutions contained in this directory are my own work unless otherwise stated.
+| Module | Content |
+|--------|---------|
+| 1-proofs | Induction, number theory, proof techniques, state machines |
+| 2-structures | Graph theory, relations, partial orders |
+| 3-counting | Sums, asymptotics, recurrences, counting rules |
+| 4-probability-theory | Random variables, expectation, deviation bounds, random walks |
 
-## Credits
-Problem statements and question images in this directory are sourced from:
+## Standards
 
-- **MIT OpenCourseWare**  
-  Course: 6.042J / 18.062J Mathematics for Computer Science (Fall 2010)  
-  https://mit.edu
+Proofs constructed from first principles. Every proof states:
+- Proof technique upfront
+- Base case explicitly verified
+- Inductive hypothesis clearly scoped
+- Inductive step using only the stated hypothesis
+- All cases exhausted with no gaps
 
-## Notes
-- All work follows repository-wide systems and mathematical rigor constraints.
-- WSL/Linux toolchain assumed.
+## Attribution
 
-## Abbreviations
-- **Pset**: Problem Set
-- **Recit**: Recitation Problems
+Course materials and problem sets from MIT 6.042J OCW.
+Tom Leighton & Marten van Dijk, *Mathematics for Computer Science*, 2010.\
+All proofs and solutions are original work.

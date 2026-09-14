@@ -1,56 +1,112 @@
-# Core Systems Engineering Foundation
+# CS Engineering Foundation — Year 1
 
-**Engineer:** Simbarashe Danda  
-**Grade:** Year 1  
-**Location:** Zimbabwe  
-**Objective:** A rigorous, self-directed 4-year Computer Science and Engineering curriculum.
+**Engineer:** Simbarashe Danda
+**Year:** 1 of 4
+**Location:** Zimbabwe
+**Curriculum:** Self-directed MIT 6-3 (EECS) — independent study
 
 ## Overview
-This repository serves as the central, verifiable proof-of-work for my foundational engineering studies. My primary focus is on low-level systems programming, strict memory management, algorithm complexity, and the discrete mathematical proofs that govern computational theory. I prioritize raw execution and theoretical mastery over high-level abstractions.
 
-## Curriculum Architecture
+This repository is the verifiable record of my foundational computer
+science and engineering studies, following the MIT 6-3 curriculum
+independently. Focus areas: low-level systems programming, memory
+management, algorithm design and correctness, and the discrete
+mathematics that underlies computational theory.
 
-The repository is strictly structured by mathematical and engineering domains, with explicit conceptual scopes for Year 1:
+## Repository Structure
 
-### ⚙️ Systems Engineering & Architecture
-* **`csapp-systems/`**: C and x86-64 assembly implementations. 
-  * `/data-lab/`: Bit-level manipulations, integer/floating-point representation limits.
-  * `/bomb-lab/`: Executable reverse engineering, x86-64 assembly, program counter tracing.
-  * `/machine-programming/`: Stack frames, procedure calls, and memory layouts.
-* **`c-k&r/`**: Rigorous problem sets from *The C Programming Language* (K&R).
-  * `/io-parsing/`: Character I/O, state-machine text parsing, syntax validation.
-  * `/memory-pointers/`: Direct memory addressing, array/pointer duality, manual block allocation.
-  * `/control-flow/`: Bitwise operations, low-level data structures, and loop invariants.
-* **`cpp-primer/`**: Object-oriented systems and standard template library (STL) mastery.
-  * `/memory-management/`: RAII principles, smart pointers, and dynamic allocation.
-  * `/object-oriented/`: Class abstractions, inheritance, and polymorphism.
-  * `/stl-structures/`: Generic programming, iterators, and container implementations.
+### Systems Engineering
 
-### 📐 Theoretical Computer Science & Mathematics
-* **`6.042j-discrete-math/`**: Formal mathematical proofs and discrete computational theory.
-  * `/01-proofs/`: Propositions, proof patterns, mathematical induction, and number theory.
-  * `/02-structures/`: Graph theory, directed graphs, relations, partial orders, and state machines.
-  * `/03-counting/`: Sums, asymptotics, recurrences, cardinality rules, generating functions, and infinite sets.
-  * `/04-probability/`: Events, probability spaces, conditional probability, independence, random variables, expectation, deviations, and random walks.
-* **`18.01-calculus-1/`**: Single-variable calculus.
-  * `/differentiation/`: Limits, derivatives, rates of change, optimization.
-  * `/integration/`: Fundamental Theorem of Calculus, Riemann sums, areas.
-  * `/series-approximations/`: Taylor series, asymptotic behavior.
-* **`8.01-physics-1/`**: Classical mechanics and mathematical physics.
-  * `/kinematics-dynamics/`: Newtonian mechanics, reference frames, force analysis.
-  * `/conservation-laws/`: Work, mechanical energy, linear momentum.
-  * `/rotational-mechanics/`: Torque, angular momentum, rigid body dynamics.
+**`csapp-systems/`** — C and x86-64 assembly, following
+*Computer Systems: A Programmer's Perspective* (Bryant & O'Hallaron)
 
-### 🐍 Algorithmic Problem Solving
-* **`6.1010-python-labs/`**: Algorithmic labs and core data structure implementations.
-  * `/environment-model/`: Variable scoping, memory frames, aliasing, and mutability.
-  * `/recursive-structures/`: Tree traversals, graph search, and recursive reduction.
-  * `/complexity-analysis/`: Asymptotic bounds, algorithm timing, optimization.
+| Directory | Content |
+|-----------|---------|
+| `1-data-lab/` | Bit manipulation, integer and floating-point representation |
+| `2-bomb-lab/` | Binary reverse engineering, assembly analysis, GDB |
+| `3-attack-lab/` | Buffer overflow exploitation, return-oriented programming |
+| `4-performance-lab/` | Cache-aware optimization, CPE benchmarking |
+| `5-cache-lab/` | Cache simulator, matrix transpose optimization |
+| `6-hell-lab/` | Unix shell implementation |
+| `7-malloc-lab/` | Dynamic memory allocator |
 
-## Execution Standards
-1. **Mathematical Rigor:** No algorithm is considered complete without a stated invariant, and tight-bound time/space complexity under the standard RAM model.
-2. **Systems Realism:** C code must be validated against memory leaks, undefined behavior, and segfaults using `valgrind`, `gdb`, and `strace` in a WSL2/Ubuntu environment.
-3. **Proof Strategy:** Discrete math proofs rely on first principles, strong induction, and formal state machine invariants. 
+**`c-k&r/`** — Problem sets from *The C Programming Language*
+(Kernighan & Ritchie)
+
+| Directory | Content |
+|-----------|---------|
+| `io-parsing/` | Character I/O, text parsing, syntax validation |
+| `memory-pointers/` | Pointer arithmetic, array-pointer duality |
+| `control-flow/` | Bitwise operations, loop invariants |
+
+**`cpp-primer/`** — C++ and object-oriented systems
+
+| Directory | Content |
+|-----------|---------|
+| `object-oriented/` | Classes, inheritance, polymorphism |
+| `memory-management/` | RAII, smart pointers, dynamic allocation |
+| `stl-structures/` | Generic programming, iterators, containers |
 
 ---
-*Committing to high-performance engineering for global execution.*
+
+### Theoretical Computer Science & Mathematics
+
+**`6.042j-discrete-math/`** — Formal proofs and discrete theory,
+following MIT 6.042J (Leighton, 2010)
+
+| Directory | Content |
+|-----------|---------|
+| `1-proofs/` | Induction, number theory, proof techniques, state machines |
+| `2-structures/` | Graph theory, relations, partial orders |
+| `3-counting/` | Sums, asymptotics, recurrences |
+| `4-probability-theory/` | Random variables, expectation, deviation bounds |
+
+**`18.01-calculus/`** — Single-variable calculus (MIT 18.01SC)
+
+| Directory | Content |
+|-----------|---------|
+| `1-differentiation/` | Limits, derivatives, optimization |
+| `2-integration/` | Fundamental theorem, Riemann sums |
+
+**`8.01-physics/`** — Classical mechanics (Lewin + Ohanian)
+
+| Directory | Content |
+|-----------|---------|
+| `1-kinematics-dynamics/` | Newtonian mechanics, force analysis |
+| `2-conservation-laws/` | Work, energy, momentum |
+| `3-rotational-mechanics/` | Torque, angular momentum |
+
+---
+
+### Algorithmic Problem Solving
+
+**`6.1010-python-labs/`** — Algorithm design and implementation,
+MIT 6.1010: Fundamentals of Programming
+
+| Directory | Content |
+|-----------|---------|
+| Labs | Image processing, graph search, state-space search, SAT solver |
+
+---
+
+## Standards
+
+**Correctness:** Every non-trivial algorithm includes a stated
+invariant and time/space complexity justification under the RAM model.
+
+**Systems verification:** C code validated with `valgrind`,
+`gcc -Wall -Wextra -Werror`, and `gdb` under WSL2/Ubuntu.
+
+**Proof discipline:** Discrete mathematics proofs constructed from
+first principles — base case, inductive hypothesis, and inductive
+step stated explicitly. No hand-waving accepted.
+
+## Attribution
+
+Course materials, lab infrastructure, and textbook content referenced
+throughout this repository are the intellectual property of their
+respective authors and institutions. See individual module READMEs
+for specific attribution.
+
+All implementations, proofs, writeups, and analysis are original work
+unless explicitly noted.

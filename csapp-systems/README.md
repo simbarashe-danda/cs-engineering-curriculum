@@ -1,60 +1,47 @@
-# CS:APP Labs
+# CS:APP — Computer Systems
 
-Self-study implementations and writeups for the CS:APP\
-(Computer Systems: A Programmer's Perspective) lab sequence,\
-completed as part of an independent MIT 6-3 curriculum study.
+Labs and implementations from
+*Computer Systems: A Programmer's Perspective, 3rd Edition*
+Bryant & O'Hallaron, Carnegie Mellon University.
 
-## Labs Completed
+Following the ICS+ course sequence (15-213).
+Chapter 4 skipped — covered separately in 6.004/6.1910.
 
+## Labs
 
 | Lab | Description | Status |
 |-----|-------------|--------|
-| Data Lab | Bit manipulation puzzles | ✓ |
-| Bomb Lab | Binary reverse engineering, 6 phases | ✓ |
-| Attack Lab | Buffer overflow exploitation, ROP | ✓ |
-| Performance Lab | Cache-aware optimization, 84.5x smooth speedup | ✓ |
-| Cache Lab | In progress | ... |
-| Shell Lab | Pending | ... |
-| Malloc Lab | Pending | ... |
-
+| 1-data-lab | Bit manipulation, integer and float representation | ✓ |
+| 2-bomb-lab | Binary reverse engineering, 6 phases | ✓ |
+| 3-attack-lab | Code injection and ROP exploitation | ✓ |
+| 4-performance-lab | Cache-optimized kernels, 84.5x smooth speedup | ✓ |
+| 5-cache-lab | Cache simulator, matrix transpose optimization | ... |
+| 6-shell-lab | Unix shell with job control | ... |
+| 7-malloc-lab | Dynamic memory allocator | ... |
+| 8-proxy-lab | Concurrent web proxy | ... |
 
 ## Methodology
 
-**Bomb and Attack Lab:** Paper-first reverse engineering.\
-Full assembly analysis on paper before touching GDB.\
-GDB used for hypothesis verification only, not exploration.
+**Reverse engineering:** Paper-first analysis before GDB.
+Full assembly read on paper, hypothesis formed, GDB used
+for verification only.
 
-**Performance Lab:** Iterative profiling with explicit reasoning\
-about cache behavior, function call cost, and memory access patterns\
-before each optimization attempt.
+**Optimization:** Explicit reasoning about cache behavior,
+function call cost, and memory access patterns before each
+optimization attempt.
 
 ## Environment
 
-- OS: Ubuntu 22.04 (WSL2)
-- Hardware: ThinkPad E16 Core i5 13th gen
-- Compiler: GCC 11, flags per lab specification
+- OS: Ubuntu 24.04.4 LTS (WSL2)
+- Compiler: GCC 13.3.0
+- Tools: GDB, Valgrind, gcc -Wall -Wextra -Werror
 
 ## Attribution
 
-The lab infrastructure, binaries, driver programs, and baseline\
-implementations in this repository are the work of:
-
-**Randal E. Bryant and David R. O'Hallaron**
-*Computer Systems: A Programmer's Perspective, 3rd Edition*
-Carnegie Mellon University\
+Lab infrastructure, binaries, baseline implementations, and
+driver programs are copyright Randal E. Bryant and David R.
+O'Hallaron, Carnegie Mellon University.
 https://csapp.cs.cmu.edu
 
-All reverse engineering writeups, optimization implementations,\
-analysis documents, and methodology descriptions are original work\
-produced through independent study.
-
-Shared for educational purposes. No lab solutions are provided\
-in a form that trivially bypasses the learning objective.
-
-## License
-
-Original lab infrastructure: copyright Bryant & O'Hallaron,\
-Carnegie Mellon University. Used under academic fair use.
-
-Original work in this repository (writeups, optimized kernels,\
-analysis): MIT License.
+All writeups, optimized implementations, and analysis are
+original work.

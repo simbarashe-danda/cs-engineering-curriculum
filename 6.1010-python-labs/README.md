@@ -1,46 +1,35 @@
 # 6.1010 — Fundamentals of Programming Labs
 
-## Module Scope
+Algorithm implementations for MIT 6.1010,
+Fundamentals of Programming, Spring 2026.
+https://py.mit.edu/spring26
 
-See root `README.md` for full curriculum architecture and execution standards.
-
-## Course
-
-**MIT 6.1010: Fundamentals of Programming**
-[py.mit.edu/spring26](https://py.mit.edu/spring26)
-
-## Labs Completed
+## Labs
 
 | Lab | Description | Status |
 |-----|-------------|--------|
-| Image Processing | Inversion, correlation, blur, sharpen | ✓ |
-| Mice-sleeper | 2D and N-D Minesweeper, flood-fill reveal | ✓ |
-| Bacon Number | BFS graph search, shortest path | ✓ |
-| Snekoban | State-space search, Sokoban solver | ✓ |
-| SAT Solver | Pending | ... |
-| Symbolic Algebra | Pending | ... |
-
-## Contents
-
-- `labN/lab.py` — my implementations for each lab
-- Personal notes and experiments where applicable
+| 1-image-processing | Inversion, correlation, blur, sharpen | ✓ |
+| 2-image-processing-2 | Color images, additional filters | ✓ |
+| 3-bacon-number | BFS graph search | ✓ |
+| 4-snekoban | State-space search, Sokoban solver | ✓ |
+| 5-auto-complete | Trie structures, prefix search | ✓ |
+| 6-mice-sleeper | 2D and N-D Minesweeper, flood-fill | ✓ |
+| 7-sat-solver | Boolean satisfiability | ✓ |
+| 8-spreadsheet | Dependency resolution | ... |
+| 9-symbolic-algebra | Symbolic expression manipulation | ... |
+| 10-lisp-interpreter | Lisp interpreter, Part 1 | ... |
+| 11-lisp-interpreter-2 | Lisp interpreter, Part 2 | ... |
+| 12-snek-is-you | Rule-based puzzle engine | ... |
 
 ## Methodology
 
-Labs approached with planning-first discipline — algorithm and data
-structure design on paper before implementation. Emphasis on
-correctness, efficiency, and clean abstraction.
+Planning-first approach — algorithm and data structure design
+on paper before implementation. No external imports beyond
+lab-specified allowances.
 
 ## Attribution
 
-Original lab structure, specifications, interfaces, test suites,
-and course materials are the work of MIT and the 6.1010 course staff.
-
-All solution code in this repository is my own original work unless
-explicitly noted otherwise.
-
-## Notes
-
-- All work follows repository-wide rigor standards
-- WSL2/Linux toolchain assumed
-- No external imports beyond lab-specified allowances
+Lab infrastructure, specifications, test suites, scaffolding
+functions (`dump()`, `random_coordinates()`, etc.) are the
+work of MIT and the 6.1010 course staff.
+All solution code is original work.
