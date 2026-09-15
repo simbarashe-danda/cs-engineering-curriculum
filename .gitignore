@@ -1,14 +1,53 @@
+# ==========================================
+# User-Specific Files & Scripts
+# ==========================================
 sub.py
 sub.srt
 fixed.srt
 fixed_subtitle.srt
-/6-0002-comp-thinking-data-science/
-flood_fill/
 test.py
 server.py
+commit_guide.md
+
+# ==========================================
+# User-Specific Directories
+# ==========================================
+# Leading slash means it only ignores the folder at the root of the repo
+/6-0002-comp-thinking-data-science/
+/bash/
+
+# Trailing slash ignores these directories anywhere in the repo
+flood_fill/
 resources/
 ui/
-/bash/
+
+# ==========================================
+# C / C++ / Build Artifacts (Linux/WSL)
+# ==========================================
+*.o
+*.so
+*.a
+*.out
 a.out
 
+# ==========================================
+# Python Caches & Virtual Environments
+# ==========================================
+__pycache__/
+*.pyc
+*.pyo
+venv/
+env/
+.pytest_cache/
 
+# ==========================================
+# Editor & IDE Workspaces
+# ==========================================
+.vscode/
+*.swp
+*~
+
+# ==========================================
+# Secrets and Environment Variables
+# ==========================================
+.env
