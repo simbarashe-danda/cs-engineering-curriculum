@@ -1,4 +1,4 @@
-# 6.1010 — Fundamentals of Programming Labs
+# 6.1010 — Fundamentals of Programming
 
 Algorithm implementations for MIT 6.1010,
 Fundamentals of Programming, Spring 2026.
@@ -29,7 +29,16 @@ lab-specified allowances.
 
 ## Attribution
 
-Lab infrastructure, specifications, test suites, scaffolding
-functions (`dump()`, `random_coordinates()`, etc.) are the
-work of MIT and the 6.1010 course staff.
-All solution code is original work.
+Lab specifications, infrastructure, test suites, and provided
+scaffolding functions are the work of the MIT 6.1010 course staff,
+Spring 2026.
+
+6.1010 is an active MIT course, not an OCW release. Lab materials
+are used here solely for educational self-study. This repository
+does not reproduce lab specifications or test infrastructure.
+Only original solution code (`lab.py`) is included.
+
+Original work in this module is licensed under the MIT License.
+See `LICENSE` in this directory.
+
+This repository is not affiliated with or endorsed by MIT.

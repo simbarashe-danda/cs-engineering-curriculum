@@ -1,7 +1,7 @@
 # C — The C Programming Language
 
 Exercises from *The C Programming Language, 2nd Edition*
-Kernighan & Ritchie.
+Kernighan & Ritchie, Prentice Hall, 1988.
 
 ## Structure
 
@@ -11,7 +11,7 @@ Kernighan & Ritchie.
 | io-parsing | Character I/O, state-machine text parsing, syntax validation |
 | memory-pointers | Pointer arithmetic, array-pointer duality, manual allocation |
 
-## Standards
+## Verification Standards
 
 All programs validated with:
 - `gcc -Wall -Wextra -Werror`
@@ -20,6 +20,12 @@ All programs validated with:
 
 ## Attribution
 
-Exercise problems from Kernighan & Ritchie,
+Exercise problems are from Kernighan & Ritchie,
 *The C Programming Language, 2nd Edition*.
+Copyright © Brian W. Kernighan and Dennis M. Ritchie.
+Used for self-study reference.
+
 All implementations are original work.
+
+This repository is not affiliated with or endorsed by
+the authors or Prentice Hall.

@@ -1,7 +1,8 @@
 # C++ Primer
 
 Exercises and implementations from
-*C++ Primer, 5th Edition* (Lippman, Lajoie, Moo).
+*C++ Primer, 5th Edition*, Lippman, Lajoie & Moo,
+Addison-Wesley, 2012.
 
 ## Structure
 
@@ -20,6 +21,12 @@ informed by CS:APP systems knowledge.
 
 ## Attribution
 
-Exercise problems from Lippman, Lajoie & Moo,
+Exercise problems are from Lippman, Lajoie & Moo,
 *C++ Primer, 5th Edition*.
+Copyright © Stanley B. Lippman, Josée Lajoie, and Barbara E. Moo.
+Used for self-study reference.
+
 All implementations are original work.
+
+This repository is not affiliated with or endorsed by
+the authors or Addison-Wesley.
